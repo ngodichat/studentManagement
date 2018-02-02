@@ -38,10 +38,7 @@ import { MatButtonModule, MatCheckboxModule } from "@angular/material";
 
 // Pagination
 import { NgxPaginationModule } from "ngx-pagination";
-import { SessionListComponent } from './components/sessions/list/session-list/session-list.component';
-import { ListComponent } from './components/sessions/list/list.component';
-import { SessionComponent } from './components/sessions/list/session/session.component';
-import { Component } from './components/sessions/.component';
+import { SessionListComponent } from "./components/sessions/list/session-list.component";
 
 // Parent Routes
 const routes: Routes = [
@@ -72,10 +69,7 @@ const routes: Routes = [
     FilterPipe,
     PhonePipe,
     HighlightStudentDirective,
-    SessionListComponent,
-    ListComponent,
-    SessionComponent,
-    Component
+    SessionListComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import { StudentAddComponent } from "../student/add/student-add.component";
 
 // Services
 import { routerTransition } from "../../services/config/config.service";
+import { SessionListComponent } from "../sessions/list/session-list.component";
 
 @Component({
   selector: "app-home",
@@ -48,11 +49,19 @@ export class HomeComponent implements OnInit {
 // Define and export child routes of HomeComponent
 export const homeChildRoutes: Routes = [
   {
-    path: "",
+    path: "listStudent",
     component: StudentListComponent
   },
   {
-    path: "add",
+    path: "listSession",
+    component: SessionListComponent
+  },
+  {
+    path: "addStudent",
+    component: StudentAddComponent
+  },
+  {
+    path: "addSession",
     component: StudentAddComponent
   },
   {

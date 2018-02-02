@@ -46,9 +46,9 @@ export class LoginComponent implements OnInit {
 
   // Login success function
   success(data) {
-    if (data.code == 200) {
+    if (data.code === 200) {
       localStorage.setItem("userData", JSON.stringify(data.data));
-      this.router.navigate(["/"]);
+      this.router.navigate(["/listStudent"]);
       this.toastr.success("Thành công", "Đăng nhập thành công");
     } else {
       this.toastr.error("Thất bại", "Email/mật khẩu không đúng");
