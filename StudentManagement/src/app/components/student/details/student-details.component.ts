@@ -28,6 +28,7 @@ export class StudentDetailsComponent implements OnInit {
   ) {
     // Get user detail index number sent in params
     this.route.params.subscribe(params => {
+      console.log(params);
       this.index = params["id"];
       if (this.index && this.index != null && this.index !== undefined) {
         this.getStudentDetails(this.index);

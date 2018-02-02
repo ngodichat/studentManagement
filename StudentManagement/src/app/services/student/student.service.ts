@@ -96,12 +96,18 @@ export class StudentService {
 
   getStudentDetails(index: number) {
     const studentList = JSON.parse(localStorage.getItem("students"));
-
-    const returnData = {
-      code: 200,
-      message: "Student Details Fetched",
-      studentData: studentList[index]
-    };
+    let returnData: any = null;
+    for (let i = 0; i < studentList.length; i++) {
+      const student = studentList[i];
+      if (student.id === +index) {
+        returnData = {
+          code: 200,
+          message: "Student Details Fetched",
+          studentData: studentList[i]
+        };
+        break;
+      }
+    }
 
     return returnData;
   }

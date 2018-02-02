@@ -1,3 +1,4 @@
+import { SessionService } from './services/sessions/session.service';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { enableProdMode } from "@angular/core";
@@ -88,7 +89,7 @@ const routes: Routes = [
       preventDuplicates: true
     })
   ],
-  providers: [AuthService, UserService, StudentService],
+  providers: [AuthService, UserService, StudentService, SessionService],
   bootstrap: [AppComponent]
 })
 

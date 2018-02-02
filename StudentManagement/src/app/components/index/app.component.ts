@@ -26,7 +26,7 @@ export class AppComponent {
       parent_id: 1
     },
     {
-      id: 1,
+      id: 2,
       first_name: "Phạm Văn",
       last_name: "B",
       class: "8A",
@@ -37,7 +37,7 @@ export class AppComponent {
       parent_id: 1
     },
     {
-      id: 2,
+      id: 3,
       first_name: "Phạm Văn",
       last_name: "Tài",
       class: "8D",
@@ -48,7 +48,7 @@ export class AppComponent {
       parent_id: 1
     },
     {
-      id: 1,
+      id: 4,
       first_name: "Lê Đức",
       last_name: "Thọ",
       class: "8B",
@@ -60,9 +60,18 @@ export class AppComponent {
     },
   ];
 
+  sessionList = [{
+    id: 1,
+    class_name: "Lớp thầy Cường",
+    session_name: "19h-21h",
+    year: 2017,
+    nStudents: 200
+  }];
+
   constructor() {
     // Save students to localStorage
     localStorage.setItem("students", JSON.stringify(this.studentsList));
+    localStorage.setItem("sessions", JSON.stringify(this.sessionList));
   }
 }
 

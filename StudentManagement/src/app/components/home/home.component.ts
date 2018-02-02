@@ -49,11 +49,11 @@ export class HomeComponent implements OnInit {
 // Define and export child routes of HomeComponent
 export const homeChildRoutes: Routes = [
   {
-    path: "listStudent",
+    path: "students",
     component: StudentListComponent
   },
   {
-    path: "listSession",
+    path: "sessions",
     component: SessionListComponent
   },
   {
@@ -65,7 +65,11 @@ export const homeChildRoutes: Routes = [
     component: StudentAddComponent
   },
   {
-    path: "update/:id",
+    path: "updateStudent/:id",
+    component: StudentAddComponent
+  },
+  {
+    path: "updateSession/:id",
     component: StudentAddComponent
   },
   {

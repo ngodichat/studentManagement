@@ -2,7 +2,7 @@
 
 <div class="w3-container" *ngIf="studentListData">
 	<div class="w3-panel w3-round-small w3-teal">
-		<h3>Danh sách học sinh<button routerLink="/add" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Thêm học sinh</button></h3>
+		<h3>Danh sách học sinh<button routerLink="/addStudent" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Thêm học sinh</button></h3>
 	</div>
 	<span><i class="w3-medium fa fa-search"></i> Tìm kiếm : <input class="" type="text" [(ngModel)]='filterData'></span>
 
@@ -25,14 +25,14 @@
 			</tr>
 			<tr class ="w3-hover-green" *ngFor="let student of studentListData | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;" appHighlightStudent>
 				<td>{{i +1}}</td>
-				<td class="pointer" [routerLink]="['detail', i]">{{student.first_name}} </td>
-				<td class="pointer" [routerLink]="['detail', i]">{{student.last_name}}</td>
-				<td class="pointer" [routerLink]="['detail', i]">{{student.class}}</td>
-				<td class="pointer" [routerLink]="['detail', i]">{{student.school}}</td>
-				<td class="pointer" [routerLink]="['detail', i]">{{student.phone | phone}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.first_name}} </td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.last_name}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.class}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.school}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.phone | phone}}</td>
 				<!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Sửa</button></td> -->
-				<td><button [routerLink]="['update', i]" mat-raised-button color="primary">Sửa</button></td>
-				<td><button (click)="deleteStudent(i);" mat-raised-button color="warn" >Xóa</button></td>
+				<td><button [routerLink]="['/updateStudent', student.id]" mat-raised-button color="primary">Sửa</button></td>
+				<td><button (click)="deleteStudent(student.id);" mat-raised-button color="warn" >Xóa</button></td>
 			</tr>
 		</table>
 	</div>

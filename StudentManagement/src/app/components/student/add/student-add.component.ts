@@ -52,7 +52,7 @@ export class StudentAddComponent implements OnInit {
     } else {
       this.index = null;
     }
-    let studentRegister = this.studentService.doRegisterStudent(
+    const studentRegister = this.studentService.doRegisterStudent(
       this.studentAddForm.value,
       this.index
     );
@@ -68,7 +68,7 @@ export class StudentAddComponent implements OnInit {
 
   // If this is update form, get user details and update form
   getStudentDetails(index: number) {
-    let studentDetail = this.studentService.getStudentDetails(index);
+    const studentDetail = this.studentService.getStudentDetails(index);
     this.createForm(studentDetail);
   }
 
