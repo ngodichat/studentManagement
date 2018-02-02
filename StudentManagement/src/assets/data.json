@@ -1,0 +1,14 @@
+{
+    "studentsList" : [
+    {
+      "id": 1,
+      "first_name": "Phạm Văn",
+      "last_name": "A",
+	  "class": "8A",
+	  "school": "Nghĩa Tân",
+      "phone": "01689947900",
+	  "department": "Science",
+	  "parent_name": "Phạm Duy Nhất"
+    }
+  ]
+}
