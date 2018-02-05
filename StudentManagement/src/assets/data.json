@@ -7,7 +7,9 @@
       "class": "8A",
       "school": "Nghĩa Tân",
       "phone": "01689947900",
-      "parent_name": "Phạm Duy Nhất"
+      "referal": "Trần Đại Nghĩa",
+      "parent_name": "Phạm Duy Nhất",
+      "start_date": "16/02/2017"
     },
     {
       "id": 2,
@@ -16,7 +18,9 @@
       "class": "8B",
       "school": "Nghĩa Tân",
       "phone": "01689947911",
-      "parent_name": "Phạm Duy Nhị"
+      "referal": "Trần Đại Quang",
+      "parent_name": "Phạm Duy Nhị",
+      "start_date": "16/06/2017"
     },
     {
       "id": 3,
@@ -25,7 +29,9 @@
       "class": "8C",
       "school": "Lê Quý Đôn",
       "phone": "01689947922",
-      "parent_name": "Phạm Tuyên"
+      "referal": "Nguyễn Tấn Dũng",
+      "parent_name": "Phạm Tuyên",
+      "start_date": "12/06/2017"
     },
     {
       "id": 4,
@@ -34,7 +40,9 @@
       "class": "8B",
       "school": "Nghĩa Tân",
       "phone": "01689947982",
-      "parent_name": "Lê Dân Trí"
+      "referal": "Nguyễn Quang Hải",
+      "parent_name": "Lê Dân Trí",
+      "start_date": "12/09/2017"
     }
   ]
 }

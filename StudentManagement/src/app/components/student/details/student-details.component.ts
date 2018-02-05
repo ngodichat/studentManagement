@@ -15,7 +15,7 @@ import { routerTransition } from "../../../services/config/config.service";
   templateUrl: "./student-details.component.html",
   styleUrls: ["./student-details.component.css"],
   animations: [routerTransition()],
-  host: { "[@routerTransition]": "" }
+  // host: { "[@routerTransition]": "" }
 })
 export class StudentDetailsComponent implements OnInit {
   index: any;

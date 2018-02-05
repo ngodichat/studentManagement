@@ -3,7 +3,7 @@
 <div class="w3-container" *ngIf="studentDetail">
 	<div class="w3-panel w3-round-small w3-teal">
 		<h3>Thông tin chi tiết 
-			<button [routerLink]="['/update', index]" class="w3-button w3-blue custom-button"> <i class="w3-medium fa fa-pencil"></i> Sửa</button> 
+			<button [routerLink]="['/updateStudent', studentDetail.id]" class="w3-button w3-blue custom-button"> <i class="w3-medium fa fa-pencil"></i> Sửa</button> 
 			<button routerLink="/" class="w3-button w3-green custom-button margin-right"> <i class="w3-medium fa fa-chevron-left"></i> Quay lại</button></h3>
 	</div>
 	<div class=" w3-card custom-card"><br>
@@ -23,12 +23,20 @@
 				<td>: <b>{{studentDetail.school}}</b></td>
 			</tr>
 			<tr>
+				<td><i class="w3-medium custom-icon fa fa-user"></i> Người giới thiệu </td>
+				<td>: <b>{{studentDetail.referal}}</b></td>
+			</tr>
+			<tr>
 				<td><i class="w3-medium custom-icon fa fa-users"></i> Bố/mẹ </td>
 				<td>: <b>{{studentDetail.parent_name}}</b></td>
 			</tr>
 			<tr>
 				<td><i class="w3-medium custom-icon fa fa-phone"></i> Điện thoại</td>
 				<td>: <b>{{studentDetail.phone | phone}}</b></td>
+			</tr>
+			<tr>
+				<td><i class="w3-medium custom-icon fa fa-calendar"></i> Ngày nhập học</td>
+				<td>: <b>{{studentDetail.start_date}}</b></td>
 			</tr>
 		</table>
 	</div>

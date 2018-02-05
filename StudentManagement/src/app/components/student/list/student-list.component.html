@@ -19,7 +19,10 @@
 				<th><i class="w3-medium custom-icon fa fa-user"></i> Tên</th>
 				<th><i class="w3-medium custom-icon fa fa-university"></i> Lớp</th>
 				<th><i class="w3-medium custom-icon fa fa-university"></i> Trường</th>
+				<th><i class="w3-medium custom-icon fa fa-university"></i> Người giới thiệu </th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Họ tên bố/mẹ </th>
 				<th><i class="w3-medium custom-icon fa fa-phone"></i> Điện thoại</th>
+				<th><i class="w3-medium custom-icon fa fa-calendar"></i> Ngày nhập học </th>
 				<th><i class="w3-medium custom-icon fa fa-pencil"></i> Sửa</th>
 				<th><i class="w3-medium custom-icon fa fa-trash"></i> Xóa</th>
 			</tr>
@@ -29,7 +32,10 @@
 				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.last_name}}</td>
 				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.class}}</td>
 				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.school}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.referal}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.parent_name}}</td>
 				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.phone | phone}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.start_date}}</td>
 				<!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Sửa</button></td> -->
 				<td><button [routerLink]="['/updateStudent', student.id]" mat-raised-button color="primary">Sửa</button></td>
 				<td><button (click)="deleteStudent(student.id);" mat-raised-button color="warn" >Xóa</button></td>
