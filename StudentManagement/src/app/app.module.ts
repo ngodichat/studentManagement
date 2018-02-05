@@ -1,4 +1,4 @@
-import { SessionService } from './services/sessions/session.service';
+import { SessionService } from "./services/sessions/session.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { enableProdMode } from "@angular/core";
@@ -83,6 +83,7 @@ const routes: Routes = [
     MatCheckboxModule,
     MatButtonModule,
     NgxPaginationModule,
+    HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: "toast-bottom-right",

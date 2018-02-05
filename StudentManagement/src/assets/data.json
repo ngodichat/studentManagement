@@ -1,14 +1,40 @@
 {
-    "studentsList" : [
+  "studentsList": [
     {
       "id": 1,
       "first_name": "Phạm Văn",
       "last_name": "A",
-	  "class": "8A",
-	  "school": "Nghĩa Tân",
+      "class": "8A",
+      "school": "Nghĩa Tân",
       "phone": "01689947900",
-	  "department": "Science",
-	  "parent_name": "Phạm Duy Nhất"
+      "parent_name": "Phạm Duy Nhất"
+    },
+    {
+      "id": 2,
+      "first_name": "Phạm Văn",
+      "last_name": "B",
+      "class": "8B",
+      "school": "Nghĩa Tân",
+      "phone": "01689947911",
+      "parent_name": "Phạm Duy Nhị"
+    },
+    {
+      "id": 3,
+      "first_name": "Phạm Văn",
+      "last_name": "Tài",
+      "class": "8C",
+      "school": "Lê Quý Đôn",
+      "phone": "01689947922",
+      "parent_name": "Phạm Tuyên"
+    },
+    {
+      "id": 4,
+      "first_name": "Lê Đức",
+      "last_name": "Thọ",
+      "class": "8B",
+      "school": "Nghĩa Tân",
+      "phone": "01689947982",
+      "parent_name": "Lê Dân Trí"
     }
   ]
 }

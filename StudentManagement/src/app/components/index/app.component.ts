@@ -3,6 +3,7 @@
  */
 
 import { Component } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-root",
@@ -13,65 +14,32 @@ export class AppComponent {
   title = "Student Management By Sangwin Gawande";
 
   // Add few students for initial listing
-  studentsList = [
+  sessionList = [
     {
       id: 1,
-      first_name: "Phạm Văn",
-      last_name: "A",
-      class: "8A",
-      school: "Nghĩa Tân",
-      phone: "01689947900",
-      department: "Science",
-      parent_name: "Phạm Duy Nhất",
-      parent_id: 1
-    },
-    {
-      id: 2,
-      first_name: "Phạm Văn",
-      last_name: "B",
-      class: "8A",
-      school: "Nghĩa Tân",
-      phone: "01689947900",
-      department: "Science",
-      parent_name: "Phạm Duy Nhị",
-      parent_id: 1
-    },
-    {
-      id: 3,
-      first_name: "Phạm Văn",
-      last_name: "Tài",
-      class: "8D",
-      school: "Lê Quý Đôn",
-      phone: "01689947981",
-      department: "Science",
-      parent_name: "Phạm Tuyên",
-      parent_id: 1
-    },
-    {
-      id: 4,
-      first_name: "Lê Đức",
-      last_name: "Thọ",
-      class: "8B",
-      school: "Nghĩa Tân",
-      phone: "01689947982",
-      department: "Science",
-      parent_name: "Lê Dân Trí",
-      parent_id: 1
-    },
+      class_name: "Lớp thầy Cường",
+      session_name: "19h-21h",
+      year: 2017,
+      nStudents: 200
+    }
   ];
 
-  sessionList = [{
-    id: 1,
-    class_name: "Lớp thầy Cường",
-    session_name: "19h-21h",
-    year: 2017,
-    nStudents: 200
-  }];
+  studentDataUrl = "assets/data.json";
 
-  constructor() {
+  constructor(private http: HttpClient) {
     // Save students to localStorage
-    localStorage.setItem("students", JSON.stringify(this.studentsList));
+    // localStorage.setItem("students", JSON.stringify(this.studentsList));
+    // localStorage.setItem("students", JSON.stringify(this.studentData));
+    this.getStudentData().subscribe(data => {
+      const students: any[] = data["studentsList"];
+      localStorage.setItem("students", JSON.stringify(students));
+
+    });
     localStorage.setItem("sessions", JSON.stringify(this.sessionList));
+  }
+
+  getStudentData() {
+    return this.http.get(this.studentDataUrl);
   }
 }
 
