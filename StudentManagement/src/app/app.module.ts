@@ -35,8 +35,22 @@ import {
 import { HighlightStudentDirective } from "./directives/highlight-student.directive";
 
 // Material package
-import { MatButtonModule, MatCheckboxModule } from "@angular/material";
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatInputModule,
+  MatFormFieldModule
+} from "@angular/material";
 
+import {
+  MAT_DATE_FORMATS,
+  DateAdapter,
+  MAT_DATE_LOCALE
+} from "@angular/material/core";
+
+import { MomentDateAdapter } from "@angular/material-moment-adapter";
 // Pagination
 import { NgxPaginationModule } from "ngx-pagination";
 import { SessionListComponent } from "./components/sessions/list/session-list.component";
@@ -58,6 +72,22 @@ const routes: Routes = [
     redirectTo: ""
   }
 ];
+
+// Custom Date Format
+import * as _moment from "moment";
+// import { default as _rollupMoment } from "moment";
+const moment =  _moment;
+export const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: "LL"
+  },
+  display: {
+    dateInput: "DD/MM/YYYY",
+    monthYearLabel: "MMM YYYY",
+    dateA11yLabel: "LL",
+    monthYearA11yLabel: "MMMM YYYY"
+  }
+};
 
 @NgModule({
   declarations: [
@@ -82,6 +112,10 @@ const routes: Routes = [
     NoopAnimationsModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
     NgxPaginationModule,
     HttpClientModule,
     ToastrModule.forRoot({
@@ -90,7 +124,18 @@ const routes: Routes = [
       preventDuplicates: true
     })
   ],
-  providers: [AuthService, UserService, StudentService, SessionService],
+  providers: [
+    AuthService,
+    UserService,
+    StudentService,
+    SessionService,
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE]
+    },
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -17,11 +17,11 @@ import { ToastrService } from "ngx-toastr";
   templateUrl: "./student-add.component.html",
   styleUrls: ["./student-add.component.css"],
   animations: [routerTransition()],
-  host: { "[@routerTransition]": "" }
+  // host: { "[@routerTransition]": "" }
 })
 export class StudentAddComponent implements OnInit {
   // create studentAddForm of type FormGroup
-  private studentAddForm: FormGroup;
+  studentAddForm: FormGroup;
   index: any;
 
   constructor(
