@@ -18,7 +18,7 @@ import { routerTransition } from "../../services/config/config.service";
   host: { "[@routerTransition]": "" }
 })
 export class LoginComponent implements OnInit {
-  private loginForm: FormGroup;
+  loginForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
   success(data) {
     if (data.code === 200) {
       localStorage.setItem("userData", JSON.stringify(data.data));
-      this.router.navigate(["/listStudent"]);
+      this.router.navigate(["/students"]);
       this.toastr.success("Thành công", "Đăng nhập thành công");
     } else {
       this.toastr.error("Thất bại", "Email/mật khẩu không đúng");

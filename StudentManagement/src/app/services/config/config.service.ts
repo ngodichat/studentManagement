@@ -52,7 +52,7 @@ export function routerTransition() {
   return slideToLeft();
 }
 
-function slideToLeft() {
+export function slideToLeft() {
   return trigger("routerTransition", [
     transition(":enter", [
       style({
