@@ -129,6 +129,7 @@ export const MY_DATE_FORMATS = {
     UserService,
     StudentService,
     SessionService,
+    PhonePipe,
     {
       provide: DateAdapter,
       useClass: MomentDateAdapter,

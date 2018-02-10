@@ -1,3 +1,4 @@
+import { PhonePipe } from "./../../../pipes/phone.pipe";
 /**
  * Created By : Sangwin Gawande (http://sangw.in)
  */
@@ -16,7 +17,7 @@ import { ToastrService } from "ngx-toastr";
   selector: "app-student-add",
   templateUrl: "./student-add.component.html",
   styleUrls: ["./student-add.component.css"],
-  animations: [routerTransition()],
+  animations: [routerTransition()]
   // host: { "[@routerTransition]": "" }
 })
 export class StudentAddComponent implements OnInit {
@@ -29,7 +30,8 @@ export class StudentAddComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private studentService: StudentService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private phonePipe: PhonePipe
   ) {
     // Check for route params
     this.route.params.subscribe(params => {
@@ -96,7 +98,7 @@ export class StudentAddComponent implements OnInit {
           "",
           [
             Validators.required,
-            ValidationService.checkLimit(5000000000, 9999999999)
+            Validators.maxLength(15)
           ]
         ],
         email: ["", [Validators.required, ValidationService.emailValidator]]
@@ -120,10 +122,10 @@ export class StudentAddComponent implements OnInit {
           ]
         ],
         phone: [
-          data.studentData.phone,
+          this.phonePipe.transform(data.studentData.phone),
           [
             Validators.required,
-            ValidationService.checkLimit(5000000000, 9999999999)
+            Validators.maxLength(20)
           ]
         ]
       });
