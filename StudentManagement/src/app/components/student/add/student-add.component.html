@@ -11,40 +11,64 @@
 			</h3>
 		</div>
 		<div class="w3-content" style="width: 60%;">
-			<label class="w3-text-blue">
+			<!-- First name field -->
+			<label class="w3-text-blue" for="firstName">
 				<i class="w3-medium custom-icon fa fa-user"></i>
 				<b>Họ và đệm</b>
 			</label>
-			<input class="w3-input w3-border" type="text" formControlName="first_name">
-			<div class="w3-panel w3-red" *ngIf="studentAddForm.controls.first_name.invalid && (studentAddForm.controls.first_name.dirty || studentAddForm.controls.first_name.touched)">Please enter 3 to 50 characters</div>
+			<input class="w3-input w3-border" type="text" formControlName="first_name" id="firstName">
+			<div class="w3-panel w3-red" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">Họ và đệm tối thiểu 2 ký tự</div>
 
-			<label class="w3-text-blue">
+			<!-- Last name field -->
+			<label class="w3-text-blue" for="lastName">
 				<i class="w3-medium custom-icon fa fa-user"></i>
 				<b>Tên</b>
 			</label>
-			<input class="w3-input w3-border" type="text" formControlName="last_name">
-			<div class="w3-panel w3-red" *ngIf="studentAddForm.controls.last_name.invalid && (studentAddForm.controls.last_name.dirty || studentAddForm.controls.last_name.touched)">Please enter 3 to 50 characters </div>
+			<input class="w3-input w3-border" type="text" formControlName="last_name" id="lastName">
+			<div class="w3-panel w3-red" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"> Tên không được để trống </div>
 
-			<label class="w3-text-blue">
+			<!-- Class field -->
+			<label class="w3-text-blue" for="class">
+				<i class="w3-medium custom-icon fa fa-university"></i>
+				<b>Lớp</b>
+			</label>
+			<input class="w3-input w3-border" type="text" formControlName="class" id="class">
+
+			<!-- School field -->
+			<label class="w3-text-blue" for="school">
+				<i class="w3-medium custom-icon fa fa-university"></i>
+				<b>Trường</b>
+			</label>
+			<input class="w3-input w3-border" type="text" formControlName="school" id="school">
+
+			<!-- Referral field -->
+			<label class="w3-text-blue" for="referral">
+				<i class="w3-medium custom-icon fa fa-user"></i>
+				<b>Người giới thiệu</b>
+			</label>
+			<input class="w3-input w3-border" type="text" formControlName="referral" id="referral">
+
+			<!-- Phone field -->
+			<label class="w3-text-blue" for="phone">
 				<i class="w3-medium custom-icon fa fa-phone"></i>
 				<b>Điện thoại</b>
 			</label>
-			<input class="w3-input w3-border" type="text" formControlName="phone">
-			<div class="w3-panel w3-red" *ngIf="studentAddForm.controls.phone.invalid && (studentAddForm.controls.phone.dirty || studentAddForm.controls.phone.touched)">Please enter valid phone number</div>
-			<label class="w3-text-blue">
+			<input class="w3-input w3-border" type="text" formControlName="phone" id="phone">
+			<div class="w3-panel w3-red" *ngIf="phone.invalid && (phone.dirty || phone.touched)">Số điện thoại không hợp lệ</div>
+
+			<!-- Start Learning Date field -->
+			<label class="w3-text-blue" for="startDate">
 				<i class="w3-medium custom-icon fa fa-calendar"></i>
 				<b>Ngày nhập học: </b>
 			</label>
+			<input class="w3-input w3-border" type="date" formControlName="start_date" id="startDate">
 
-			<mat-form-field>
-				<input matInput [matDatepicker]="picker" placeholder="Chọn ngày" disabled>
-				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-				<mat-datepicker #picker disabled=false></mat-datepicker>
-			</mat-form-field>
-
-
-
-			<br>
+			<!-- Note field -->
+			<label class="w3-text-blue" for="note">
+				<i class="w3-medium custom-icon fa fa-book"></i>
+				<b>Ghi chú</b>
+			</label>
+			<textarea id="note"  class="w3-input w3-border" style="resize: none" placeholder="Ghi chú về học sinh" [formControl]="note"></textarea>
 			<button class="w3-btn w3-blue" type="submit" [disabled]="!studentAddForm.valid">
 				<span *ngIf="index == undefined">Tạo mới</span>
 				<span *ngIf="index != undefined">Cập nhật</span>

@@ -1,4 +1,3 @@
-import { PhonePipe } from "./../../../pipes/phone.pipe";
 /**
  * Created By : Sangwin Gawande (http://sangw.in)
  */
@@ -12,6 +11,8 @@ import { StudentService } from "../../../services/student/student.service";
 import { routerTransition } from "../../../services/config/config.service";
 
 import { ToastrService } from "ngx-toastr";
+import { DatePipe } from "@angular/common";
+import { PhonePipe } from "./../../../pipes/phone.pipe";
 
 @Component({
   selector: "app-student-add",
@@ -31,7 +32,8 @@ export class StudentAddComponent implements OnInit {
     private route: ActivatedRoute,
     private studentService: StudentService,
     private toastr: ToastrService,
-    private phonePipe: PhonePipe
+    private phonePipe: PhonePipe,
+    private datePipe: DatePipe
   ) {
     // Check for route params
     this.route.params.subscribe(params => {
@@ -74,62 +76,59 @@ export class StudentAddComponent implements OnInit {
     this.createForm(studentDetail);
   }
 
+  get firstName() {
+    return this.studentAddForm.get("first_name");
+  }
+  get lastName() {
+    return this.studentAddForm.get("last_name");
+  }
+  get class() {
+    return this.studentAddForm.get("class");
+  }
+  get school() {
+    return this.studentAddForm.get("school");
+  }
+  get referral() {
+    return this.studentAddForm.get("referral");
+  }
+  get totalMoney() {
+    return this.studentAddForm.get("total_money");
+  }
+  get phone() {
+    return this.studentAddForm.get("phone");
+  }
+  get startDate() {
+    return this.studentAddForm.get("start_date");
+  }
+  get note() {
+    return this.studentAddForm.get("note");
+  }
   // If this is update request then auto fill form
   createForm(data) {
-    if (data == null) {
-      this.studentAddForm = this.formBuilder.group({
-        first_name: [
-          "",
-          [
-            Validators.required,
-            Validators.minLength(3),
-            Validators.maxLength(50)
-          ]
-        ],
-        last_name: [
-          "",
-          [
-            Validators.required,
-            Validators.minLength(3),
-            Validators.maxLength(50)
-          ]
-        ],
-        phone: [
-          "",
-          [
-            Validators.required,
-            Validators.maxLength(15)
-          ]
-        ],
-        email: ["", [Validators.required, ValidationService.emailValidator]]
-      });
-    } else {
-      this.studentAddForm = this.formBuilder.group({
-        first_name: [
-          data.studentData.first_name,
-          [
-            Validators.required,
-            Validators.minLength(3),
-            Validators.maxLength(50)
-          ]
-        ],
-        last_name: [
-          data.studentData.last_name,
-          [
-            Validators.required,
-            Validators.minLength(3),
-            Validators.maxLength(50)
-          ]
-        ],
-        phone: [
-          this.phonePipe.transform(data.studentData.phone),
-          [
-            Validators.required,
-            Validators.maxLength(20)
-          ]
-        ]
-      });
-    }
+    this.studentAddForm = this.formBuilder.group({
+      first_name: [
+        data === null ? "" : data.studentData.first_name,
+        [Validators.required, Validators.minLength(2), Validators.maxLength(50)]
+      ],
+      last_name: [
+        data === null ? "" : data.studentData.last_name,
+        [Validators.required]
+      ],
+      class: [data === null ? "" : data.studentData.class],
+      school: [data === null ? "" : data.studentData.school],
+      referral: [data === null ? "" : data.studentData.referral],
+      phone: [
+        data === null ? "" : data.studentData.phone,
+        [Validators.required, Validators.maxLength(15)]
+      ],
+      total_money: [data === null ? 0 : data.studentData.total_money],
+      start_date: [
+        data === null
+          ? ""
+          : this.datePipe.transform(data.studentData.start_date, "yyyy-MM-dd")
+      ],
+      note: [data === null ? "" : data.studentData.note]
+    });
   }
 }
 

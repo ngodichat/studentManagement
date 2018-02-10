@@ -9,7 +9,9 @@
       "phone": "01689947900",
       "referal": "Trần Đại Nghĩa",
       "parent_name": "Phạm Duy Nhất",
-      "start_date": "16/02/2017"
+      "start_date": "2017-02-16",
+      "total_money": 120,
+      "note": "Học chăm"
     },
     {
       "id": 2,
@@ -20,7 +22,9 @@
       "phone": "01689947911",
       "referal": "Trần Đại Quang",
       "parent_name": "Phạm Duy Nhị",
-      "start_date": "16/06/2017"
+      "start_date": "06/16/2017",
+      "total_money": 220,
+      "note": "Học lười"
     },
     {
       "id": 3,
@@ -31,7 +35,7 @@
       "phone": "01689947922",
       "referal": "Nguyễn Tấn Dũng",
       "parent_name": "Phạm Tuyên",
-      "start_date": "12/06/2017"
+      "start_date": "06/12/2017"
     },
     {
       "id": 4,
@@ -42,7 +46,7 @@
       "phone": "01689947982",
       "referal": "Nguyễn Quang Hải",
       "parent_name": "Lê Dân Trí",
-      "start_date": "12/09/2017"
+      "start_date": "09/12/2017"
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { DatePipe } from "@angular/common";
 import { SessionService } from "./services/sessions/session.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -76,16 +77,16 @@ const routes: Routes = [
 // Custom Date Format
 import * as _moment from "moment";
 // import { default as _rollupMoment } from "moment";
-const moment =  _moment;
+const moment = _moment;
 export const MY_DATE_FORMATS = {
   parse: {
     dateInput: "LL"
   },
   display: {
     dateInput: "DD/MM/YYYY",
-    monthYearLabel: "MMM YYYY",
+    monthYearLabel: "MM YYYY",
     dateA11yLabel: "LL",
-    monthYearA11yLabel: "MMMM YYYY"
+    monthYearA11yLabel: "MM YYYY"
   }
 };
 
@@ -130,6 +131,7 @@ export const MY_DATE_FORMATS = {
     StudentService,
     SessionService,
     PhonePipe,
+    DatePipe,
     {
       provide: DateAdapter,
       useClass: MomentDateAdapter,

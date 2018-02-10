@@ -35,7 +35,7 @@
 				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.referal}}</td>
 				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.parent_name}}</td>
 				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.phone | phone}}</td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.start_date}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.start_date | date:"dd/MM/yyyy"}}</td>
 				<!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Sửa</button></td> -->
 				<td><button [routerLink]="['/updateStudent', student.id]" mat-raised-button color="primary">Sửa</button></td>
 				<td><button (click)="deleteStudent(student.id);" mat-raised-button color="warn" >Xóa</button></td>
