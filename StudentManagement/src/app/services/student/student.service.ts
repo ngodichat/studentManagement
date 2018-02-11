@@ -35,18 +35,15 @@ export class StudentService {
     let returnData;
     console.log("index", index);
     if (index != null) {
+      console.log("Update case");
       for (let i = 0; i < studentList.length; i++) {
-        if (index !== i && studentList[i].email === data.email) {
-          returnData = {
-            code: 503,
-            message: "Email Address Already In Use",
-            data: null
-          };
-          return returnData;
+        const student = studentList[i];
+        if (student["id"] === +index) {
+          studentList[i] = data;
+          // console.log("Update student " + i);
+          break;
         }
       }
-
-      studentList[index] = data;
       localStorage.setItem("students", JSON.stringify(studentList));
       returnData = {
         code: 200,
@@ -54,17 +51,8 @@ export class StudentService {
         data: JSON.parse(localStorage.getItem("students"))
       };
     } else {
+      console.log("Register case");
       data.id = this.generateRandomID();
-      for (let i = 0; i < studentList.length; i++) {
-        if (studentList[i].email === data.email) {
-          returnData = {
-            code: 503,
-            message: "Email Address Already In Use",
-            data: null
-          };
-          return returnData;
-        }
-      }
       studentList.unshift(data);
 
       localStorage.setItem("students", JSON.stringify(studentList));
@@ -96,6 +84,7 @@ export class StudentService {
 
   getStudentDetails(index: number) {
     const studentList = JSON.parse(localStorage.getItem("students"));
+    console.log(studentList);
     let returnData: any = null;
     for (let i = 0; i < studentList.length; i++) {
       const student = studentList[i];
@@ -105,6 +94,7 @@ export class StudentService {
           message: "Student Details Fetched",
           studentData: studentList[i]
         };
+        console.log("FOUND");
         break;
       }
     }

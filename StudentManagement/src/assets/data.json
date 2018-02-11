@@ -3,27 +3,27 @@
     {
       "id": 1,
       "first_name": "Phạm Văn",
-      "last_name": "A",
+      "last_name": "Tuấn",
       "class": "8A",
       "school": "Nghĩa Tân",
       "phone": "01689947900",
-      "referal": "Trần Đại Nghĩa",
+      "referral": "Trần Đại Nghĩa",
       "parent_name": "Phạm Duy Nhất",
       "start_date": "2017-02-16",
-      "total_money": 120,
+      "total_money": 12000000,
       "note": "Học chăm"
     },
     {
       "id": 2,
       "first_name": "Phạm Văn",
-      "last_name": "B",
+      "last_name": "Công",
       "class": "8B",
       "school": "Nghĩa Tân",
       "phone": "01689947911",
-      "referal": "Trần Đại Quang",
+      "referral": "Trần Đại Quang",
       "parent_name": "Phạm Duy Nhị",
       "start_date": "06/16/2017",
-      "total_money": 220,
+      "total_money": -220000,
       "note": "Học lười"
     },
     {
@@ -33,9 +33,11 @@
       "class": "8C",
       "school": "Lê Quý Đôn",
       "phone": "01689947922",
-      "referal": "Nguyễn Tấn Dũng",
+      "referral": "Nguyễn Tấn Dũng",
       "parent_name": "Phạm Tuyên",
-      "start_date": "06/12/2017"
+      "start_date": "06/12/2017",
+      "total_money": 0,
+      "note": "Học lười"
     },
     {
       "id": 4,
@@ -44,9 +46,11 @@
       "class": "8B",
       "school": "Nghĩa Tân",
       "phone": "01689947982",
-      "referal": "Nguyễn Quang Hải",
+      "referral": "Nguyễn Quang Hải",
       "parent_name": "Lê Dân Trí",
-      "start_date": "09/12/2017"
+      "start_date": "09/12/2017",
+      "total_money": 150000,
+      "note": "Học tốt"
     }
   ]
 }

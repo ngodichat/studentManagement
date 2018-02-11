@@ -1,7 +1,6 @@
-import { DatePipe } from "@angular/common";
 import { SessionService } from "./services/sessions/session.service";
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule} from "@angular/core";
 import { enableProdMode } from "@angular/core";
 
 // Modules
@@ -22,6 +21,7 @@ import { StudentService } from "./services/student/student.service";
 // Pipes
 import { FilterPipe } from "./pipes/filter.pipe";
 import { PhonePipe } from "./pipes/phone.pipe";
+import { DatePipe, DecimalPipe } from "@angular/common";
 
 // Components
 import { AppComponent } from "./components/index/app.component";
@@ -76,6 +76,7 @@ const routes: Routes = [
 
 // Custom Date Format
 import * as _moment from "moment";
+import { MyNumberPipe } from './pipes/my-number.pipe';
 // import { default as _rollupMoment } from "moment";
 const moment = _moment;
 export const MY_DATE_FORMATS = {
@@ -101,7 +102,8 @@ export const MY_DATE_FORMATS = {
     FilterPipe,
     PhonePipe,
     HighlightStudentDirective,
-    SessionListComponent
+    SessionListComponent,
+    MyNumberPipe
   ],
   imports: [
     BrowserModule,
@@ -131,13 +133,15 @@ export const MY_DATE_FORMATS = {
     StudentService,
     SessionService,
     PhonePipe,
+    MyNumberPipe,
     DatePipe,
+    DecimalPipe,
     {
       provide: DateAdapter,
       useClass: MomentDateAdapter,
       deps: [MAT_DATE_LOCALE]
     },
-    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS },
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,4 @@
+import { MyNumberPipe } from "./../../../pipes/my-number.pipe";
 /**
  * Created By : Sangwin Gawande (http://sangw.in)
  */
@@ -11,7 +12,7 @@ import { StudentService } from "../../../services/student/student.service";
 import { routerTransition } from "../../../services/config/config.service";
 
 import { ToastrService } from "ngx-toastr";
-import { DatePipe } from "@angular/common";
+import { DatePipe, DecimalPipe } from "@angular/common";
 import { PhonePipe } from "./../../../pipes/phone.pipe";
 
 @Component({
@@ -33,13 +34,16 @@ export class StudentAddComponent implements OnInit {
     private studentService: StudentService,
     private toastr: ToastrService,
     private phonePipe: PhonePipe,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private decimalPipe: DecimalPipe,
+    private myNumberPipe: MyNumberPipe
   ) {
     // Check for route params
     this.route.params.subscribe(params => {
       this.index = params["id"];
+      // console.log("INDEX " + this.index);
       // check if ID exists in route & call update or add methods accordingly
-      if (this.index && this.index != null && this.index !== undefined) {
+      if (this.index && this.index !== null && this.index !== undefined) {
         this.getStudentDetails(this.index);
       } else {
         this.createForm(null);
@@ -52,7 +56,7 @@ export class StudentAddComponent implements OnInit {
   // Submit student details form
   doRegister() {
     if (this.index && this.index != null && this.index !== undefined) {
-      this.studentAddForm.value.id = this.index;
+      this.studentAddForm.value.id = +this.index;
     } else {
       this.index = null;
     }
@@ -63,7 +67,7 @@ export class StudentAddComponent implements OnInit {
     if (studentRegister) {
       if (studentRegister.code === 200) {
         this.toastr.success(studentRegister.message, "Success");
-        this.router.navigate(["/"]);
+        this.router.navigate(["/students"]);
       } else {
         this.toastr.error(studentRegister.message, "Failed");
       }
@@ -105,7 +109,13 @@ export class StudentAddComponent implements OnInit {
   }
   // If this is update request then auto fill form
   createForm(data) {
+    if (data !== null) {
+      // console.log("index" + data.studentData.id);
+    } else {
+      console.log("DATA NULL");
+    }
     this.studentAddForm = this.formBuilder.group({
+      id: [data === null ? -1 : data.studentData.id],
       first_name: [
         data === null ? "" : data.studentData.first_name,
         [Validators.required, Validators.minLength(2), Validators.maxLength(50)]
@@ -117,11 +127,16 @@ export class StudentAddComponent implements OnInit {
       class: [data === null ? "" : data.studentData.class],
       school: [data === null ? "" : data.studentData.school],
       referral: [data === null ? "" : data.studentData.referral],
+      parent_name: [data === null ? "" : data.studentData.parent_name],
       phone: [
         data === null ? "" : data.studentData.phone,
         [Validators.required, Validators.maxLength(15)]
       ],
-      total_money: [data === null ? 0 : data.studentData.total_money],
+      total_money: [
+        data === null
+          ? 0
+          : this.myNumberPipe.transform(data.studentData.total_money)
+      ],
       start_date: [
         data === null
           ? ""
@@ -131,7 +146,3 @@ export class StudentAddComponent implements OnInit {
     });
   }
 }
-
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
- */

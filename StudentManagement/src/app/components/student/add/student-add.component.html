@@ -63,12 +63,18 @@
 			</label>
 			<input class="w3-input w3-border" type="date" formControlName="start_date" id="startDate">
 
+			<label class="w3-text-blue" for="totalMoney">
+				<i class="w3-medium custom-icon fa fa-money"></i>
+				<b>Tiền học: </b>
+			</label>
+			<input class="w3-input w3-border" type="text" formControlName="total_money" id="totalMoney">
+
 			<!-- Note field -->
 			<label class="w3-text-blue" for="note">
 				<i class="w3-medium custom-icon fa fa-book"></i>
 				<b>Ghi chú</b>
 			</label>
-			<textarea id="note"  class="w3-input w3-border" style="resize: none" placeholder="Ghi chú về học sinh" [formControl]="note"></textarea>
+			<textarea id="note" class="w3-input w3-border" style="resize: none" placeholder="Ghi chú về học sinh" [formControl]="note"></textarea>
 			<button class="w3-btn w3-blue" type="submit" [disabled]="!studentAddForm.valid">
 				<span *ngIf="index == undefined">Tạo mới</span>
 				<span *ngIf="index != undefined">Cập nhật</span>

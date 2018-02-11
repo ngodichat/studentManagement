@@ -1,15 +1,15 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-	name: 'filter'
+  name: "filter"
 })
 export class FilterPipe implements PipeTransform {
-
-	transform(value: any, args?: any): any {
-		if (args != undefined && args != null && args != '') {
-			return value.filter(data => (data.name.toLowerCase()).indexOf(args.toLowerCase()) > -1);
-		}
-		return value;
-	}
-
+  transform(value: any, args?: any): any {
+    if (args !== undefined && args != null && args !== "") {
+      return value.filter(
+        data => data.name.toLocaleLowerCase().indexOf(args.toLowerCase()) > -1
+      );
+    }
+    return value;
+  }
 }
