@@ -3,31 +3,21 @@
  */
 
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs/Observable";
+import { of } from "rxjs/observable/of";
+import { Student } from "../../components/student/student";
+import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable()
 export class StudentService {
-  constructor() {}
+  // students: Student[];
+  constructor(private http: HttpClient) {}
 
   // Get all students list via API or any data storage
-  getAllStudents() {
-    let studentList: any;
-    if (
-      localStorage.getItem("students") &&
-      localStorage.getItem("students") !== ""
-    ) {
-      studentList = {
-        code: 200,
-        message: "Students List Fetched Successfully",
-        data: JSON.parse(localStorage.getItem("students"))
-      };
-    } else {
-      studentList = {
-        code: 200,
-        message: "Students List Fetched Successfully",
-        data: JSON.parse(localStorage.getItem("students"))
-      };
-    }
-    return studentList;
+  getAllStudents(): Observable<Student[]> {
+    const studentDataUrl = "/api/students";
+    return this.http.get<Student[]>(studentDataUrl);
   }
 
   doRegisterStudent(data, index) {

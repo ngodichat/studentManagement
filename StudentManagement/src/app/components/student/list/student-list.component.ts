@@ -8,6 +8,7 @@ import { ToastrService } from "ngx-toastr";
 // Services
 import { StudentService } from "../../../services/student/student.service";
 import { routerTransition } from "../../../services/config/config.service";
+import { Student } from "../student";
 
 @Component({
   selector: "app-student-list",
@@ -18,7 +19,7 @@ import { routerTransition } from "../../../services/config/config.service";
 })
 export class StudentListComponent implements OnInit {
   studentList: any;
-  studentListData: any;
+  students: Student[];
   constructor(
     private studentService: StudentService,
     private toastr: ToastrService
@@ -30,18 +31,21 @@ export class StudentListComponent implements OnInit {
 
   // Get student list from services
   getStudentList() {
-    const studentList = this.studentService.getAllStudents();
-    this.success(studentList);
+    this.studentService.getAllStudents().subscribe(students => {
+      console.log(students);
+      this.students = students;
+      // this.success();
+    });
   }
 
   // Get student list success
-  success(data) {
-    this.studentListData = data.data;
-    for (let i = 0; i < this.studentListData.length; i++) {
-      this.studentListData[i].name =
-        this.studentListData[i].first_name +
+  success() {
+    // this.students = abc.data;
+    for (let i = 0; i < this.students.length; i++) {
+      this.students[i].full_name =
+        this.students[i].sur_middle_name +
         " " +
-        this.studentListData[i].last_name;
+        this.students[i].first_name;
     }
   }
 

@@ -33,9 +33,11 @@ export class AppComponent {
     this.getStudentData().subscribe(data => {
       const students: any[] = data["studentsList"];
       localStorage.setItem("students", JSON.stringify(students));
-
     });
     localStorage.setItem("sessions", JSON.stringify(this.sessionList));
+    // http.get("/users").subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
   getStudentData() {
