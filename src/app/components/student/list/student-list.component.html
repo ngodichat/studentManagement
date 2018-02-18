@@ -1,0 +1,48 @@
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
+
+<div class="w3-container" *ngIf="students">
+	<div class="w3-panel w3-round-small w3-teal">
+		<h3>Danh sách học sinh<button routerLink="/addStudent" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Thêm học sinh</button></h3>
+	</div>
+	<span><i class="w3-medium fa fa-search"></i> Tìm kiếm : <input class="" type="text" [(ngModel)]='filterData'></span>
+
+	<div class="w3-panel w3-green" *ngIf="(students | filter:filterData).length == 0">
+		<!-- <h3>Oh no</h3> -->
+		<p>Không có học sinh nào <span *ngIf="filterData"> có tên là "{{filterData}}"</span> </p>
+	</div>
+	<div class="w3-panel w3-light-grey w3-padding-16 w3-card-2" *ngIf="(students | filter:filterData | filter:filterData).length != 0">
+		<table class="w3-table w3-striped w3-bordered">
+			<tr>
+				<th><i class="w3-medium custom-icon fa fa-refresh"></i> STT</th>
+				<!-- <th>ID</th> -->
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Họ và đệm</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Tên</th>
+				<th><i class="w3-medium custom-icon fa fa-university"></i> Lớp</th>
+				<th><i class="w3-medium custom-icon fa fa-university"></i> Trường</th>
+				<th><i class="w3-medium custom-icon fa fa-university"></i> Người giới thiệu </th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Họ tên bố/mẹ </th>
+				<th><i class="w3-medium custom-icon fa fa-phone"></i> Điện thoại</th>
+				<th><i class="w3-medium custom-icon fa fa-calendar"></i> Ngày nhập học </th>
+				<th><i class="w3-medium custom-icon fa fa-pencil"></i> Sửa</th>
+				<th><i class="w3-medium custom-icon fa fa-trash"></i> Xóa</th>
+			</tr>
+			<tr class ="w3-hover-green" *ngFor="let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;" appHighlightStudent>
+				<td>{{i +1}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.sur_middle_name}} </td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.first_name}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.class}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.school}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.referral}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.parent_name}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.phone | phone}}</td>
+				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.start_date | date:"dd/MM/yyyy"}}</td>
+				<!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Sửa</button></td> -->
+				<td><button [routerLink]="['/updateStudent', student.id]" mat-raised-button color="primary">Sửa</button></td>
+				<td><button (click)="deleteStudent(student.id);" mat-raised-button color="warn" >Xóa</button></td>
+			</tr>
+		</table>
+	</div>
+	  <pagination-controls (pageChange)="p = $event" nextLabel="Tiếp" previousLabel="Trước"></pagination-controls>
+</div>
+
+<!-- Created By : Sangwin Gawande (http://sangw.in) -->
