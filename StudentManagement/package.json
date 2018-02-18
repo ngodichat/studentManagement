@@ -11,6 +11,9 @@
     "e2e": "ng e2e",
     "deploy": "ng build --prod && firebase deploy"
   },
+  "engines": {
+    "node": "8.9.1"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
