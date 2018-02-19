@@ -14,6 +14,7 @@ import { routerTransition } from "../../../services/config/config.service";
 import { ToastrService } from "ngx-toastr";
 import { DatePipe, DecimalPipe } from "@angular/common";
 import { PhonePipe } from "./../../../pipes/phone.pipe";
+import { Student } from "../student";
 
 @Component({
   selector: "app-student-add",
@@ -56,35 +57,44 @@ export class StudentAddComponent implements OnInit {
   // Submit student details form
   doRegister() {
     if (this.index && this.index != null && this.index !== undefined) {
-      this.studentAddForm.value.id = +this.index;
+      this.studentAddForm.value._id = this.index;
     } else {
       this.index = null;
     }
-    const studentRegister = this.studentService.doRegisterStudent(
-      this.studentAddForm.value,
-      this.index
-    );
-    if (studentRegister) {
-      if (studentRegister.code === 200) {
-        this.toastr.success(studentRegister.message, "Success");
-        this.router.navigate(["/students"]);
-      } else {
-        this.toastr.error(studentRegister.message, "Failed");
-      }
+    // const studentRegister = this.studentService.doRegisterStudent(
+    //   this.studentAddForm.value,
+    //   this.index
+    // );
+    // if (studentRegister) {
+    //   if (studentRegister.code === 200) {
+    //     this.toastr.success(studentRegister.message, "Success");
+    //     this.router.navigate(["/students"]);
+    //   } else {
+    //     this.toastr.error(studentRegister.message, "Failed");
+    //   }
+    // }
+    if(this.index) {
+      const student: Student = this.studentAddForm.value;
+      this.studentService.doUpdateStudent(student).subscribe(()=>{
+        
+      });
     }
   }
 
   // If this is update form, get user details and update form
-  getStudentDetails(index: number) {
-    const studentDetail = this.studentService.getStudentDetails(index);
-    this.createForm(studentDetail);
+  getStudentDetails(index: any) {
+    this.studentService.getStudentDetails(index).subscribe(data=>{
+      const studentDetail = data[0];
+      // console.log(data);
+      this.createForm(studentDetail);
+    });
   }
 
   get firstName() {
     return this.studentAddForm.get("first_name");
   }
-  get lastName() {
-    return this.studentAddForm.get("last_name");
+  get surMiddleName() {
+    return this.studentAddForm.get("sur_middle_name");
   }
   get class() {
     return this.studentAddForm.get("class");
@@ -110,39 +120,39 @@ export class StudentAddComponent implements OnInit {
   // If this is update request then auto fill form
   createForm(data) {
     if (data !== null) {
-      // console.log("index" + data.studentData.id);
+      // console.log("index" + data.id);
     } else {
       console.log("DATA NULL");
     }
     this.studentAddForm = this.formBuilder.group({
-      id: [data === null ? -1 : data.studentData.id],
+      _id: [data === null ? -1 : data._id],
       first_name: [
-        data === null ? "" : data.studentData.first_name,
+        data === null ? "" : data.first_name,
         [Validators.required, Validators.minLength(2), Validators.maxLength(50)]
       ],
-      last_name: [
-        data === null ? "" : data.studentData.last_name,
+      sur_middle_name: [
+        data === null ? "" : data.sur_middle_name,
         [Validators.required]
       ],
-      class: [data === null ? "" : data.studentData.class],
-      school: [data === null ? "" : data.studentData.school],
-      referral: [data === null ? "" : data.studentData.referral],
-      parent_name: [data === null ? "" : data.studentData.parent_name],
+      class: [data === null ? "" : data.class],
+      school: [data === null ? "" : data.school],
+      referral: [data === null ? "" : data.referral],
+      parent_name: [data === null ? "" : data.parent_name],
       phone: [
-        data === null ? "" : data.studentData.phone,
+        data === null ? "" : data.phone,
         [Validators.required, Validators.maxLength(15)]
       ],
       total_money: [
         data === null
           ? 0
-          : this.myNumberPipe.transform(data.studentData.total_money)
+          : this.myNumberPipe.transform(data.total_money)
       ],
       start_date: [
         data === null
           ? ""
-          : this.datePipe.transform(data.studentData.start_date, "yyyy-MM-dd")
+          : this.datePipe.transform(data.start_date, "yyyy-MM-dd")
       ],
-      note: [data === null ? "" : data.studentData.note]
+      note: [data === null ? "" : data.note]
     });
   }
 }

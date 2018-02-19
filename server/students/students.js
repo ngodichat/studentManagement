@@ -39,15 +39,11 @@ fs.readFile(dataLink, "utf8", (err, data) => {
 router.get("/:id", (req, res, next) => {
   console.log("Received student detail request");
   const req_id = req.params.id;
-  const studentCollection = db.collection('students');
+  const studentCollection = db.collection("students");
   var objID = new mongo.ObjectId(req_id);
-  studentCollection.find({_id:objID}).toArray((err, items)=>{
-    // console.log(items);
-    // res.setHeader();
+  studentCollection.find({ _id: objID }).toArray((err, items) => {
     res.send(items);
   });
-  // res.send("Hello world");
-  // next();
 });
 
 router.get("/", function(req, res, next) {
@@ -61,4 +57,14 @@ router.get("/", function(req, res, next) {
   });
 });
 
+router.put("/update/", (req, res, next) => {
+  console.log("Update student");
+  // console.log(req.body);
+  var student = req.body;
+  // console.log(student["_id"]);
+  var collection = db.collection("students");
+  var objID = new mongo.ObjectId(student["_id"]);
+  student["_id"] = objID;
+  collection.update({_id: objID},student);
+});
 module.exports = router;

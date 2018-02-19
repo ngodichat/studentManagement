@@ -11,21 +11,21 @@
 			</h3>
 		</div>
 		<div class="w3-content" style="width: 60%;">
-			<!-- First name field -->
-			<label class="w3-text-blue" for="firstName">
+			<!-- Sur and middle name field -->
+			<label class="w3-text-blue" for="surMiddleName">
 				<i class="w3-medium custom-icon fa fa-user"></i>
 				<b>Họ và đệm</b>
 			</label>
-			<input class="w3-input w3-border" type="text" formControlName="first_name" id="firstName">
-			<div class="w3-panel w3-red" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">Họ và đệm tối thiểu 2 ký tự</div>
-
-			<!-- Last name field -->
-			<label class="w3-text-blue" for="lastName">
+			<input class="w3-input w3-border" type="text" formControlName="sur_middle_name" id="surMiddleName">
+			<div class="w3-panel w3-red" *ngIf="surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)">Họ và đệm tối thiểu 2 ký tự </div>
+			
+			<!-- First name field -->
+			<label class="w3-text-blue" for="firstName">
 				<i class="w3-medium custom-icon fa fa-user"></i>
 				<b>Tên</b>
 			</label>
-			<input class="w3-input w3-border" type="text" formControlName="last_name" id="lastName">
-			<div class="w3-panel w3-red" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"> Tên không được để trống </div>
+			<input class="w3-input w3-border" type="text" formControlName="first_name" id="firstName">
+			<div class="w3-panel w3-red" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"> Tên không được để trống</div>
 
 			<!-- Class field -->
 			<label class="w3-text-blue" for="class">

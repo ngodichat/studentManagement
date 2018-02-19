@@ -3,7 +3,7 @@
  */
 
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 import { of } from "rxjs/observable/of";
 import { Student } from "../../components/student/student";
@@ -20,40 +20,11 @@ export class StudentService {
     return this.http.get<Student[]>(studentDataUrl);
   }
 
-  doRegisterStudent(data, index) {
-    const studentList = JSON.parse(localStorage.getItem("students"));
-    let returnData;
-    console.log("index", index);
-    if (index != null) {
-      console.log("Update case");
-      for (let i = 0; i < studentList.length; i++) {
-        const student = studentList[i];
-        if (student["id"] === +index) {
-          studentList[i] = data;
-          // console.log("Update student " + i);
-          break;
-        }
-      }
-      localStorage.setItem("students", JSON.stringify(studentList));
-      returnData = {
-        code: 200,
-        message: "Student Successfully Updated",
-        data: JSON.parse(localStorage.getItem("students"))
-      };
-    } else {
-      console.log("Register case");
-      data.id = this.generateRandomID();
-      studentList.unshift(data);
-
-      localStorage.setItem("students", JSON.stringify(studentList));
-
-      returnData = {
-        code: 200,
-        message: "Student Successfully Added",
-        data: JSON.parse(localStorage.getItem("students"))
-      };
-    }
-    return returnData;
+  doUpdateStudent(student: Student): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ "Content-Type": "application/json" })
+    };
+    return this.http.put("/api/students/update", student, httpOptions);
   }
 
   deleteStudent(index: number) {
@@ -90,7 +61,7 @@ export class StudentService {
     // }
     // console.log("Get student detail " + "/api/students/" + index.toString());
     // const url = `http://localhost:3000/api/students/`;
-    const url = "/api/students/"+ index.toString();
+    const url = "/api/students/" + index.toString();
     return this.http.get<Student[]>(url);
     // return returnData;
   }
