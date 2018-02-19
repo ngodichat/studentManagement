@@ -28,17 +28,17 @@
 			</tr>
 			<tr class ="w3-hover-green" *ngFor="let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;" appHighlightStudent>
 				<td>{{i +1}}</td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.sur_middle_name}} </td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.first_name}}</td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.class}}</td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.school}}</td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.referral}}</td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.parent_name}}</td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.phone | phone}}</td>
-				<td class="pointer" [routerLink]="['/detail', student.id]">{{student.start_date | date:"dd/MM/yyyy"}}</td>
+				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.sur_middle_name}} </td>
+				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.first_name}}</td>
+				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.class}}</td>
+				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.school}}</td>
+				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.referral}}</td>
+				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.parent_name}}</td>
+				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.phone | phone}}</td>
+				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.start_date | date:"dd/MM/yyyy"}}</td>
 				<!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Sửa</button></td> -->
-				<td><button [routerLink]="['/updateStudent', student.id]" mat-raised-button color="primary">Sửa</button></td>
-				<td><button (click)="deleteStudent(student.id);" mat-raised-button color="warn" >Xóa</button></td>
+				<td><button [routerLink]="['/updateStudent', student._id]" mat-raised-button color="primary">Sửa</button></td>
+				<td><button (click)="deleteStudent(student._id);" mat-raised-button color="warn" >Xóa</button></td>
 			</tr>
 		</table>
 	</div>

@@ -16,7 +16,7 @@ export class StudentService {
 
   // Get all students list via API or any data storage
   getAllStudents(): Observable<Student[]> {
-    const studentDataUrl = "/api/students";
+    const studentDataUrl = "/api/students/";
     return this.http.get<Student[]>(studentDataUrl);
   }
 
@@ -72,24 +72,27 @@ export class StudentService {
     return returnData;
   }
 
-  getStudentDetails(index: number) {
-    const studentList = JSON.parse(localStorage.getItem("students"));
-    console.log(studentList);
-    let returnData: any = null;
-    for (let i = 0; i < studentList.length; i++) {
-      const student = studentList[i];
-      if (student.id === +index) {
-        returnData = {
-          code: 200,
-          message: "Student Details Fetched",
-          studentData: studentList[i]
-        };
-        console.log("FOUND");
-        break;
-      }
-    }
-
-    return returnData;
+  getStudentDetails(index: any): Observable<Student[]> {
+    // const studentList = JSON.parse(localStorage.getItem("students"));
+    // console.log(studentList);
+    // let returnData: any = null;
+    // for (let i = 0; i < studentList.length; i++) {
+    //   const student = studentList[i];
+    //   if (student.id === +index) {
+    //     returnData = {
+    //       code: 200,
+    //       message: "Student Details Fetched",
+    //       studentData: studentList[i]
+    //     };
+    //     console.log("FOUND");
+    //     break;
+    //   }
+    // }
+    // console.log("Get student detail " + "/api/students/" + index.toString());
+    // const url = `http://localhost:3000/api/students/`;
+    const url = "/api/students/"+ index.toString();
+    return this.http.get<Student[]>(url);
+    // return returnData;
   }
 
   generateRandomID() {

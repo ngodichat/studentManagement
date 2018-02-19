@@ -864,7 +864,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/details/student-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\r\n\t<div class=\"w3-panel w3-round-small w3-teal\">\r\n\t\t<h3>Thông tin chi tiết \r\n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \r\n\t\t\t<button routerLink=\"/\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\r\n\t</div>\r\n\t<div class=\" w3-card custom-card\"><br>\r\n\t\t<h3 class=\"text-center\">{{studentDetail.first_name}} {{studentDetail.last_name}}</h3>\r\n\t\t<hr>\r\n\t\t<table class=\"w3-table w3-bordered\">\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.first_name}} {{studentDetail.last_name}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\r\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\r\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n</div>\r\n\r\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\r\n\t<div class=\"w3-panel w3-round-small w3-teal\">\r\n\t\t<h3>Thông tin chi tiết \r\n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \r\n\t\t\t<button routerLink=\"/\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\r\n\t</div>\r\n\t<div class=\" w3-card custom-card\"><br>\r\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\r\n\t\t<hr>\r\n\t\t<table class=\"w3-table w3-bordered\">\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\r\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\r\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n</div>\r\n\r\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
 
 /***/ }),
 
@@ -915,11 +915,17 @@ var StudentDetailsComponent = /** @class */ (function () {
     StudentDetailsComponent.prototype.ngOnInit = function () { };
     // Get student details
     StudentDetailsComponent.prototype.getStudentDetails = function (index) {
-        var getStudentDetail = this.studentService.getStudentDetails(index);
-        if (getStudentDetail) {
-            this.studentDetail = getStudentDetail.studentData;
-            this.toastr.success(getStudentDetail.message, "Success");
-        }
+        var _this = this;
+        this.studentService.getStudentDetails(index).subscribe(function (data) {
+            _this.studentDetail = data[0];
+            // console.log(this.studentDetail._id);
+        });
+        // console.log(this.studentDetail);
+        // console.log(this.router.url);
+        // if (getStudentDetail) {
+        //   this.studentDetail = getStudentDetail.studentData;
+        // this.toastr.success(getStudentDetail.message, "Success");
+        // }
     };
     StudentDetailsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -964,7 +970,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/list/student-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"students\">\r\n\t<div class=\"w3-panel w3-round-small w3-teal\">\r\n\t\t<h3>Danh sách học sinh<button routerLink=\"/addStudent\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm học sinh</button></h3>\r\n\t</div>\r\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\r\n\r\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(students | filter:filterData).length == 0\">\r\n\t\t<!-- <h3>Oh no</h3> -->\r\n\t\t<p>Không có học sinh nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\r\n\t</div>\r\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(students | filter:filterData | filter:filterData).length != 0\">\r\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\r\n\t\t\t<tr>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\r\n\t\t\t\t<!-- <th>ID</th> -->\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Lớp</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Người giới thiệu </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ tên bố/mẹ </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr class =\"w3-hover-green\" *ngFor=\"let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\" appHighlightStudent>\r\n\t\t\t\t<td>{{i +1}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student.id]\">{{student.sur_middle_name}} </td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student.id]\">{{student.first_name}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student.id]\">{{student.class}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student.id]\">{{student.school}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student.id]\">{{student.referral}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student.id]\">{{student.parent_name}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student.id]\">{{student.phone | phone}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student.id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\r\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\r\n\t\t\t\t<td><button [routerLink]=\"['/updateStudent', student.id]\" mat-raised-button color=\"primary\">Sửa</button></td>\r\n\t\t\t\t<td><button (click)=\"deleteStudent(student.id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\r\n</div>\r\n\r\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"students\">\r\n\t<div class=\"w3-panel w3-round-small w3-teal\">\r\n\t\t<h3>Danh sách học sinh<button routerLink=\"/addStudent\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm học sinh</button></h3>\r\n\t</div>\r\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\r\n\r\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(students | filter:filterData).length == 0\">\r\n\t\t<!-- <h3>Oh no</h3> -->\r\n\t\t<p>Không có học sinh nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\r\n\t</div>\r\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(students | filter:filterData | filter:filterData).length != 0\">\r\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\r\n\t\t\t<tr>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\r\n\t\t\t\t<!-- <th>ID</th> -->\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Lớp</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Người giới thiệu </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ tên bố/mẹ </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr class =\"w3-hover-green\" *ngFor=\"let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\" appHighlightStudent>\r\n\t\t\t\t<td>{{i +1}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.sur_middle_name}} </td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\r\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\r\n\t\t\t\t<td><button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\r\n\t\t\t\t<td><button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\r\n</div>\r\n\r\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
 
 /***/ }),
 
@@ -977,6 +983,7 @@ module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\r\n\r\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/toastr.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_student_student_service__ = __webpack_require__("../../../../../src/app/services/student/student.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_config_config_service__ = __webpack_require__("../../../../../src/app/services/config/config.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /**
  * Created By : Sangwin Gawande (http://sangw.in)
  */
@@ -994,14 +1001,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // Services
 
 
+
 var StudentListComponent = /** @class */ (function () {
-    function StudentListComponent(studentService, toastr) {
+    function StudentListComponent(studentService, toastr, router) {
         this.studentService = studentService;
         this.toastr = toastr;
+        this.router = router;
     }
     // Call student list function on page load
     StudentListComponent.prototype.ngOnInit = function () {
         this.getStudentList();
+        console.log(this.router.url);
     };
     // Get student list from services
     StudentListComponent.prototype.getStudentList = function () {
@@ -1043,7 +1053,8 @@ var StudentListComponent = /** @class */ (function () {
             host: { "[@routerTransition]": "" }
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_student_student_service__["a" /* StudentService */],
-            __WEBPACK_IMPORTED_MODULE_1_ngx_toastr__["b" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_1_ngx_toastr__["b" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
     ], StudentListComponent);
     return StudentListComponent;
 }());
@@ -1443,7 +1454,7 @@ var StudentService = /** @class */ (function () {
     }
     // Get all students list via API or any data storage
     StudentService.prototype.getAllStudents = function () {
-        var studentDataUrl = "/api/students";
+        var studentDataUrl = "/api/students/";
         return this.http.get(studentDataUrl);
     };
     StudentService.prototype.doRegisterStudent = function (data, index) {
@@ -1492,22 +1503,26 @@ var StudentService = /** @class */ (function () {
         return returnData;
     };
     StudentService.prototype.getStudentDetails = function (index) {
-        var studentList = JSON.parse(localStorage.getItem("students"));
-        console.log(studentList);
-        var returnData = null;
-        for (var i = 0; i < studentList.length; i++) {
-            var student = studentList[i];
-            if (student.id === +index) {
-                returnData = {
-                    code: 200,
-                    message: "Student Details Fetched",
-                    studentData: studentList[i]
-                };
-                console.log("FOUND");
-                break;
-            }
-        }
-        return returnData;
+        // const studentList = JSON.parse(localStorage.getItem("students"));
+        // console.log(studentList);
+        // let returnData: any = null;
+        // for (let i = 0; i < studentList.length; i++) {
+        //   const student = studentList[i];
+        //   if (student.id === +index) {
+        //     returnData = {
+        //       code: 200,
+        //       message: "Student Details Fetched",
+        //       studentData: studentList[i]
+        //     };
+        //     console.log("FOUND");
+        //     break;
+        //   }
+        // }
+        // console.log("Get student detail " + "/api/students/" + index.toString());
+        // const url = `http://localhost:3000/api/students/`;
+        var url = "/api/students/" + index.toString();
+        return this.http.get(url);
+        // return returnData;
     };
     StudentService.prototype.generateRandomID = function () {
         var x = Math.floor(Math.random() * Math.random() * 9999);

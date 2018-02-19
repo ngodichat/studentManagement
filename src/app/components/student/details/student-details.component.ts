@@ -9,6 +9,7 @@ import { ToastrService } from "ngx-toastr";
 // Services
 import { StudentService } from "../../../services/student/student.service";
 import { routerTransition } from "../../../services/config/config.service";
+import { Student } from "../student";
 
 @Component({
   selector: "app-student-details",
@@ -19,7 +20,7 @@ import { routerTransition } from "../../../services/config/config.service";
 })
 export class StudentDetailsComponent implements OnInit {
   index: any;
-  studentDetail: any;
+  studentDetail: Student;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -39,12 +40,17 @@ export class StudentDetailsComponent implements OnInit {
   ngOnInit() {}
 
   // Get student details
-  getStudentDetails(index: number) {
-    const getStudentDetail = this.studentService.getStudentDetails(index);
-    if (getStudentDetail) {
-      this.studentDetail = getStudentDetail.studentData;
-      this.toastr.success(getStudentDetail.message, "Success");
-    }
+  getStudentDetails(index: any) {
+    this.studentService.getStudentDetails(index).subscribe(data=>{
+      this.studentDetail = data[0];
+      // console.log(this.studentDetail._id);
+    });
+    // console.log(this.studentDetail);
+    // console.log(this.router.url);
+    // if (getStudentDetail) {
+    //   this.studentDetail = getStudentDetail.studentData;
+      // this.toastr.success(getStudentDetail.message, "Success");
+    // }
   }
 }
 

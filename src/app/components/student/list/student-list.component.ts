@@ -9,6 +9,7 @@ import { ToastrService } from "ngx-toastr";
 import { StudentService } from "../../../services/student/student.service";
 import { routerTransition } from "../../../services/config/config.service";
 import { Student } from "../student";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-student-list",
@@ -22,11 +23,13 @@ export class StudentListComponent implements OnInit {
   students: Student[];
   constructor(
     private studentService: StudentService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
   // Call student list function on page load
   ngOnInit() {
     this.getStudentList();
+    console.log(this.router.url);
   }
 
   // Get student list from services

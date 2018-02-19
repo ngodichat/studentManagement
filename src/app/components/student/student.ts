@@ -1,5 +1,5 @@
 export class Student {
-    id: number;
+    _id: any;
     sur_middle_name: string;
     first_name: string;
     full_name;
