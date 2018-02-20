@@ -33,9 +33,19 @@ export class StudentService {
     );
   }
 
+  doAddStudent(student: Student): Observable<any> {
+    return this.http.put("/api/students/add", student, httpOptions).pipe(
+      tap(_ => {
+        console.log("Add new student");
+      }),
+      catchError(this.handleError<any>("addStudent"))
+    );
+  }
+
   private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
+      // console.log("Lỗi rồi");
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
@@ -47,51 +57,16 @@ export class StudentService {
   }
 
   deleteStudent(index: any): Observable<any> {
-    // const studentList = JSON.parse(localStorage.getItem("students"));
-
-    // studentList.splice(index, 1);
-
-    // localStorage.setItem("students", JSON.stringify(studentList));
-
-    // const returnData = {
-    //   code: 200,
-    //   message: "Student Successfully Deleted",
-    //   data: JSON.parse(localStorage.getItem("students"))
-    // };
-
-    // return returnData;
-
-    return this.http
-      .delete(`/api/students/delete/${index}`, httpOptions)
-      .pipe(
-        tap(_ => {
-          console.log(`Delete student id = ${index}`)
-        }),
-        catchError(this.handleError<Student>("deleteStudent"))
-      );
+    return this.http.delete(`/api/students/delete/${index}`, httpOptions).pipe(
+      tap(_ => {
+        console.log(`Delete student id = ${index}`);
+      }),
+      catchError(this.handleError<Student>("deleteStudent"))
+    );
   }
 
   getStudentDetails(index: any): Observable<Student[]> {
-    // const studentList = JSON.parse(localStorage.getItem("students"));
-    // console.log(studentList);
-    // let returnData: any = null;
-    // for (let i = 0; i < studentList.length; i++) {
-    //   const student = studentList[i];
-    //   if (student.id === +index) {
-    //     returnData = {
-    //       code: 200,
-    //       message: "Student Details Fetched",
-    //       studentData: studentList[i]
-    //     };
-    //     console.log("FOUND");
-    //     break;
-    //   }
-    // }
-    // console.log("Get student detail " + "/api/students/" + index.toString());
-    // const url = `http://localhost:3000/api/students/`;
-    const url = "/api/students/" + index.toString();
-    return this.http.get<Student[]>(url);
-    // return returnData;
+    return this.http.get<Student[]>(`/api/students/${index}`);
   }
 
   generateRandomID() {

@@ -73,21 +73,48 @@ export class StudentAddComponent implements OnInit {
     //     this.toastr.error(studentRegister.message, "Failed");
     //   }
     // }
-    if (this.index) {
-      const total_money: string = this.studentAddForm.value.total_money;
+    const total_money: string = this.studentAddForm.value.total_money;
+    if (total_money !== "0") {
       this.studentAddForm.value.total_money = total_money.replace(".", "");
-      const student: Student = this.studentAddForm.value;
-      this.studentService.doUpdateStudent(student).subscribe(() => {});
+    } else {
+      this.studentAddForm.value.total_money = 0;
+    }
+    const student: Student = this.studentAddForm.value;
+    if (this.index) {
+      this.studentService.doUpdateStudent(student).subscribe(
+        data => {
+          this.toastr.success("Thành công", "Lưu chỉnh sửa thành công");
+        },
+        err => {
+          this.toastr.error("Thất bại", "Không thể lưu chỉnh sửa");
+        }
+      );
+    } else {
+      this.studentService.doAddStudent(student).subscribe(
+        data => {
+          this.toastr.success("Thành công", "Thêm mới học sinh thành công");
+        },
+        err => {
+          this.toastr.error("Thất bại", "Không thêm mới được học sinh");
+        }
+      );
     }
   }
 
   // If this is update form, get user details and update form
   getStudentDetails(index: any) {
-    this.studentService.getStudentDetails(index).subscribe(data => {
-      const studentDetail = data[0];
-      // console.log(data);
-      this.createForm(studentDetail);
-    });
+    this.studentService.getStudentDetails(index).subscribe(
+      data => {
+        const studentDetail = data[0];
+        // this.toastr.success("Thành công", "Xóa học sinh thành công");
+        // console.log(data);
+        this.createForm(studentDetail);
+      },
+      err => {
+        console.log(err);
+        // this.toastr.error("Thất bại", "Không xóa được học sinh");
+      }
+    );
   }
 
   get firstName() {
@@ -107,6 +134,9 @@ export class StudentAddComponent implements OnInit {
   }
   get totalMoney() {
     return this.studentAddForm.get("total_money");
+  }
+  get parentName() {
+    return this.studentAddForm.get("parent_name");
   }
   get phone() {
     return this.studentAddForm.get("phone");
@@ -137,13 +167,17 @@ export class StudentAddComponent implements OnInit {
       class: [data === null ? "" : data.class],
       school: [data === null ? "" : data.school],
       referral: [data === null ? "" : data.referral],
-      parent_name: [data === null ? "" : data.parent_name],
+      parent_name: [
+        data === null ? "" : data.parent_name,
+        [Validators.required]
+      ],
       phone: [
         data === null ? "" : data.phone,
-        [Validators.required, Validators.maxLength(15)]
+        [Validators.pattern("(\\+)?[0-9]*"), Validators.maxLength(13)]
       ],
       total_money: [
-        data === null ? 0 : this.myNumberPipe.transform(data.total_money)
+        data === null ? 0 : this.myNumberPipe.transform(data.total_money),
+        [Validators.pattern("(-)?[0-9.]+")]
       ],
       start_date: [
         data === null

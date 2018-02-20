@@ -34,11 +34,18 @@ export class StudentListComponent implements OnInit {
 
   // Get student list from services
   getStudentList() {
-    this.studentService.getAllStudents().subscribe(students => {
-      console.log(students);
-      this.students = students;
-      // this.success();
-    });
+    this.studentService.getAllStudents().subscribe(
+      students => {
+        // this.toastr.success("Thành công", "Tải danh sách học sinh thành công");
+        // console.log(students);
+        this.students = students;
+        // this.success();
+      },
+      err => {
+        console.log(err);
+        this.toastr.error("Thất bại", "Không tải được danh sách học sinh");
+      }
+    );
   }
 
   // Get student list success
@@ -55,10 +62,15 @@ export class StudentListComponent implements OnInit {
     // get confirm box for confirmation
     const r = confirm("Thầy/cô muốn xóa học sinh này?");
     if (r === true) {
-      this.studentService.deleteStudent(index).subscribe(() => {});
-      // if (studentDelete) {
-      //   this.toastr.success("Success", "Student Deleted");
-      // }
+      this.studentService.deleteStudent(index).subscribe(
+        (data) => {
+          console.log(data);
+          this.toastr.success("Thành công", "Xóa học sinh thành công");
+        },
+        err => {
+          this.toastr.error("Thất bại", "Xóa học sinh thất bại");
+        }
+      );
       this.getStudentList();
     }
   }

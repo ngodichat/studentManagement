@@ -2,7 +2,7 @@
 
 <div class="w3-container" *ngIf="studentAddForm">
 	<form class="w3-container" [formGroup]="studentAddForm" (ngSubmit)="doRegister()">
-		<div class="w3-panel w3-round-small w3-teal">
+		<div class="w3-panel w3-round-small custom-blue">
 			<h3>
 				<span *ngIf="index == undefined">Tạo học sinh mới</span>
 				<span *ngIf="index != undefined">Cập nhật thông tin học sinh</span>
@@ -48,6 +48,14 @@
 			</label>
 			<input class="w3-input w3-border" type="text" formControlName="referral" id="referral">
 
+			<!-- Parent Name field -->
+			<label class="w3-text-blue" for="parentName">
+				<i class="w3-medium custom-icon fa fa-user"></i>
+				<b>Tên bố/ mẹ</b>
+			</label>
+			<input class="w3-input w3-border" type="text" formControlName="parent_name" id="parentName">
+			<div class="w3-panel w3-red" *ngIf="parentName.invalid && (parentName.dirty || parentName.touched)"> Tên bố/ mẹ không được để trống</div>
+
 			<!-- Phone field -->
 			<label class="w3-text-blue" for="phone">
 				<i class="w3-medium custom-icon fa fa-phone"></i>
@@ -68,6 +76,7 @@
 				<b>Tiền học: </b>
 			</label>
 			<input class="w3-input w3-border" type="text" formControlName="total_money" id="totalMoney">
+			<div class="w3-panel w3-red" *ngIf="totalMoney.invalid && (totalMoney.dirty || totalMoney.touched)"> Số tiền không hợp lệ</div>
 
 			<!-- Note field -->
 			<label class="w3-text-blue" for="note">

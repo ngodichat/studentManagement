@@ -67,7 +67,11 @@ router.put("/update/", (req, res, next) => {
   var collection = db.collection("students");
   var objID = new mongo.ObjectId(student["_id"]);
   student["_id"] = objID;
-  collection.update({ _id: objID }, student);
+  collection.update({ _id: objID }, student,{w:1}, (err, result)=>{
+    if(err) res.status(401).end();
+    else res.status(200).end();
+  });
+  
 });
 
 router.delete("/delete/:id", (req, res, next) => {
@@ -76,6 +80,19 @@ router.delete("/delete/:id", (req, res, next) => {
   var objID = new mongo.ObjectID(studentId);
   var collection = db.collection("students");
   collection.deleteOne({ _id: objID });
+});
+
+router.put("/add", (req, res, next) => {
+  console.log("Add new student");
+  var student = req.body;
+  delete student["_id"];  
+  var collection = db.collection("students");
+  collection.insert(student,{w:1}, (err, result) => {
+    if(!err) res.status(200).end();
+    else {
+      res.status(401).end();
+    }
+  })
 });
 
 module.exports = router;

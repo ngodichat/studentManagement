@@ -627,7 +627,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/add/student-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"studentAddForm\" (ngSubmit)=\"doRegister()\">\n\t\t<div class=\"w3-panel w3-round-small w3-teal\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo học sinh mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật thông tin học sinh</span>\n\t\t\t\t<a routerLink=\"/students\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Sur and middle name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"surMiddleName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Họ và đệm</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"sur_middle_name\" id=\"surMiddleName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)\">Họ và đệm tối thiểu 2 ký tự </div>\n\t\t\t\n\t\t\t<!-- First name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"firstName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"first_name\" id=\"firstName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"firstName.invalid && (firstName.dirty || firstName.touched)\"> Tên không được để trống</div>\n\n\t\t\t<!-- Class field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"class\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Lớp</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class\" id=\"class\">\n\n\t\t\t<!-- School field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"school\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Trường</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"school\" id=\"school\">\n\n\t\t\t<!-- Referral field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"referral\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Người giới thiệu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"referral\" id=\"referral\">\n\n\t\t\t<!-- Phone field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"phone\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-phone\"></i>\n\t\t\t\t<b>Điện thoại</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"phone\" id=\"phone\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\">Số điện thoại không hợp lệ</div>\n\n\t\t\t<!-- Start Learning Date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày nhập học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\n\t\t\t<label class=\"w3-text-blue\" for=\"totalMoney\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\n\t\t\t\t<b>Tiền học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"total_money\" id=\"totalMoney\">\n\n\t\t\t<!-- Note field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"note\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-book\"></i>\n\t\t\t\t<b>Ghi chú</b>\n\t\t\t</label>\n\t\t\t<textarea id=\"note\" class=\"w3-input w3-border\" style=\"resize: none\" placeholder=\"Ghi chú về học sinh\" [formControl]=\"note\"></textarea>\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!studentAddForm.valid\">\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"studentAddForm\" (ngSubmit)=\"doRegister()\">\n\t\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo học sinh mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật thông tin học sinh</span>\n\t\t\t\t<a routerLink=\"/students\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Sur and middle name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"surMiddleName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Họ và đệm</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"sur_middle_name\" id=\"surMiddleName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)\">Họ và đệm tối thiểu 2 ký tự </div>\n\t\t\t\n\t\t\t<!-- First name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"firstName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"first_name\" id=\"firstName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"firstName.invalid && (firstName.dirty || firstName.touched)\"> Tên không được để trống</div>\n\n\t\t\t<!-- Class field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"class\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Lớp</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class\" id=\"class\">\n\n\t\t\t<!-- School field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"school\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Trường</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"school\" id=\"school\">\n\n\t\t\t<!-- Referral field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"referral\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Người giới thiệu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"referral\" id=\"referral\">\n\n\t\t\t<!-- Parent Name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"parentName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên bố/ mẹ</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"parent_name\" id=\"parentName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"parentName.invalid && (parentName.dirty || parentName.touched)\"> Tên bố/ mẹ không được để trống</div>\n\n\t\t\t<!-- Phone field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"phone\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-phone\"></i>\n\t\t\t\t<b>Điện thoại</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"phone\" id=\"phone\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\">Số điện thoại không hợp lệ</div>\n\n\t\t\t<!-- Start Learning Date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày nhập học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\n\t\t\t<label class=\"w3-text-blue\" for=\"totalMoney\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\n\t\t\t\t<b>Tiền học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"total_money\" id=\"totalMoney\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"totalMoney.invalid && (totalMoney.dirty || totalMoney.touched)\"> Số tiền không hợp lệ</div>\n\n\t\t\t<!-- Note field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"note\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-book\"></i>\n\t\t\t\t<b>Ghi chú</b>\n\t\t\t</label>\n\t\t\t<textarea id=\"note\" class=\"w3-input w3-border\" style=\"resize: none\" placeholder=\"Ghi chú về học sinh\" [formControl]=\"note\"></textarea>\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!studentAddForm.valid\">\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -694,6 +694,7 @@ var StudentAddComponent = /** @class */ (function () {
     StudentAddComponent.prototype.ngOnInit = function () { };
     // Submit student details form
     StudentAddComponent.prototype.doRegister = function () {
+        var _this = this;
         if (this.index && this.index != null && this.index !== undefined) {
             this.studentAddForm.value._id = this.index;
         }
@@ -712,11 +713,27 @@ var StudentAddComponent = /** @class */ (function () {
         //     this.toastr.error(studentRegister.message, "Failed");
         //   }
         // }
-        if (this.index) {
-            var total_money = this.studentAddForm.value.total_money;
+        var total_money = this.studentAddForm.value.total_money;
+        if (total_money !== "0") {
             this.studentAddForm.value.total_money = total_money.replace(".", "");
-            var student = this.studentAddForm.value;
-            this.studentService.doUpdateStudent(student).subscribe(function () { });
+        }
+        else {
+            this.studentAddForm.value.total_money = 0;
+        }
+        var student = this.studentAddForm.value;
+        if (this.index) {
+            this.studentService.doUpdateStudent(student).subscribe(function (data) {
+                _this.toastr.success("Thành công", "Lưu chỉnh sửa thành công");
+            }, function (err) {
+                _this.toastr.error("Thất bại", "Không thể lưu chỉnh sửa");
+            });
+        }
+        else {
+            this.studentService.doAddStudent(student).subscribe(function (data) {
+                _this.toastr.success("Thành công", "Thêm mới học sinh thành công");
+            }, function (err) {
+                _this.toastr.error("Thất bại", "Không thêm mới được học sinh");
+            });
         }
     };
     // If this is update form, get user details and update form
@@ -724,8 +741,12 @@ var StudentAddComponent = /** @class */ (function () {
         var _this = this;
         this.studentService.getStudentDetails(index).subscribe(function (data) {
             var studentDetail = data[0];
+            // this.toastr.success("Thành công", "Xóa học sinh thành công");
             // console.log(data);
             _this.createForm(studentDetail);
+        }, function (err) {
+            console.log(err);
+            // this.toastr.error("Thất bại", "Không xóa được học sinh");
         });
     };
     Object.defineProperty(StudentAddComponent.prototype, "firstName", {
@@ -766,6 +787,13 @@ var StudentAddComponent = /** @class */ (function () {
     Object.defineProperty(StudentAddComponent.prototype, "totalMoney", {
         get: function () {
             return this.studentAddForm.get("total_money");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(StudentAddComponent.prototype, "parentName", {
+        get: function () {
+            return this.studentAddForm.get("parent_name");
         },
         enumerable: true,
         configurable: true
@@ -812,13 +840,17 @@ var StudentAddComponent = /** @class */ (function () {
             class: [data === null ? "" : data.class],
             school: [data === null ? "" : data.school],
             referral: [data === null ? "" : data.referral],
-            parent_name: [data === null ? "" : data.parent_name],
+            parent_name: [
+                data === null ? "" : data.parent_name,
+                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required]
+            ],
             phone: [
                 data === null ? "" : data.phone,
-                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(15)]
+                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern("(\\+)?[0-9]*"), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(15)]
             ],
             total_money: [
-                data === null ? 0 : this.myNumberPipe.transform(data.total_money)
+                data === null ? 0 : this.myNumberPipe.transform(data.total_money),
+                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern("(-)?[0-9.]+")]
             ],
             start_date: [
                 data === null
@@ -1028,9 +1060,13 @@ var StudentListComponent = /** @class */ (function () {
     StudentListComponent.prototype.getStudentList = function () {
         var _this = this;
         this.studentService.getAllStudents().subscribe(function (students) {
-            console.log(students);
+            // this.toastr.success("Thành công", "Tải danh sách học sinh thành công");
+            // console.log(students);
             _this.students = students;
             // this.success();
+        }, function (err) {
+            console.log(err);
+            _this.toastr.error("Thất bại", "Không tải được danh sách học sinh");
         });
     };
     // Get student list success
@@ -1043,13 +1079,16 @@ var StudentListComponent = /** @class */ (function () {
     };
     // Delete a student with its index
     StudentListComponent.prototype.deleteStudent = function (index) {
+        var _this = this;
         // get confirm box for confirmation
         var r = confirm("Thầy/cô muốn xóa học sinh này?");
         if (r === true) {
-            this.studentService.deleteStudent(index).subscribe(function () { });
-            // if (studentDelete) {
-            //   this.toastr.success("Success", "Student Deleted");
-            // }
+            this.studentService.deleteStudent(index).subscribe(function (data) {
+                console.log(data);
+                _this.toastr.success("Thành công", "Xóa học sinh thành công");
+            }, function (err) {
+                _this.toastr.error("Thất bại", "Xóa học sinh thất bại");
+            });
             this.getStudentList();
         }
     };
@@ -1480,10 +1519,16 @@ var StudentService = /** @class */ (function () {
             console.log("Update student id = " + student._id);
         }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("updateStudent")));
     };
+    StudentService.prototype.doAddStudent = function (student) {
+        return this.http.put("/api/students/add", student, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
+            console.log("Add new student");
+        }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("addStudent")));
+    };
     StudentService.prototype.handleError = function (operation, result) {
         if (operation === void 0) { operation = "operation"; }
         return function (error) {
             // TODO: send the error to remote logging infrastructure
+            // console.log("Lỗi rồi");
             console.error(error); // log to console instead
             // TODO: better job of transforming error for user consumption
             console.log(operation + " failed: " + error.message);
@@ -1492,42 +1537,12 @@ var StudentService = /** @class */ (function () {
         };
     };
     StudentService.prototype.deleteStudent = function (index) {
-        // const studentList = JSON.parse(localStorage.getItem("students"));
-        // studentList.splice(index, 1);
-        // localStorage.setItem("students", JSON.stringify(studentList));
-        // const returnData = {
-        //   code: 200,
-        //   message: "Student Successfully Deleted",
-        //   data: JSON.parse(localStorage.getItem("students"))
-        // };
-        // return returnData;
-        return this.http
-            .delete("/api/students/delete/" + index, httpOptions)
-            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
+        return this.http.delete("/api/students/delete/" + index, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
             console.log("Delete student id = " + index);
         }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("deleteStudent")));
     };
     StudentService.prototype.getStudentDetails = function (index) {
-        // const studentList = JSON.parse(localStorage.getItem("students"));
-        // console.log(studentList);
-        // let returnData: any = null;
-        // for (let i = 0; i < studentList.length; i++) {
-        //   const student = studentList[i];
-        //   if (student.id === +index) {
-        //     returnData = {
-        //       code: 200,
-        //       message: "Student Details Fetched",
-        //       studentData: studentList[i]
-        //     };
-        //     console.log("FOUND");
-        //     break;
-        //   }
-        // }
-        // console.log("Get student detail " + "/api/students/" + index.toString());
-        // const url = `http://localhost:3000/api/students/`;
-        var url = "/api/students/" + index.toString();
-        return this.http.get(url);
-        // return returnData;
+        return this.http.get("/api/students/" + index);
     };
     StudentService.prototype.generateRandomID = function () {
         var x = Math.floor(Math.random() * Math.random() * 9999);
