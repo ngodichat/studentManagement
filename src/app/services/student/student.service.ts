@@ -24,9 +24,27 @@ export class StudentService {
     const httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
     };
-    return this.http.put("/api/students/update", student, httpOptions);
+    return this.http.put("/api/students/update", student, httpOptions).pipe(
+      tap(_ => {
+        console.log(`Update student id = ${student._id}`);
+      }),
+      catchError(this.handleError<any>("updateStudent"))
+    );
   }
 
+  private handleError<T> (operation = 'operation', result?: T){
+    return (error: any): Observable<T> => {
+ 
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+ 
+      // TODO: better job of transforming error for user consumption
+      console.log(`${operation} failed: ${error.message}`);
+ 
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
   deleteStudent(index: number) {
     const studentList = JSON.parse(localStorage.getItem("students"));
 

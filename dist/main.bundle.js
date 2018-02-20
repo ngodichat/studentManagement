@@ -713,9 +713,10 @@ var StudentAddComponent = /** @class */ (function () {
         //   }
         // }
         if (this.index) {
+            var total_money = this.studentAddForm.value.total_money;
+            this.studentAddForm.value.total_money = total_money.replace(".", "");
             var student = this.studentAddForm.value;
-            this.studentService.doUpdateStudent(student).subscribe(function () {
-            });
+            this.studentService.doUpdateStudent(student).subscribe(function () { });
         }
     };
     // If this is update form, get user details and update form
@@ -800,13 +801,13 @@ var StudentAddComponent = /** @class */ (function () {
         }
         this.studentAddForm = this.formBuilder.group({
             _id: [data === null ? -1 : data._id],
-            first_name: [
-                data === null ? "" : data.first_name,
-                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].minLength(2), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(50)]
-            ],
             sur_middle_name: [
                 data === null ? "" : data.sur_middle_name,
                 [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required]
+            ],
+            first_name: [
+                data === null ? "" : data.first_name,
+                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].minLength(2), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(50)]
             ],
             class: [data === null ? "" : data.class],
             school: [data === null ? "" : data.school],
@@ -817,9 +818,7 @@ var StudentAddComponent = /** @class */ (function () {
                 [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(15)]
             ],
             total_money: [
-                data === null
-                    ? 0
-                    : this.myNumberPipe.transform(data.total_money)
+                data === null ? 0 : this.myNumberPipe.transform(data.total_money)
             ],
             start_date: [
                 data === null
@@ -943,7 +942,8 @@ var StudentDetailsComponent = /** @class */ (function () {
             selector: "app-student-details",
             template: __webpack_require__("../../../../../src/app/components/student/details/student-details.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/student/details/student-details.component.css")],
-            animations: [Object(__WEBPACK_IMPORTED_MODULE_4__services_config_config_service__["b" /* routerTransition */])()],
+            animations: [Object(__WEBPACK_IMPORTED_MODULE_4__services_config_config_service__["b" /* routerTransition */])()]
+            // host: { "[@routerTransition]": "" }
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
@@ -1022,7 +1022,7 @@ var StudentListComponent = /** @class */ (function () {
     // Call student list function on page load
     StudentListComponent.prototype.ngOnInit = function () {
         this.getStudentList();
-        console.log(this.router.url);
+        // console.log(this.router.url);
     };
     // Get student list from services
     StudentListComponent.prototype.getStudentList = function () {
@@ -1189,6 +1189,8 @@ var MyNumberPipe = /** @class */ (function () {
     }
     MyNumberPipe.prototype.transform = function (value, args) {
         var valueStr = value.toString();
+        if (valueStr.indexOf(".") != -1)
+            return value;
         var numberGroups = valueStr.startsWith("-")
             ? (valueStr.length - 1) / 3
             : valueStr.length / 3;
@@ -1444,6 +1446,8 @@ var SessionService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__("../../../../rxjs/_esm5/observable/of.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
 /**
  * Created By : Sangwin Gawande (http://sangw.in)
  */
@@ -1456,6 +1460,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 var StudentService = /** @class */ (function () {
@@ -1472,7 +1478,20 @@ var StudentService = /** @class */ (function () {
         var httpOptions = {
             headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ "Content-Type": "application/json" })
         };
-        return this.http.put("/api/students/update", student, httpOptions);
+        return this.http.put("/api/students/update", student, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
+            console.log("Update student id = " + student._id);
+        }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("updateStudent")));
+    };
+    StudentService.prototype.handleError = function (operation, result) {
+        if (operation === void 0) { operation = 'operation'; }
+        return function (error) {
+            // TODO: send the error to remote logging infrastructure
+            console.error(error); // log to console instead
+            // TODO: better job of transforming error for user consumption
+            console.log(operation + " failed: " + error.message);
+            // Let the app keep running by returning an empty result.
+            return Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__["a" /* of */])(result);
+        };
     };
     StudentService.prototype.deleteStudent = function (index) {
         var studentList = JSON.parse(localStorage.getItem("students"));

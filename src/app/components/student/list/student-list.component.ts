@@ -29,7 +29,7 @@ export class StudentListComponent implements OnInit {
   // Call student list function on page load
   ngOnInit() {
     this.getStudentList();
-    console.log(this.router.url);
+    // console.log(this.router.url);
   }
 
   // Get student list from services

@@ -6,6 +6,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class MyNumberPipe implements PipeTransform {
   transform(value: number, args?: any): any {
     let valueStr = value.toString();
+    if (valueStr.indexOf(".") != -1) return value;
     const numberGroups = valueStr.startsWith("-")
       ? (valueStr.length - 1) / 3
       : valueStr.length / 3;

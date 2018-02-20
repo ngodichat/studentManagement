@@ -53,7 +53,9 @@ router.get("/", function(req, res, next) {
   var collection = db.collection("students");
   collection.find().toArray((err, items) => {
     // console.log(items);
-    res.send(items);
+    if(err) res.status(401);
+    else res.status(200);
+    res.json(items);
   });
 });
 

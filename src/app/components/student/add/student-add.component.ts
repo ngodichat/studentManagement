@@ -73,9 +73,11 @@ export class StudentAddComponent implements OnInit {
     //     this.toastr.error(studentRegister.message, "Failed");
     //   }
     // }
-    if(this.index) {
+    if (this.index) {
+      let total_money: string = this.studentAddForm.value.total_money;
+      this.studentAddForm.value.total_money = total_money.replace(".","");
       const student: Student = this.studentAddForm.value;
-      this.studentService.doUpdateStudent(student).subscribe(()=>{
+      this.studentService.doUpdateStudent(student).subscribe(() => {
         
       });
     }
@@ -83,7 +85,7 @@ export class StudentAddComponent implements OnInit {
 
   // If this is update form, get user details and update form
   getStudentDetails(index: any) {
-    this.studentService.getStudentDetails(index).subscribe(data=>{
+    this.studentService.getStudentDetails(index).subscribe(data => {
       const studentDetail = data[0];
       // console.log(data);
       this.createForm(studentDetail);
@@ -126,13 +128,13 @@ export class StudentAddComponent implements OnInit {
     }
     this.studentAddForm = this.formBuilder.group({
       _id: [data === null ? -1 : data._id],
-      first_name: [
-        data === null ? "" : data.first_name,
-        [Validators.required, Validators.minLength(2), Validators.maxLength(50)]
-      ],
       sur_middle_name: [
         data === null ? "" : data.sur_middle_name,
         [Validators.required]
+      ],
+      first_name: [
+        data === null ? "" : data.first_name,
+        [Validators.required, Validators.minLength(2), Validators.maxLength(50)]
       ],
       class: [data === null ? "" : data.class],
       school: [data === null ? "" : data.school],
@@ -143,9 +145,7 @@ export class StudentAddComponent implements OnInit {
         [Validators.required, Validators.maxLength(15)]
       ],
       total_money: [
-        data === null
-          ? 0
-          : this.myNumberPipe.transform(data.total_money)
+        data === null ? 0 : this.myNumberPipe.transform(data.total_money)
       ],
       start_date: [
         data === null

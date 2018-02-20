@@ -15,7 +15,7 @@ import { Student } from "../student";
   selector: "app-student-details",
   templateUrl: "./student-details.component.html",
   styleUrls: ["./student-details.component.css"],
-  animations: [routerTransition()],
+  animations: [routerTransition()]
   // host: { "[@routerTransition]": "" }
 })
 export class StudentDetailsComponent implements OnInit {
@@ -41,7 +41,7 @@ export class StudentDetailsComponent implements OnInit {
 
   // Get student details
   getStudentDetails(index: any) {
-    this.studentService.getStudentDetails(index).subscribe(data=>{
+    this.studentService.getStudentDetails(index).subscribe(data => {
       this.studentDetail = data[0];
       // console.log(this.studentDetail._id);
     });
@@ -49,7 +49,7 @@ export class StudentDetailsComponent implements OnInit {
     // console.log(this.router.url);
     // if (getStudentDetail) {
     //   this.studentDetail = getStudentDetail.studentData;
-      // this.toastr.success(getStudentDetail.message, "Success");
+    // this.toastr.success(getStudentDetail.message, "Success");
     // }
   }
 }
