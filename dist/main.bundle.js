@@ -104,7 +104,7 @@ var routes = [
     },
     {
         path: "**",
-        redirectTo: ""
+        redirectTo: "/students"
     }
 ];
 // Custom Date Format
@@ -199,7 +199,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Sangwin Gawande (http://sangw.in)*/\n\n\n/*Created By : Sangwin Gawande (http://sangw.in)*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\n\n\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -212,7 +212,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<!-- Side Bar -->\n<nav class=\"w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2\" style=\"z-index:3;width:250px;\" id=\"mySidebar\">\n\t<!-- Logo -->\n\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\n\t<!-- Sidebar Links -->\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/students')}\" routerLink=\"/students\"> <i class=\"w3-medium fa fa-user\"></i>  Danh sách học sinh</a>\n\t<!-- <a class=\"w3-bar-item w3-button\" routerLink=\"/addStudent\"  [ngClass]=\"{'w3-teal': (active == '/add')}\"> <i class=\"w3-medium fa fa-plus\"></i>  Thêm học sinh</a> -->\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/sessions')}\" routerLink=\"/sessions\"> <i class=\"w3-medium fa fa-university\"></i>  Danh sách lớp học</a>\n\t<a class=\"w3-bar-item w3-button\" (click)=\"logOut()\"><i class=\"w3-medium fa fa-sign-out\"></i>  Đăng xuất</a>\n</nav>\n\n<!-- Load main contents -->\n<div class=\"w3-main\" style=\"margin-left:250px;\">\n\t<div class=\"w3-container\">\n\t<!-- Initiate Child Routing -->\n\t\t<router-outlet></router-outlet>\n\t</div>\n</div>\n\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<!-- Side Bar -->\n<nav class=\"w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2\" style=\"z-index:3;width:250px;\" id=\"mySidebar\">\n\t<!-- Logo -->\n\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\n\t<!-- Sidebar Links -->\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/students')}\" routerLink=\"/students\"> <i class=\"w3-medium fa fa-user\"></i>  Danh sách học sinh</a>\n\t<!-- <a class=\"w3-bar-item w3-button\" routerLink=\"/addStudent\"  [ngClass]=\"{'w3-teal': (active == '/add')}\"> <i class=\"w3-medium fa fa-plus\"></i>  Thêm học sinh</a> -->\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/sessions')}\" routerLink=\"/sessions\"> <i class=\"w3-medium fa fa-university\"></i>  Danh sách lớp học</a>\n\t<a class=\"w3-bar-item w3-button\" (click)=\"logOut()\"><i class=\"w3-medium fa fa-sign-out\"></i>  Đăng xuất</a>\n</nav>\n\n<!-- Load main contents -->\n<div class=\"w3-main\" style=\"margin-left:250px;\">\n\t<div class=\"w3-container\">\n\t<!-- Initiate Child Routing -->\n\t\t<router-outlet></router-outlet>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -231,7 +231,7 @@ module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<!-
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_config_config_service__ = __webpack_require__("../../../../../src/app/services/config/config.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sessions_list_session_list_component__ = __webpack_require__("../../../../../src/app/components/sessions/list/session-list.component.ts");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -318,7 +318,7 @@ var homeChildRoutes = [
     }
 ];
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -332,7 +332,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n/*Created By : Sangwin Gawande (http://sangw.in)*/\n\n\n/*Created By : Sangwin Gawande (http://sangw.in)*/", ""]);
+exports.push([module.i, "\n/*Created By : Pham Nguyen Binh*/\n\n\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -345,7 +345,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/index/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n<!-- App component - Load Parent routes defined in app.module.ts -->\n<router-outlet></router-outlet>\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<!-- App component - Load Parent routes defined in app.module.ts -->\n<router-outlet></router-outlet>\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -357,7 +357,7 @@ module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n<!-- 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -373,7 +373,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = /** @class */ (function () {
     function AppComponent(http) {
         this.http = http;
-        this.title = "Student Management By Sangwin Gawande";
+        this.title = "Student Management By Pham Nguyen Binh";
         // Add few students for initial listing
         this.sessionList = [
             {
@@ -412,7 +412,7 @@ var AppComponent = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -426,7 +426,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Sangwin Gawande (http://sangw.in)*/\n\n.align-center{\n\twidth: 40%;\n\tmargin: auto;\n}\n\n.login-card{\n\tmargin-top: 5%;\n\tborder-radius: 15px;\n}\n\n/*Created By : Sangwin Gawande (http://sangw.in)*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\n\n.align-center{\n\twidth: 40%;\n\tmargin: auto;\n}\n\n.login-card{\n\tmargin-top: 5%;\n\tborder-radius: 15px;\n}\n\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -439,7 +439,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<div class=\"w3-container align-center w3-card login-card\">\n\t<form [formGroup]=\"loginForm\" (ngSubmit)=\"doLogin()\">\n\t\t<div class=\"text-center\">\n\t\t\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\n\t\t</div>\n\n\t\t<label class=\"w3-text-blue\"><b>Email</b></label>\n\t\t<input class=\"w3-input w3-border\" type=\"email\" formControlName=\"email\">\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)\">Địa chỉ email không hợp lệ</div> \n\n\t\t<label class=\"w3-text-blue\"><b>Mật khẩu</b></label>\n\t\t<input class=\"w3-input w3-border\" type=\"password\" formControlName=\"password\">\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)\">Mật khẩu phải dài tối thiểu 6 ký tự và có số</div> \n\t\t<br>\n\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!loginForm.valid\">Đăng nhập <i class=\"w3-medium fa fa-check\"></i> </button>\n\t</form>\n\t<div class=\"w3-panel w3-blue-gray\">\n\t\t<h4>Ghi chú : </h4>\n\t\t<p>Tài khoản : admin@gmail.com &amp; admin123</p>\n\t\t<!-- <p>All data will be restored when refreshed</p> -->\n\t</div> \n</div>\n\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container align-center w3-card login-card\">\n\t<form [formGroup]=\"loginForm\" (ngSubmit)=\"doLogin()\">\n\t\t<div class=\"text-center\">\n\t\t\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\n\t\t</div>\n\n\t\t<label class=\"w3-text-blue\"><b>Email</b></label>\n\t\t<input class=\"w3-input w3-border\" type=\"email\" formControlName=\"email\" placeholder=\"Địa chỉ email\">\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.email.invalid && (loginForm.controls.email.dirty)\">Địa chỉ email không hợp lệ</div> \n\n\t\t<label class=\"w3-text-blue\"><b>Mật khẩu</b></label>\n\t\t<input class=\"w3-input w3-border\" type=\"password\" formControlName=\"password\" placeholder=\"Mật khẩu\">\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.password.invalid && (loginForm.controls.password.dirty)\">Mật khẩu phải dài tối thiểu 6 ký tự và có số</div> \n\t\t<br>\n\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!loginForm.valid\">Đăng nhập <i class=\"w3-medium fa fa-check\"></i> </button>\n\t</form>\n\t<div class=\"w3-panel w3-blue-gray\">\n\t\t<h4>Ghi chú : </h4>\n\t\t<p>Tài khoản : admin@gmail.com &amp; admin123</p>\n\t\t<!-- <p>All data will be restored when refreshed</p> -->\n\t</div> \n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -455,7 +455,7 @@ module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<di
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_user_service__ = __webpack_require__("../../../../../src/app/services/user/user.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/toastr.es5.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -487,7 +487,7 @@ var LoginComponent = /** @class */ (function () {
     // Check if user already logged in
     LoginComponent.prototype.ngOnInit = function () {
         if (localStorage.getItem("userData")) {
-            this.router.navigate(["/"]);
+            this.router.navigate(["/students"]);
         }
     };
     // Initicate login
@@ -523,7 +523,7 @@ var LoginComponent = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -550,7 +550,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sessions/list/session-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<div class=\"w3-container\" *ngIf=\"sessionListData\">\n\t<div class=\"w3-panel w3-round-small w3-teal\">\n\t\t<h3>Danh sách lớp học<button routerLink=\"/add\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessionListData | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessionListData | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Năm học</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\n\t\t\t\t<!-- <th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th> -->\n\t\t\t\t<!-- <th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th> -->\n\t\t\t</tr>\n\t\t\t<tr class =\"w3-hover-green\" *ngFor=\"let session of sessionListData | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.class_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.session_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.year}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.nStudents}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" mat-raised-button color=\"primary\">Sửa</button></td> -->\n\t\t\t\t<!-- <td><button (click)=\"deleteStudent(i);\" mat-raised-button color=\"warn\" >Xóa</button></td> -->\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessionListData\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách lớp học<button routerLink=\"/add\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessionListData | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessionListData | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Năm học</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\n\t\t\t\t<!-- <th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th> -->\n\t\t\t\t<!-- <th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th> -->\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let session of sessionListData | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.class_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.session_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.year}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.nStudents}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" mat-raised-button color=\"primary\">Sửa</button></td> -->\n\t\t\t\t<!-- <td><button (click)=\"deleteStudent(i);\" mat-raised-button color=\"warn\" >Xóa</button></td> -->\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -614,7 +614,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Sangwin Gawande (http://sangw.in)*/\nform{\n\tpadding: 0px;\n}\n/*Created By : Sangwin Gawande (http://sangw.in)*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\nform{\n\tpadding: 0px;\n}\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -627,7 +627,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/add/student-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<div class=\"w3-container\" *ngIf=\"studentAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"studentAddForm\" (ngSubmit)=\"doRegister()\">\n\t\t<div class=\"w3-panel w3-round-small w3-teal\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo học sinh mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật thông tin học sinh</span>\n\t\t\t\t<a routerLink=\"/students\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Sur and middle name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"surMiddleName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Họ và đệm</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"sur_middle_name\" id=\"surMiddleName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)\">Họ và đệm tối thiểu 2 ký tự </div>\n\t\t\t\n\t\t\t<!-- First name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"firstName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"first_name\" id=\"firstName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"firstName.invalid && (firstName.dirty || firstName.touched)\"> Tên không được để trống</div>\n\n\t\t\t<!-- Class field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"class\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Lớp</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class\" id=\"class\">\n\n\t\t\t<!-- School field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"school\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Trường</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"school\" id=\"school\">\n\n\t\t\t<!-- Referral field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"referral\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Người giới thiệu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"referral\" id=\"referral\">\n\n\t\t\t<!-- Phone field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"phone\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-phone\"></i>\n\t\t\t\t<b>Điện thoại</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"phone\" id=\"phone\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\">Số điện thoại không hợp lệ</div>\n\n\t\t\t<!-- Start Learning Date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày nhập học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\n\t\t\t<label class=\"w3-text-blue\" for=\"totalMoney\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\n\t\t\t\t<b>Tiền học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"total_money\" id=\"totalMoney\">\n\n\t\t\t<!-- Note field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"note\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-book\"></i>\n\t\t\t\t<b>Ghi chú</b>\n\t\t\t</label>\n\t\t\t<textarea id=\"note\" class=\"w3-input w3-border\" style=\"resize: none\" placeholder=\"Ghi chú về học sinh\" [formControl]=\"note\"></textarea>\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!studentAddForm.valid\">\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"studentAddForm\" (ngSubmit)=\"doRegister()\">\n\t\t<div class=\"w3-panel w3-round-small w3-teal\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo học sinh mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật thông tin học sinh</span>\n\t\t\t\t<a routerLink=\"/students\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Sur and middle name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"surMiddleName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Họ và đệm</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"sur_middle_name\" id=\"surMiddleName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)\">Họ và đệm tối thiểu 2 ký tự </div>\n\t\t\t\n\t\t\t<!-- First name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"firstName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"first_name\" id=\"firstName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"firstName.invalid && (firstName.dirty || firstName.touched)\"> Tên không được để trống</div>\n\n\t\t\t<!-- Class field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"class\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Lớp</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class\" id=\"class\">\n\n\t\t\t<!-- School field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"school\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Trường</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"school\" id=\"school\">\n\n\t\t\t<!-- Referral field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"referral\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Người giới thiệu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"referral\" id=\"referral\">\n\n\t\t\t<!-- Phone field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"phone\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-phone\"></i>\n\t\t\t\t<b>Điện thoại</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"phone\" id=\"phone\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\">Số điện thoại không hợp lệ</div>\n\n\t\t\t<!-- Start Learning Date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày nhập học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\n\t\t\t<label class=\"w3-text-blue\" for=\"totalMoney\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\n\t\t\t\t<b>Tiền học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"total_money\" id=\"totalMoney\">\n\n\t\t\t<!-- Note field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"note\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-book\"></i>\n\t\t\t\t<b>Ghi chú</b>\n\t\t\t</label>\n\t\t\t<textarea id=\"note\" class=\"w3-input w3-border\" style=\"resize: none\" placeholder=\"Ghi chú về học sinh\" [formControl]=\"note\"></textarea>\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!studentAddForm.valid\">\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -656,7 +656,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -716,8 +716,7 @@ var StudentAddComponent = /** @class */ (function () {
             var total_money = this.studentAddForm.value.total_money;
             this.studentAddForm.value.total_money = total_money.replace(".", "");
             var student = this.studentAddForm.value;
-            this.studentService.doUpdateStudent(student).subscribe(function () {
-            });
+            this.studentService.doUpdateStudent(student).subscribe(function () { });
         }
     };
     // If this is update form, get user details and update form
@@ -862,7 +861,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Sangwin Gawande (http://sangw.in)*/\n.margin-right{\n\tmargin-right: 10px;\n}\n.custom-card{\n\twidth: 50%;\n\tmargin:auto;\n}\n/*Created By : Sangwin Gawande (http://sangw.in)*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\n.margin-right{\n\tmargin-right: 10px;\n}\n.custom-card{\n\twidth: 50%;\n\tmargin:auto;\n}\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -875,7 +874,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/details/student-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\n\t<div class=\"w3-panel w3-round-small w3-teal\">\n\t\t<h3>Thông tin chi tiết \n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \n\t\t\t<button routerLink=\"/\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\n\t</div>\n\t<div class=\" w3-card custom-card\"><br>\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\n\t\t<hr>\n\t\t<table class=\"w3-table w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n</div>\n\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Thông tin chi tiết \n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \n\t\t\t<button routerLink=\"/\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\n\t</div>\n\t<div class=\" w3-card custom-card\"><br>\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\n\t\t<hr>\n\t\t<table class=\"w3-table w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-money\"></i> Tổng tiền </td>\n\t\t\t\t<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -899,7 +898,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -955,7 +954,7 @@ var StudentDetailsComponent = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -969,7 +968,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Sangwin Gawande (http://sangw.in)*/\ntd{\n\t    vertical-align: middle;\n}\n/*Created By : Sangwin Gawande (http://sangw.in)*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\ntd{\n\t    vertical-align: middle;\n}\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -982,7 +981,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/list/student-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<div class=\"w3-container\" *ngIf=\"students\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách học sinh<button routerLink=\"/addStudent\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm học sinh</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel custom-blue\" *ngIf=\"(students | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có học sinh nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(students | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Lớp</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Người giới thiệu </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ tên bố/mẹ </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\" appHighlightStudent>\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.sur_middle_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Sangwin Gawande (http://sangw.in) -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"students\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách học sinh<button routerLink=\"/addStudent\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm học sinh</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel custom-blue\" *ngIf=\"(students | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có học sinh nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(students | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Lớp</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Người giới thiệu </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ tên bố/mẹ </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\" appHighlightStudent>\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.sur_middle_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -997,7 +996,7 @@ module.exports = "<!-- Created By : Sangwin Gawande (http://sangw.in) -->\n\n<di
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_config_config_service__ = __webpack_require__("../../../../../src/app/services/config/config.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1039,20 +1038,18 @@ var StudentListComponent = /** @class */ (function () {
         // this.students = abc.data;
         for (var i = 0; i < this.students.length; i++) {
             this.students[i].full_name =
-                this.students[i].sur_middle_name +
-                    " " +
-                    this.students[i].first_name;
+                this.students[i].sur_middle_name + " " + this.students[i].first_name;
         }
     };
     // Delete a student with its index
     StudentListComponent.prototype.deleteStudent = function (index) {
         // get confirm box for confirmation
-        var r = confirm("Are you sure?");
+        var r = confirm("Thầy/cô muốn xóa học sinh này?");
         if (r === true) {
-            var studentDelete = this.studentService.deleteStudent(index);
-            if (studentDelete) {
-                this.toastr.success("Success", "Student Deleted");
-            }
+            this.studentService.deleteStudent(index).subscribe(function () { });
+            // if (studentDelete) {
+            //   this.toastr.success("Success", "Student Deleted");
+            // }
             this.getStudentList();
         }
     };
@@ -1072,7 +1069,7 @@ var StudentListComponent = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -1085,7 +1082,7 @@ var StudentListComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HighlightStudentDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1132,7 +1129,7 @@ var HighlightStudentDirective = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */ 
 
 
@@ -1156,7 +1153,7 @@ var FilterPipe = /** @class */ (function () {
     }
     FilterPipe.prototype.transform = function (value, args) {
         if (args !== undefined && args != null && args !== "") {
-            return value.filter(function (data) { return data.name.toLocaleLowerCase().indexOf(args.toLowerCase()) > -1; });
+            return value.filter(function (data) { return (data.first_name + " " + data.sur_middle_name + " " + data.class).toLocaleLowerCase().indexOf(args.toLowerCase()) > -1; });
         }
         return value;
     };
@@ -1226,7 +1223,7 @@ var MyNumberPipe = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PhonePipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1253,7 +1250,7 @@ var PhonePipe = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -1267,7 +1264,7 @@ var PhonePipe = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1302,7 +1299,7 @@ var AuthService = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -1318,7 +1315,7 @@ var AuthService = /** @class */ (function () {
 /* unused harmony export slideToLeft */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1395,7 +1392,7 @@ function slideToLeft() {
     ]);
 }
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -1450,7 +1447,7 @@ var SessionService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__("../../../../rxjs/_esm5/observable/of.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1465,6 +1462,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+var httpOptions = {
+    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ "Content-Type": "application/json" })
+};
 var StudentService = /** @class */ (function () {
     // students: Student[];
     function StudentService(http) {
@@ -1476,15 +1476,12 @@ var StudentService = /** @class */ (function () {
         return this.http.get(studentDataUrl);
     };
     StudentService.prototype.doUpdateStudent = function (student) {
-        var httpOptions = {
-            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ "Content-Type": "application/json" })
-        };
         return this.http.put("/api/students/update", student, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
             console.log("Update student id = " + student._id);
         }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("updateStudent")));
     };
     StudentService.prototype.handleError = function (operation, result) {
-        if (operation === void 0) { operation = 'operation'; }
+        if (operation === void 0) { operation = "operation"; }
         return function (error) {
             // TODO: send the error to remote logging infrastructure
             console.error(error); // log to console instead
@@ -1495,15 +1492,20 @@ var StudentService = /** @class */ (function () {
         };
     };
     StudentService.prototype.deleteStudent = function (index) {
-        var studentList = JSON.parse(localStorage.getItem("students"));
-        studentList.splice(index, 1);
-        localStorage.setItem("students", JSON.stringify(studentList));
-        var returnData = {
-            code: 200,
-            message: "Student Successfully Deleted",
-            data: JSON.parse(localStorage.getItem("students"))
-        };
-        return returnData;
+        // const studentList = JSON.parse(localStorage.getItem("students"));
+        // studentList.splice(index, 1);
+        // localStorage.setItem("students", JSON.stringify(studentList));
+        // const returnData = {
+        //   code: 200,
+        //   message: "Student Successfully Deleted",
+        //   data: JSON.parse(localStorage.getItem("students"))
+        // };
+        // return returnData;
+        return this.http
+            .delete("/api/students/delete/" + index, httpOptions)
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
+            console.log("Delete student id = " + index);
+        }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("deleteStudent")));
     };
     StudentService.prototype.getStudentDetails = function (index) {
         // const studentList = JSON.parse(localStorage.getItem("students"));
@@ -1539,7 +1541,7 @@ var StudentService = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -1552,7 +1554,7 @@ var StudentService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1592,7 +1594,7 @@ var UserService = /** @class */ (function () {
 }());
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -1624,7 +1626,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 
@@ -1636,7 +1638,7 @@ if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment *
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 

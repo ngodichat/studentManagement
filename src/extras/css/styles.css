@@ -2,39 +2,50 @@
  * Created By : Pham Nguyen Binh
  */
 
- /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
 
- @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
- .logo{
- 	margin: 30px 20px;
- }
- .custom-button{
- 	float: right;
- 	font-size: 15px;
- }
- .text-center{
- 	text-align: center;
- }
- .pointer{
- 	cursor: pointer;
- }
- .float-right{
- 	float:right;
- }
- .w3-button{
- 	border-radius: 10px;
- }
- .w3-input{
- 	margin-bottom: 10px;
- }
- .custom-blue, .custom-hover-blue:hover{
-	color:#fff!important;background-color:#0081c0!important
- }
- .custom-icon{
- 	margin: 5px 6px 5px 0px;
- 	font-size: 20px!important;
- }
+.logo {
+  margin: 30px 20px;
+}
+.custom-button {
+  float: right;
+  font-size: 15px;
+}
+.text-center {
+  text-align: center;
+}
+.pointer {
+  cursor: pointer;
+}
+.float-right {
+  float: right;
+}
+.w3-button {
+  border-radius: 10px;
+}
+.w3-input {
+  margin-bottom: 10px;
+}
+.w3-input:focus {
+  border-color: #0081c0;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(0, 129, 192, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(0, 129, 192, 0.6);
+}
+
+.custom-blue,
+.custom-hover-blue:hover {
+  color: #fff !important;
+  background-color: #0081c0 !important;
+}
+.custom-icon {
+  margin: 5px 6px 5px 0px;
+  font-size: 20px !important;
+}
 /**
  * Created By : Pham Nguyen Binh
  */

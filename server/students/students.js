@@ -53,7 +53,7 @@ router.get("/", function(req, res, next) {
   var collection = db.collection("students");
   collection.find().toArray((err, items) => {
     // console.log(items);
-    if(err) res.status(401);
+    if (err) res.status(401);
     else res.status(200);
     res.json(items);
   });
@@ -67,6 +67,15 @@ router.put("/update/", (req, res, next) => {
   var collection = db.collection("students");
   var objID = new mongo.ObjectId(student["_id"]);
   student["_id"] = objID;
-  collection.update({_id: objID},student);
+  collection.update({ _id: objID }, student);
 });
+
+router.delete("/delete/:id", (req, res, next) => {
+  var studentId = req.params.id;
+  console.log("Delete student" + studentId);
+  var objID = new mongo.ObjectID(studentId);
+  var collection = db.collection("students");
+  collection.deleteOne({ _id: objID });
+});
+
 module.exports = router;

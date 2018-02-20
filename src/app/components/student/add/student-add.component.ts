@@ -74,12 +74,10 @@ export class StudentAddComponent implements OnInit {
     //   }
     // }
     if (this.index) {
-      let total_money: string = this.studentAddForm.value.total_money;
-      this.studentAddForm.value.total_money = total_money.replace(".","");
+      const total_money: string = this.studentAddForm.value.total_money;
+      this.studentAddForm.value.total_money = total_money.replace(".", "");
       const student: Student = this.studentAddForm.value;
-      this.studentService.doUpdateStudent(student).subscribe(() => {
-        
-      });
+      this.studentService.doUpdateStudent(student).subscribe(() => {});
     }
   }
 

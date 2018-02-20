@@ -1,7 +1,7 @@
 <!-- Created By : Pham Nguyen Binh -->
 
 <div class="w3-container" *ngIf="studentDetail">
-	<div class="w3-panel w3-round-small w3-teal">
+	<div class="w3-panel w3-round-small custom-blue">
 		<h3>Thông tin chi tiết 
 			<button [routerLink]="['/updateStudent', studentDetail.id]" class="w3-button w3-blue custom-button"> <i class="w3-medium fa fa-pencil"></i> Sửa</button> 
 			<button routerLink="/" class="w3-button w3-green custom-button margin-right"> <i class="w3-medium fa fa-chevron-left"></i> Quay lại</button></h3>
@@ -37,6 +37,10 @@
 			<tr>
 				<td><i class="w3-medium custom-icon fa fa-calendar"></i> Ngày nhập học</td>
 				<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>
+			</tr>
+			<tr>
+				<td><i class="w3-medium custom-icon fa fa-money"></i> Tổng tiền </td>
+				<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>
 			</tr>
 		</table>
 	</div>

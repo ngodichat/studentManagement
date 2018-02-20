@@ -7,12 +7,12 @@
 		</div>
 
 		<label class="w3-text-blue"><b>Email</b></label>
-		<input class="w3-input w3-border" type="email" formControlName="email">
-		<div class="w3-panel w3-red"  *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">Địa chỉ email không hợp lệ</div> 
+		<input class="w3-input w3-border" type="email" formControlName="email" placeholder="Địa chỉ email">
+		<div class="w3-panel w3-red"  *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty)">Địa chỉ email không hợp lệ</div> 
 
 		<label class="w3-text-blue"><b>Mật khẩu</b></label>
-		<input class="w3-input w3-border" type="password" formControlName="password">
-		<div class="w3-panel w3-red"  *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">Mật khẩu phải dài tối thiểu 6 ký tự và có số</div> 
+		<input class="w3-input w3-border" type="password" formControlName="password" placeholder="Mật khẩu">
+		<div class="w3-panel w3-red"  *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty)">Mật khẩu phải dài tối thiểu 6 ký tự và có số</div> 
 		<br>
 		<button class="w3-btn w3-blue" type="submit" [disabled]="!loginForm.valid">Đăng nhập <i class="w3-medium fa fa-check"></i> </button>
 	</form>

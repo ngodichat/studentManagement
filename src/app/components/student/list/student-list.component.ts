@@ -46,21 +46,19 @@ export class StudentListComponent implements OnInit {
     // this.students = abc.data;
     for (let i = 0; i < this.students.length; i++) {
       this.students[i].full_name =
-        this.students[i].sur_middle_name +
-        " " +
-        this.students[i].first_name;
+        this.students[i].sur_middle_name + " " + this.students[i].first_name;
     }
   }
 
   // Delete a student with its index
   deleteStudent(index: number) {
     // get confirm box for confirmation
-    const r = confirm("Are you sure?");
+    const r = confirm("Thầy/cô muốn xóa học sinh này?");
     if (r === true) {
-      const studentDelete = this.studentService.deleteStudent(index);
-      if (studentDelete) {
-        this.toastr.success("Success", "Student Deleted");
-      }
+      this.studentService.deleteStudent(index).subscribe(() => {});
+      // if (studentDelete) {
+      //   this.toastr.success("Success", "Student Deleted");
+      // }
       this.getStudentList();
     }
   }

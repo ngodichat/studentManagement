@@ -9,6 +9,10 @@ import { of } from "rxjs/observable/of";
 import { Student } from "../../components/student/student";
 import { catchError, map, tap } from "rxjs/operators";
 
+const httpOptions = {
+  headers: new HttpHeaders({ "Content-Type": "application/json" })
+};
+
 @Injectable()
 export class StudentService {
   // students: Student[];
@@ -21,9 +25,6 @@ export class StudentService {
   }
 
   doUpdateStudent(student: Student): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({ "Content-Type": "application/json" })
-    };
     return this.http.put("/api/students/update", student, httpOptions).pipe(
       tap(_ => {
         console.log(`Update student id = ${student._id}`);
@@ -45,20 +46,29 @@ export class StudentService {
     };
   }
 
-  deleteStudent(index: number) {
-    const studentList = JSON.parse(localStorage.getItem("students"));
+  deleteStudent(index: any): Observable<any> {
+    // const studentList = JSON.parse(localStorage.getItem("students"));
 
-    studentList.splice(index, 1);
+    // studentList.splice(index, 1);
 
-    localStorage.setItem("students", JSON.stringify(studentList));
+    // localStorage.setItem("students", JSON.stringify(studentList));
 
-    const returnData = {
-      code: 200,
-      message: "Student Successfully Deleted",
-      data: JSON.parse(localStorage.getItem("students"))
-    };
+    // const returnData = {
+    //   code: 200,
+    //   message: "Student Successfully Deleted",
+    //   data: JSON.parse(localStorage.getItem("students"))
+    // };
 
-    return returnData;
+    // return returnData;
+
+    return this.http
+      .delete(`/api/students/delete/${index}`, httpOptions)
+      .pipe(
+        tap(_ => {
+          console.log(`Delete student id = ${index}`)
+        }),
+        catchError(this.handleError<Student>("deleteStudent"))
+      );
   }
 
   getStudentDetails(index: any): Observable<Student[]> {
