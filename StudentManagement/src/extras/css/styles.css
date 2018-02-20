@@ -28,6 +28,9 @@
  .w3-input{
  	margin-bottom: 10px;
  }
+ .custom-blue, .custom-hover-blue:hover{
+	color:#fff!important;background-color:#0081c0!important
+ }
  .custom-icon{
  	margin: 5px 6px 5px 0px;
  	font-size: 20px!important;
