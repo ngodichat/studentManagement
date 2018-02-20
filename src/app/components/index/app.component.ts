@@ -1,5 +1,5 @@
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 import { Component } from "@angular/core";
@@ -11,7 +11,7 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "Student Management By Sangwin Gawande";
+  title = "Student Management By Pham Nguyen Binh";
 
   // Add few students for initial listing
   sessionList = [
@@ -46,5 +46,5 @@ export class AppComponent {
 }
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */

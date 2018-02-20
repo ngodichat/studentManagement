@@ -1,5 +1,5 @@
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 import { Component, OnInit } from "@angular/core";
@@ -34,13 +34,13 @@ export class LoginComponent implements OnInit {
   // Check if user already logged in
   ngOnInit() {
     if (localStorage.getItem("userData")) {
-      this.router.navigate(["/"]);
+      this.router.navigate(["/students"]);
     }
   }
 
   // Initicate login
   doLogin() {
-    let login = this.userService.doLogin(this.loginForm.value);
+    const login = this.userService.doLogin(this.loginForm.value);
     this.success(login);
   }
 
@@ -57,5 +57,5 @@ export class LoginComponent implements OnInit {
 }
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */

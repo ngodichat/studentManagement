@@ -1,5 +1,5 @@
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 import { FilterPipe } from './filter.pipe';
@@ -12,5 +12,5 @@ describe('FilterPipe', () => {
 });
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */

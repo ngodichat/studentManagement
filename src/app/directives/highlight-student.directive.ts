@@ -1,5 +1,5 @@
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 import { Directive, ElementRef,HostListener } from '@angular/core';
@@ -26,5 +26,5 @@ export class HighlightStudentDirective {
 }
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */

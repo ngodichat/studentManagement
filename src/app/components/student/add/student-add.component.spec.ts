@@ -1,5 +1,5 @@
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -29,5 +29,5 @@ describe('StudentAddComponent', () => {
 });
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */

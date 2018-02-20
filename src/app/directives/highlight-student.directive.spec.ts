@@ -1,5 +1,5 @@
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 
 import { HighlightStudentDirective } from './highlight-student.directive';
@@ -12,5 +12,5 @@ describe('HighlightStudentDirective', () => {
 });
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */

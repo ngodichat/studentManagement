@@ -1,5 +1,5 @@
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */
 import { Component, OnInit } from "@angular/core";
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
@@ -55,5 +55,5 @@ export class StudentDetailsComponent implements OnInit {
 }
 
 /**
- * Created By : Sangwin Gawande (http://sangw.in)
+ * Created By : Pham Nguyen Binh
  */

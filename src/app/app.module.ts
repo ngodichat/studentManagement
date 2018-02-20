@@ -70,7 +70,7 @@ const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: ""
+    redirectTo: "/students"
   }
 ];
 
