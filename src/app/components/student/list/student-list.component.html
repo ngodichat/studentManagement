@@ -1,12 +1,12 @@
 <!-- Created By : Sangwin Gawande (http://sangw.in) -->
 
 <div class="w3-container" *ngIf="students">
-	<div class="w3-panel w3-round-small w3-teal">
+	<div class="w3-panel w3-round-small custom-blue">
 		<h3>Danh sách học sinh<button routerLink="/addStudent" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Thêm học sinh</button></h3>
 	</div>
 	<span><i class="w3-medium fa fa-search"></i> Tìm kiếm : <input class="" type="text" [(ngModel)]='filterData'></span>
 
-	<div class="w3-panel w3-green" *ngIf="(students | filter:filterData).length == 0">
+	<div class="w3-panel custom-blue" *ngIf="(students | filter:filterData).length == 0">
 		<!-- <h3>Oh no</h3> -->
 		<p>Không có học sinh nào <span *ngIf="filterData"> có tên là "{{filterData}}"</span> </p>
 	</div>
@@ -26,7 +26,7 @@
 				<th><i class="w3-medium custom-icon fa fa-pencil"></i> Sửa</th>
 				<th><i class="w3-medium custom-icon fa fa-trash"></i> Xóa</th>
 			</tr>
-			<tr class ="w3-hover-green" *ngFor="let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;" appHighlightStudent>
+			<tr class ="custom-hover-blue" *ngFor="let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;" appHighlightStudent>
 				<td>{{i +1}}</td>
 				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.sur_middle_name}} </td>
 				<td class="pointer" [routerLink]="['/detail', student._id]">{{student.first_name}}</td>
