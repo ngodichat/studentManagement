@@ -64,7 +64,7 @@ export class SessionAddComponent implements OnInit {
           ? ""
           : this.datePipe.transform(data.end_date, "yyyy-MM-dd")
       ],
-      start_time: [data === null ? 18 : this.formatTime(data.start_time),
+      start_time: [data === null ? "18h00" : data.start_time,
       [Validators.pattern("\\d{1,2}(h){0,1}\\d{0,2}")]
     ],
       fee: [
