@@ -54,7 +54,20 @@
 				<b>Số lượng học sinh: </b>
 			</label>
 			<input class="w3-input w3-border" type="number" formControlName="nStudents" id="nStudents" [value] = "sessionAddForm.value.nStudents">
-			<!-- {{sessionAddForm.nStudents}} -->
+
+			<!-- Add students field -->
+			<label class="w3-text-blue" for="fee">
+				<i class="w3-medium custom-icon fa fa-calendar"></i>
+				<b>Danh sách học sinh: </b>
+			</label>
+			<table class="w3-table w3-striped w3-bordered">
+				<tr class ="custom-hover-blue" *ngFor="let student of sessionAddForm.value.students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;">
+					<td>{{i+1}}</td>
+					<td>{{student.first_name}}</td>
+					<td><button class="w3-red fa fa-times" (click)="onRemoveStudent(student);"></button></td>
+				</tr>
+			</table>
+			<br/>
 
 			<button class="w3-btn w3-blue" type="submit" [disabled]="!sessionAddForm.valid">
 				<span *ngIf="id == undefined">Tạo mới</span>

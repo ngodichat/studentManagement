@@ -16,7 +16,7 @@ import { MyNumberPipe } from "../../../pipes/my-number.pipe";
 export class SessionAddComponent implements OnInit {
   sessionAddForm: FormGroup;
   id: string;
-  studentList: Student[];
+  // studentList: Student[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -64,22 +64,32 @@ export class SessionAddComponent implements OnInit {
           ? ""
           : this.datePipe.transform(data.end_date, "yyyy-MM-dd")
       ],
-      start_time: [data === null ? "18h00" : data.start_time,
-      [Validators.pattern("\\d{1,2}(h){0,1}\\d{0,2}")]
-    ],
+      start_time: [
+        data === null ? "18h00" : data.start_time,
+        [Validators.pattern("\\d{1,2}(h){0,1}\\d{0,2}")]
+      ],
       fee: [
         data === null ? "100.000" : this.myNumberPipe.transform(data.fee),
         [Validators.pattern("[0-9.]+")]
       ],
-      nStudents: [{value: 0, disabled:  true}],
-      students: [data === null ? [] : this.studentList]
+      nStudents: [{ value: 0, disabled: true }],
+      students: [[]]
     });
+  }
+
+  onRemoveStudent(student: Student) {
+    let studentList: Student[] = this.sessionAddForm.value.students;
+    const index = studentList.indexOf(student);
+    studentList.splice(index, 1);
+    this.sessionAddForm.value.students = studentList;
+    this.sessionAddForm.value.nStudents = studentList.length;
   }
 
   getStudentsBySession(sessionId: string) {
     this.sessionService.getStudentsBySession(sessionId).subscribe(students => {
-      this.studentList = students;
+      // this.studentList = students;
       this.sessionAddForm.value.nStudents = students.length;
+      this.sessionAddForm.value.students = students;
       console.log(this.sessionAddForm.value);
     });
     // console.log(studentList);
@@ -117,13 +127,20 @@ export class SessionAddComponent implements OnInit {
     } else {
       this.sessionAddForm.value.fee = 0;
     }
-    
+
+    let studentIds = [];
+    let students_bk = this.sessionAddForm.value.students;
+    for (let i = 0; i < this.sessionAddForm.value.students.length; i++) {
+      const student: Student = this.sessionAddForm.value.students[i];
+      studentIds.push(student._id);
+    }
+    this.sessionAddForm.value.students = studentIds;
     // let time: string = this.sessionAddForm.value.start_time;
     // const pos_of_h = time.indexOf("h");
     // if(pos_of_h !== -1){
     //   console.log(+time.substr(0,pos_of_h)+(+time.substr(pos_of_h-1)/60));
     // }
-    
+
     if (!this.id) {
       this.sessionService
         .doAddSession(this.sessionAddForm.value)
@@ -137,16 +154,17 @@ export class SessionAddComponent implements OnInit {
           this.toastr.success("Thành công", "Cập nhật lớp học thành công");
         });
     }
+
+    this.sessionAddForm.value.students = students_bk;
   }
 
   formatTime(value: number) {
     if (Number.isInteger(value)) {
       return value.toString() + " h";
-    } else{
+    } else {
       let valStr = Math.floor(value).toString();
       return valStr + "h30";
-
-    } 
+    }
   }
 
   ngOnInit() {}
