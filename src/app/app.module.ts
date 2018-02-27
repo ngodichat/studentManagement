@@ -77,6 +77,7 @@ const routes: Routes = [
 // Custom Date Format
 import * as _moment from "moment";
 import { MyNumberPipe } from './pipes/my-number.pipe';
+import { SessionAddComponent } from './components/sessions/add/session-add.component';
 // import { default as _rollupMoment } from "moment";
 const moment = _moment;
 export const MY_DATE_FORMATS = {
@@ -103,7 +104,8 @@ export const MY_DATE_FORMATS = {
     PhonePipe,
     HighlightStudentDirective,
     SessionListComponent,
-    MyNumberPipe
+    MyNumberPipe,
+    SessionAddComponent,
   ],
   imports: [
     BrowserModule,

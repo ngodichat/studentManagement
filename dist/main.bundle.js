@@ -52,6 +52,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_moment__ = __webpack_require__("../../../../moment/moment.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pipes_my_number_pipe__ = __webpack_require__("../../../../../src/app/pipes/my-number.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_sessions_add_session_add_component__ = __webpack_require__("../../../../../src/app/components/sessions/add/session-add.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -110,6 +111,7 @@ var routes = [
 // Custom Date Format
 
 
+
 // import { default as _rollupMoment } from "moment";
 var moment = __WEBPACK_IMPORTED_MODULE_26_moment__;
 var MY_DATE_FORMATS = {
@@ -140,7 +142,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_12__pipes_phone_pipe__["a" /* PhonePipe */],
                 __WEBPACK_IMPORTED_MODULE_20__directives_highlight_student_directive__["a" /* HighlightStudentDirective */],
                 __WEBPACK_IMPORTED_MODULE_25__components_sessions_list_session_list_component__["a" /* SessionListComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__pipes_my_number_pipe__["a" /* MyNumberPipe */]
+                __WEBPACK_IMPORTED_MODULE_27__pipes_my_number_pipe__["a" /* MyNumberPipe */],
+                __WEBPACK_IMPORTED_MODULE_28__components_sessions_add_session_add_component__["a" /* SessionAddComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -228,8 +231,9 @@ module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<!-- Side Bar -->\n<
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__student_list_student_list_component__ = __webpack_require__("../../../../../src/app/components/student/list/student-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__student_details_student_details_component__ = __webpack_require__("../../../../../src/app/components/student/details/student-details.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__student_add_student_add_component__ = __webpack_require__("../../../../../src/app/components/student/add/student-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_config_config_service__ = __webpack_require__("../../../../../src/app/services/config/config.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sessions_add_session_add_component__ = __webpack_require__("../../../../../src/app/components/sessions/add/session-add.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sessions_list_session_list_component__ = __webpack_require__("../../../../../src/app/components/sessions/list/session-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_config_config_service__ = __webpack_require__("../../../../../src/app/services/config/config.service.ts");
 /**
  * Created By : Pham Nguyen Binh
  */
@@ -249,8 +253,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// Services
 
+
+// Services
 
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(router, toastr) {
@@ -278,7 +283,7 @@ var HomeComponent = /** @class */ (function () {
             selector: "app-home",
             template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")],
-            animations: [Object(__WEBPACK_IMPORTED_MODULE_6__services_config_config_service__["b" /* routerTransition */])()],
+            animations: [Object(__WEBPACK_IMPORTED_MODULE_8__services_config_config_service__["b" /* routerTransition */])()],
             host: { "[@routerTransition]": "" }
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2_ngx_toastr__["b" /* ToastrService */]])
@@ -302,7 +307,7 @@ var homeChildRoutes = [
     },
     {
         path: "addSession",
-        component: __WEBPACK_IMPORTED_MODULE_5__student_add_student_add_component__["a" /* StudentAddComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_6__sessions_add_session_add_component__["a" /* SessionAddComponent */]
     },
     {
         path: "updateStudent/:id",
@@ -310,7 +315,7 @@ var homeChildRoutes = [
     },
     {
         path: "updateSession/:id",
-        component: __WEBPACK_IMPORTED_MODULE_5__student_add_student_add_component__["a" /* StudentAddComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_6__sessions_add_session_add_component__["a" /* SessionAddComponent */]
     },
     {
         path: "detail/:id",
@@ -529,6 +534,218 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/sessions/add/session-add.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/sessions/add/session-add.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessionAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"sessionAddForm\" (ngSubmit)=\"doSubmit()\">\n\t\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"id == undefined\">Tạo lớp mới</span>\n\t\t\t\t<span *ngIf=\"id != undefined\">Cập nhật thông tin lớp học</span>\n\t\t\t\t<a routerLink=\"/sessions\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Class name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"className\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Tên lớp học</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class_name\" id=\"className\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"className.invalid && (className.dirty || className.touched)\">Tên lớp học không được để trống </div>\n      \n      <!-- Start date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày bắt đầu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n      <div class=\"w3-panel w3-red\" *ngIf=\"startDate.invalid && (startDate.dirty || startDate.touched)\">Ngày bắt đầu không được để trống </div>\n      \n      <!-- End date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"endDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày kết thúc</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"end_date\" id=\"endDate\">\n      \n      <!-- Start time field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startTime\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Bắt đầu lúc: </b>\n\t\t\t</label>\n      <input class=\"w3-input w3-border\" type=\"text\" formControlName=\"start_time\" id=\"startTime\">\n      \n      <!-- Start time field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"fee\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Học phí một buổi: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"fee\" id=\"fee\">\n\n\t\t\t<!-- Add students field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"fee\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Số lượng học sinh: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"number\" formControlName=\"nStudents\" id=\"nStudents\" [value] = \"sessionAddForm.value.nStudents\">\n\t\t\t<!-- {{sessionAddForm.nStudents}} -->\n\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!sessionAddForm.valid\">\n\t\t\t\t<span *ngIf=\"id == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"id != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/sessions/add/session-add.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SessionAddComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_sessions_session_service__ = __webpack_require__("../../../../../src/app/services/sessions/session.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/toastr.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pipes_my_number_pipe__ = __webpack_require__("../../../../../src/app/pipes/my-number.pipe.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var SessionAddComponent = /** @class */ (function () {
+    function SessionAddComponent(formBuilder, sessionService, toastr, route, datePipe, myNumberPipe) {
+        var _this = this;
+        this.formBuilder = formBuilder;
+        this.sessionService = sessionService;
+        this.toastr = toastr;
+        this.route = route;
+        this.datePipe = datePipe;
+        this.myNumberPipe = myNumberPipe;
+        //check for route Params
+        this.route.params.subscribe(function (params) {
+            _this.id = params["id"];
+            if (_this.id && _this.id != undefined) {
+                console.log("Update session: " + _this.id);
+                // this.sessionAddForm.value._id = id;
+                _this.getSessionDetail(_this.id);
+            }
+            else {
+                _this.createForm(null);
+            }
+        });
+    }
+    SessionAddComponent.prototype.getSessionDetail = function (id) {
+        var session = this.sessionService.getSessionById(id);
+        // console.log(session._id);
+        this.createForm(session);
+        this.getStudentsBySession(id);
+    };
+    SessionAddComponent.prototype.createForm = function (data) {
+        this.sessionAddForm = this.formBuilder.group({
+            _id: [data === null ? "-1" : data._id],
+            class_name: [
+                data === null ? "" : data.class_name,
+                [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].maxLength(50)]
+            ],
+            start_date: [
+                data === null
+                    ? ""
+                    : this.datePipe.transform(data.start_date, "yyyy-MM-dd"),
+                [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required]
+            ],
+            end_date: [
+                data === null
+                    ? ""
+                    : this.datePipe.transform(data.end_date, "yyyy-MM-dd")
+            ],
+            start_time: [data === null ? 18 : this.formatTime(data.start_time)],
+            fee: [
+                data === null ? "100.000" : this.myNumberPipe.transform(data.fee),
+                [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern("[0-9.]+")]
+            ],
+            nStudents: [0],
+            students: [data === null ? [] : this.studentList]
+        });
+    };
+    SessionAddComponent.prototype.getStudentsBySession = function (sessionId) {
+        var _this = this;
+        this.sessionService.getStudentsBySession(sessionId).subscribe(function (students) {
+            _this.studentList = students;
+            _this.sessionAddForm.value.nStudents = students.length;
+            console.log(_this.sessionAddForm.value);
+        });
+        // console.log(studentList);
+        // return studentList;
+    };
+    Object.defineProperty(SessionAddComponent.prototype, "className", {
+        get: function () {
+            return this.sessionAddForm.get("class_name");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SessionAddComponent.prototype, "startDate", {
+        get: function () {
+            return this.sessionAddForm.get("start_date");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SessionAddComponent.prototype, "endtDate", {
+        get: function () {
+            return this.sessionAddForm.get("end_date");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SessionAddComponent.prototype, "startTime", {
+        get: function () {
+            return this.sessionAddForm.get("start_time");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SessionAddComponent.prototype, "fee", {
+        get: function () {
+            return this.sessionAddForm.get("fee");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SessionAddComponent.prototype, "nStudents", {
+        get: function () {
+            return this.sessionAddForm.get("nStudents");
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SessionAddComponent.prototype.doSubmit = function () {
+        var _this = this;
+        var fee = this.sessionAddForm.value.fee.toString();
+        if (fee !== "0") {
+            this.sessionAddForm.value.fee = fee.replace(".", "");
+        }
+        else {
+            this.sessionAddForm.value.fee = 0;
+        }
+        if (!this.id) {
+            this.sessionService
+                .doAddSession(this.sessionAddForm.value)
+                .subscribe(function (_) {
+                _this.toastr.success("Thành công", "Thêm mới lớp học thành công");
+            });
+        }
+        else {
+            this.sessionService
+                .doUpdateSession(this.sessionAddForm.value)
+                .subscribe(function (_) {
+                _this.toastr.success("Thành công", "Cập nhật lớp học thành công");
+            });
+        }
+    };
+    SessionAddComponent.prototype.formatTime = function (value) {
+        if (Number.isInteger(value)) {
+            return value.toString() + " h";
+        }
+        else
+            return (value - 30).toString() + " h30";
+    };
+    SessionAddComponent.prototype.ngOnInit = function () { };
+    SessionAddComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: "app-session-add",
+            template: __webpack_require__("../../../../../src/app/components/sessions/add/session-add.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/sessions/add/session-add.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_2__services_sessions_session_service__["a" /* SessionService */],
+            __WEBPACK_IMPORTED_MODULE_3_ngx_toastr__["b" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_6__pipes_my_number_pipe__["a" /* MyNumberPipe */]])
+    ], SessionAddComponent);
+    return SessionAddComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/sessions/list/session-list.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -550,7 +767,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sessions/list/session-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessionListData\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách lớp học<button routerLink=\"/add\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessionListData | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessionListData | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Năm học</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\n\t\t\t\t<!-- <th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th> -->\n\t\t\t\t<!-- <th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th> -->\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let session of sessionListData | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.class_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.session_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.year}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', i]\">{{session.nStudents}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" mat-raised-button color=\"primary\">Sửa</button></td> -->\n\t\t\t\t<!-- <td><button (click)=\"deleteStudent(i);\" mat-raised-button color=\"warn\" >Xóa</button></td> -->\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessions\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách lớp học<button routerLink=\"/addSession\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessions | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessions | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Bắt đầu</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Kết thúc</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Học phí </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let session of sessions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.class_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_time}} - {{session.start_time+2}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.end_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.fee | myNumber}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.nStudents}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateSession', session._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteSession(session._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -585,8 +802,25 @@ var SessionListComponent = /** @class */ (function () {
         this.getSessionList();
     };
     SessionListComponent.prototype.getSessionList = function () {
-        this.sessionList = this.sessionService.getAllSessions();
-        this.sessionListData = this.sessionList.data;
+        var _this = this;
+        this.sessionService.getAllSessions().subscribe(function (items) {
+            // console.log(items);
+            _this.sessions = items;
+            sessionStorage.setItem("sessions", JSON.stringify(_this.sessions));
+        });
+    };
+    SessionListComponent.prototype.deleteSession = function (id) {
+        var _this = this;
+        var r = confirm("Thầy/cô có muốn xóa lớp học này?");
+        console.log("Delete sessionID " + id);
+        if (r) {
+            this.sessionService.doDeleteSession(id).subscribe(function (_) {
+                _this.toastService.success("Thành công", "Xóa lớp học thành công");
+                _this.getSessionList();
+            }, function (err) {
+                _this.toastService.error("Thất bại", "Không xóa được lớp học");
+            });
+        }
     };
     SessionListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
@@ -701,18 +935,6 @@ var StudentAddComponent = /** @class */ (function () {
         else {
             this.index = null;
         }
-        // const studentRegister = this.studentService.doRegisterStudent(
-        //   this.studentAddForm.value,
-        //   this.index
-        // );
-        // if (studentRegister) {
-        //   if (studentRegister.code === 200) {
-        //     this.toastr.success(studentRegister.message, "Success");
-        //     this.router.navigate(["/students"]);
-        //   } else {
-        //     this.toastr.error(studentRegister.message, "Failed");
-        //   }
-        // }
         var total_money = this.studentAddForm.value.total_money;
         if (total_money !== "0") {
             this.studentAddForm.value.total_money = total_money.replace(".", "");
@@ -846,7 +1068,7 @@ var StudentAddComponent = /** @class */ (function () {
             ],
             phone: [
                 data === null ? "" : data.phone,
-                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern("(\\+)?[0-9]*"), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(15)]
+                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern("(\\+)?[0-9]*"), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(13)]
             ],
             total_money: [
                 data === null ? 0 : this.myNumberPipe.transform(data.total_money),
@@ -906,7 +1128,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/details/student-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Thông tin chi tiết \n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \n\t\t\t<button routerLink=\"/\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\n\t</div>\n\t<div class=\" w3-card custom-card\"><br>\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\n\t\t<hr>\n\t\t<table class=\"w3-table w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-money\"></i> Tổng tiền </td>\n\t\t\t\t<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Thông tin chi tiết \n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \n\t\t\t<button routerLink=\"/students\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\n\t</div>\n\t<div class=\" w3-card custom-card\"><br>\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\n\t\t<hr>\n\t\t<table class=\"w3-table w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-money\"></i> Tổng tiền </td>\n\t\t\t\t<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1443,6 +1665,9 @@ function slideToLeft() {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SessionService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__("../../../../rxjs/_esm5/observable/of.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1453,21 +1678,64 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+var httpOptions = {
+    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ "Content-Type": "application/json" })
+};
 var SessionService = /** @class */ (function () {
-    function SessionService() {
+    function SessionService(http) {
+        this.http = http;
     }
     SessionService.prototype.getAllSessions = function () {
-        var sessionList;
-        sessionList = {
-            code: 200,
-            message: "Session list fetched successfully",
-            data: JSON.parse(localStorage.getItem("sessions"))
+        return this.http.get("api/sessions");
+    };
+    SessionService.prototype.getSessionById = function (id) {
+        var sessions = JSON.parse(sessionStorage.getItem("sessions"));
+        for (var i = 0; i < sessions.length; i++) {
+            var session = sessions[i];
+            console.log(session);
+            if (session._id === id) {
+                console.log("Found session");
+                return session;
+            }
+        }
+        return null;
+    };
+    SessionService.prototype.getStudentsBySession = function (sessionId) {
+        return this.http.get("api/sessions/students/" + sessionId);
+    };
+    SessionService.prototype.doAddSession = function (session) {
+        return this.http.post("/api/sessions/", session).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
+            console.log("Add new session");
+        }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("addSession")));
+    };
+    SessionService.prototype.doUpdateSession = function (session) {
+        return this.http.put("/api/sessions/", session).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
+            console.log("Update session " + session._id);
+        }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("updateSession")));
+    };
+    SessionService.prototype.doDeleteSession = function (sessionId) {
+        return this.http.delete("/api/sessions/" + sessionId).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
+            console.log("Delete session " + sessionId);
+        }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("deleteSession")));
+    };
+    SessionService.prototype.handleError = function (operation, result) {
+        if (operation === void 0) { operation = "operation"; }
+        return function (error) {
+            // TODO: send the error to remote logging infrastructure
+            // console.log("Lỗi rồi");
+            console.error(error); // log to console instead
+            // TODO: better job of transforming error for user consumption
+            console.log(operation + " failed: " + error.message);
+            // Let the app keep running by returning an empty result.
+            return Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__["a" /* of */])(result);
         };
-        return sessionList;
     };
     SessionService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], SessionService);
     return SessionService;
 }());
@@ -1524,6 +1792,11 @@ var StudentService = /** @class */ (function () {
             console.log("Add new student");
         }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("addStudent")));
     };
+    StudentService.prototype.deleteStudent = function (index) {
+        return this.http.delete("/api/students/delete/" + index, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
+            console.log("Delete student id = " + index);
+        }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("deleteStudent")));
+    };
     StudentService.prototype.handleError = function (operation, result) {
         if (operation === void 0) { operation = "operation"; }
         return function (error) {
@@ -1536,17 +1809,8 @@ var StudentService = /** @class */ (function () {
             return Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__["a" /* of */])(result);
         };
     };
-    StudentService.prototype.deleteStudent = function (index) {
-        return this.http.delete("/api/students/delete/" + index, httpOptions).pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) {
-            console.log("Delete student id = " + index);
-        }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError("deleteStudent")));
-    };
     StudentService.prototype.getStudentDetails = function (index) {
         return this.http.get("/api/students/" + index);
-    };
-    StudentService.prototype.generateRandomID = function () {
-        var x = Math.floor(Math.random() * Math.random() * 9999);
-        return x;
     };
     StudentService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),

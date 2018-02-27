@@ -10,10 +10,11 @@ import { ToastrService } from "ngx-toastr";
 import { StudentListComponent } from "../student/list/student-list.component";
 import { StudentDetailsComponent } from "../student/details/student-details.component";
 import { StudentAddComponent } from "../student/add/student-add.component";
+import { SessionAddComponent } from "../sessions/add/session-add.component";
+import { SessionListComponent } from "../sessions/list/session-list.component";
 
 // Services
 import { routerTransition } from "../../services/config/config.service";
-import { SessionListComponent } from "../sessions/list/session-list.component";
 
 @Component({
   selector: "app-home",
@@ -62,7 +63,7 @@ export const homeChildRoutes: Routes = [
   },
   {
     path: "addSession",
-    component: StudentAddComponent
+    component: SessionAddComponent
   },
   {
     path: "updateStudent/:id",
@@ -70,7 +71,7 @@ export const homeChildRoutes: Routes = [
   },
   {
     path: "updateSession/:id",
-    component: StudentAddComponent
+    component: SessionAddComponent
   },
   {
     path: "detail/:id",

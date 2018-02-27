@@ -11,8 +11,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "dist")));
 
-var students = require("./server/students/students");
+var students = require("./server/students/studentRoutes");
+var sessions = require("./server/sessions/sessionRoutes");
 app.use("/api/students", students);
+app.use("/api/sessions", sessions);
 app.get("/detail/:id", (req,res,next)=>{
   console.log(req.params.id);
 });

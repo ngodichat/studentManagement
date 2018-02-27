@@ -28,13 +28,13 @@ MongoClient.connect(
   }
 );
 
-/* GET users listing. */
-const dataLink = "src/assets/data.json";
-fs.readFile(dataLink, "utf8", (err, data) => {
-  if (err) throw err;
-  students = JSON.parse(data);
-  // console.log(students["studentsList"]);
-});
+// /* GET users listing. */
+// const dataLink = "src/assets/data.json";
+// fs.readFile(dataLink, "utf8", (err, data) => {
+//   if (err) throw err;
+//   students = JSON.parse(data);
+//   // console.log(students["studentsList"]);
+// });
 
 router.get("/:id", (req, res, next) => {
   console.log("Received student detail request");

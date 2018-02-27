@@ -5,6 +5,7 @@ import {
 import { SessionService } from "./../../../services/sessions/session.service";
 import { Component, OnInit } from "@angular/core";
 import { ToastrService } from "ngx-toastr";
+import { Session } from "../sessions";
 
 @Component({
   selector: "app-session-list",
@@ -15,7 +16,7 @@ import { ToastrService } from "ngx-toastr";
 })
 export class SessionListComponent implements OnInit {
   sessionList: any;
-  sessionListData: any;
+  sessions: Session[];
 
   constructor(
     private sessionService: SessionService,
@@ -27,7 +28,26 @@ export class SessionListComponent implements OnInit {
   }
 
   getSessionList() {
-    this.sessionList = this.sessionService.getAllSessions();
-    this.sessionListData = this.sessionList.data;
+    this.sessionService.getAllSessions().subscribe(items => {
+      // console.log(items);
+      this.sessions = items;
+      sessionStorage.setItem("sessions", JSON.stringify(this.sessions));
+    });
+  }
+
+  deleteSession(id: string) {
+    const r = confirm("Thầy/cô có muốn xóa lớp học này?");
+    console.log("Delete sessionID " + id);
+    if (r) {
+      this.sessionService.doDeleteSession(id).subscribe(
+        _ => {
+          this.toastService.success("Thành công", "Xóa lớp học thành công");
+          this.getSessionList();
+        },
+        err => {
+          this.toastService.error("Thất bại", "Không xóa được lớp học");
+        }
+      );
+    }
   }
 }

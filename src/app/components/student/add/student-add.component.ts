@@ -61,18 +61,6 @@ export class StudentAddComponent implements OnInit {
     } else {
       this.index = null;
     }
-    // const studentRegister = this.studentService.doRegisterStudent(
-    //   this.studentAddForm.value,
-    //   this.index
-    // );
-    // if (studentRegister) {
-    //   if (studentRegister.code === 200) {
-    //     this.toastr.success(studentRegister.message, "Success");
-    //     this.router.navigate(["/students"]);
-    //   } else {
-    //     this.toastr.error(studentRegister.message, "Failed");
-    //   }
-    // }
     const total_money: string = this.studentAddForm.value.total_money;
     if (total_money !== "0") {
       this.studentAddForm.value.total_money = total_money.replace(".", "");

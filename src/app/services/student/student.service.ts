@@ -41,6 +41,15 @@ export class StudentService {
       catchError(this.handleError<any>("addStudent"))
     );
   }
+  
+  deleteStudent(index: any): Observable<any> {
+    return this.http.delete(`/api/students/delete/${index}`, httpOptions).pipe(
+      tap(_ => {
+        console.log(`Delete student id = ${index}`);
+      }),
+      catchError(this.handleError<Student>("deleteStudent"))
+    );
+  }
 
   private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
@@ -56,22 +65,8 @@ export class StudentService {
     };
   }
 
-  deleteStudent(index: any): Observable<any> {
-    return this.http.delete(`/api/students/delete/${index}`, httpOptions).pipe(
-      tap(_ => {
-        console.log(`Delete student id = ${index}`);
-      }),
-      catchError(this.handleError<Student>("deleteStudent"))
-    );
-  }
-
   getStudentDetails(index: any): Observable<Student[]> {
     return this.http.get<Student[]>(`/api/students/${index}`);
-  }
-
-  generateRandomID() {
-    const x = Math.floor(Math.random() * Math.random() * 9999);
-    return x;
   }
 }
 /**
