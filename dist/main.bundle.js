@@ -633,12 +633,14 @@ var SessionAddComponent = /** @class */ (function () {
                     ? ""
                     : this.datePipe.transform(data.end_date, "yyyy-MM-dd")
             ],
-            start_time: [data === null ? 18 : this.formatTime(data.start_time)],
+            start_time: [data === null ? 18 : this.formatTime(data.start_time),
+                [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern("\\d{1,2}(h){0,1}\\d{0,2}")]
+            ],
             fee: [
                 data === null ? "100.000" : this.myNumberPipe.transform(data.fee),
                 [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern("[0-9.]+")]
             ],
-            nStudents: [0],
+            nStudents: [{ value: 0, disabled: true }],
             students: [data === null ? [] : this.studentList]
         });
     };
@@ -703,6 +705,11 @@ var SessionAddComponent = /** @class */ (function () {
         else {
             this.sessionAddForm.value.fee = 0;
         }
+        var time = this.sessionAddForm.value.start_time;
+        var pos_of_h = time.indexOf("h");
+        if (pos_of_h !== -1) {
+            console.log(+time.substr(0, pos_of_h) + (+time.substr(pos_of_h - 1) / 60));
+        }
         if (!this.id) {
             this.sessionService
                 .doAddSession(this.sessionAddForm.value)
@@ -722,8 +729,10 @@ var SessionAddComponent = /** @class */ (function () {
         if (Number.isInteger(value)) {
             return value.toString() + " h";
         }
-        else
-            return (value - 30).toString() + " h30";
+        else {
+            var valStr = Math.floor(value).toString();
+            return valStr + "h30";
+        }
     };
     SessionAddComponent.prototype.ngOnInit = function () { };
     SessionAddComponent = __decorate([
@@ -767,7 +776,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sessions/list/session-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessions\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách lớp học<button routerLink=\"/addSession\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessions | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessions | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Bắt đầu</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Kết thúc</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Học phí </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let session of sessions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.class_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_time}} - {{session.start_time+2}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.end_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.fee | myNumber}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.nStudents}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateSession', session._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteSession(session._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessions\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách lớp học<button routerLink=\"/addSession\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessions | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessions | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Bắt đầu</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Kết thúc</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Học phí </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let session of sessions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.class_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_time}}h </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.end_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.fee | myNumber}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.nStudents}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateSession', session._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteSession(session._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 

@@ -27,7 +27,7 @@
 			<tr class ="custom-hover-blue" *ngFor="let session of sessions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;">
 				<td>{{i +1}}</td>
 				<td class="pointer" [routerLink]="['detail', session._id]">{{session.class_name}} </td>
-				<td class="pointer" [routerLink]="['detail', session._id]">{{session.start_time}} - {{session.start_time+2}}</td>
+				<td class="pointer" [routerLink]="['detail', session._id]">{{session.start_time}}h </td>
 				<td class="pointer" [routerLink]="['detail', session._id]">{{session.start_date}}</td>
 				<td class="pointer" [routerLink]="['detail', session._id]">{{session.end_date}}</td>
 				<td class="pointer" [routerLink]="['detail', session._id]">{{session.fee | myNumber}}</td>

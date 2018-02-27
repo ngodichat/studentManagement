@@ -64,12 +64,14 @@ export class SessionAddComponent implements OnInit {
           ? ""
           : this.datePipe.transform(data.end_date, "yyyy-MM-dd")
       ],
-      start_time: [data === null ? 18 : this.formatTime(data.start_time)],
+      start_time: [data === null ? 18 : this.formatTime(data.start_time),
+      [Validators.pattern("\\d{1,2}(h){0,1}\\d{0,2}")]
+    ],
       fee: [
         data === null ? "100.000" : this.myNumberPipe.transform(data.fee),
         [Validators.pattern("[0-9.]+")]
       ],
-      nStudents: [0],
+      nStudents: [{value: 0, disabled:  true}],
       students: [data === null ? [] : this.studentList]
     });
   }
@@ -115,6 +117,13 @@ export class SessionAddComponent implements OnInit {
     } else {
       this.sessionAddForm.value.fee = 0;
     }
+    
+    // let time: string = this.sessionAddForm.value.start_time;
+    // const pos_of_h = time.indexOf("h");
+    // if(pos_of_h !== -1){
+    //   console.log(+time.substr(0,pos_of_h)+(+time.substr(pos_of_h-1)/60));
+    // }
+    
     if (!this.id) {
       this.sessionService
         .doAddSession(this.sessionAddForm.value)
@@ -133,7 +142,11 @@ export class SessionAddComponent implements OnInit {
   formatTime(value: number) {
     if (Number.isInteger(value)) {
       return value.toString() + " h";
-    } else return (value - 30).toString() + " h30";
+    } else{
+      let valStr = Math.floor(value).toString();
+      return valStr + "h30";
+
+    } 
   }
 
   ngOnInit() {}
