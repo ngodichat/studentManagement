@@ -11,4 +11,5 @@ export class Student {
     start_date: Date;
     total_money: number;
     note: string;
+    filter_data: string;
 }

@@ -9,7 +9,7 @@ import { Directive, ElementRef,HostListener } from '@angular/core';
 })
 export class HighlightStudentDirective {
 
-	constructor(private el: ElementRef) {
+	constructor(private el?: ElementRef) {
 	}
 
 	@HostListener('mouseenter') onMouseEnter() {

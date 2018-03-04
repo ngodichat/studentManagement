@@ -6,8 +6,10 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class FilterPipe implements PipeTransform {
   transform(value: any, args?: any): any {
     if (args !== undefined && args != null && args !== "") {
+      // console.log("FILTERING DATA");
+      // console.log(value[0].filter_data);
       return value.filter(
-        data => (data.first_name + " " + data.sur_middle_name + " " + data.class).toLocaleLowerCase().indexOf(args.toLowerCase()) > -1
+        data => (data.filter_data).toLocaleLowerCase().indexOf(args.toLowerCase()) > -1
       );
     }
     return value;

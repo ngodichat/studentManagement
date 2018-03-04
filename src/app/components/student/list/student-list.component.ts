@@ -39,7 +39,8 @@ export class StudentListComponent implements OnInit {
         // this.toastr.success("Thành công", "Tải danh sách học sinh thành công");
         // console.log(students);
         this.students = students;
-        // this.success();
+        this.success();
+        sessionStorage.setItem("students",JSON.stringify(students));
       },
       err => {
         console.log(err);
@@ -52,7 +53,7 @@ export class StudentListComponent implements OnInit {
   success() {
     // this.students = abc.data;
     for (let i = 0; i < this.students.length; i++) {
-      this.students[i].full_name =
+      this.students[i].filter_data =
         this.students[i].sur_middle_name + " " + this.students[i].first_name;
     }
   }

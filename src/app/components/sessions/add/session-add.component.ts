@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { SessionService } from "../../../services/sessions/session.service";
 import { ToastrService } from "ngx-toastr";
@@ -16,7 +16,10 @@ import { MyNumberPipe } from "../../../pipes/my-number.pipe";
 export class SessionAddComponent implements OnInit {
   sessionAddForm: FormGroup;
   id: string;
+  showSearch: boolean;
   // studentList: Student[];
+  students: Student[];
+  optionStudentId: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,8 +27,11 @@ export class SessionAddComponent implements OnInit {
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private datePipe: DatePipe,
-    private myNumberPipe: MyNumberPipe
+    private myNumberPipe: MyNumberPipe,
+    private cdRef: ChangeDetectorRef
   ) {
+    this.showSearch = false;
+    this.students = JSON.parse(sessionStorage.getItem("students"));
     //check for route Params
     this.route.params.subscribe(params => {
       this.id = params["id"];
@@ -39,6 +45,30 @@ export class SessionAddComponent implements OnInit {
     });
   }
 
+  showHideSearchBox() {
+    this.showSearch = !this.showSearch;
+    this.cdRef.detectChanges();
+  }
+
+  onSelectStudent(id: string) {
+    console.log("OLD: ");
+    console.log(this.sessionAddForm.value.students);
+    let student: Student;
+    for (let i = 0; i < this.students.length; i++) {
+      const s = this.students[i];
+      if (s._id === id) {
+        student = s;
+        console.log("FOUND: ");
+        console.log(student);
+        if (this.sessionAddForm.value.students.indexOf(student) === -1) {
+          this.sessionAddForm.value.students.push(student);
+          this.cdRef.detectChanges();
+          console.log(this.sessionAddForm.value.students);
+        }
+        return;
+      }
+    }
+  }
   getSessionDetail(id: string) {
     var session: Session = this.sessionService.getSessionById(id);
     // console.log(session._id);
@@ -73,8 +103,23 @@ export class SessionAddComponent implements OnInit {
         [Validators.pattern("[0-9.]+")]
       ],
       nStudents: [{ value: 0, disabled: true }],
-      students: [[]]
+      students: [[]],
+      filter_data: [""]
     });
+    this.sessionAddForm.controls["filter_data"].valueChanges.subscribe(
+      value => {
+        // console.log("Filter Data: ");
+        // console.log(value);
+      }
+    );
+
+    this.sessionAddForm.controls["students"].valueChanges.subscribe(
+      value =>{
+        console.log("Students value changed");
+        console.log(value);
+        this.sessionAddForm.controls["nStudents"] = value.length;
+      }
+    )
   }
 
   onRemoveStudent(student: Student) {
@@ -88,9 +133,9 @@ export class SessionAddComponent implements OnInit {
   getStudentsBySession(sessionId: string) {
     this.sessionService.getStudentsBySession(sessionId).subscribe(students => {
       // this.studentList = students;
-      this.sessionAddForm.value.nStudents = students.length;
+      // this.sessionAddForm.value.nStudents = students.length;
       this.sessionAddForm.value.students = students;
-      console.log(this.sessionAddForm.value);
+      // console.log(this.sessionAddForm.value);
     });
     // console.log(studentList);
     // return studentList;
@@ -120,6 +165,10 @@ export class SessionAddComponent implements OnInit {
     return this.sessionAddForm.get("nStudents");
   }
 
+  get filterData() {
+    return this.sessionAddForm.get("filter_data");
+  }
+
   doSubmit() {
     const fee: string = this.sessionAddForm.value.fee.toString();
     if (fee !== "0") {
@@ -135,6 +184,8 @@ export class SessionAddComponent implements OnInit {
       studentIds.push(student._id);
     }
     this.sessionAddForm.value.students = studentIds;
+
+    delete this.sessionAddForm.value.filterData;
     // let time: string = this.sessionAddForm.value.start_time;
     // const pos_of_h = time.indexOf("h");
     // if(pos_of_h !== -1){
