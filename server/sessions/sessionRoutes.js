@@ -45,18 +45,21 @@ router.get("/students/:id", (req, res) => {
   console.log(`Get all students of session: ${id} request`);
   sessionCollection.find({ _id: objID }).toArray((err, items) => {
     if (!err) {
-      // console.log(items);
-      var result = [];
       for (let i = 0; i < items.length; i++) {
         const studentIDs = items[i].students;
-        var ids = new Array();
-        for (let j = 0; j < studentIDs.length; j++) {
-          const studentID = new mongo.ObjectId(studentIDs[j]);
-          ids.push(studentID);
+        if(studentIDs){
+          var ids = new Array();
+          for (let j = 0; j < studentIDs.length; j++) {
+            const studentID = new mongo.ObjectId(studentIDs[j]);
+            ids.push(studentID);
+          }
+          studentCollection.find({ _id: { $in: ids} }).toArray((err, data) => {
+            res.send(data);
+          });
         }
-        studentCollection.find({ _id: { $in: ids} }).toArray((err, data) => {
-          res.send(data);
-        });
+        else {
+          res.send(new Array());
+        }
       }
     }
   });

@@ -7,6 +7,6 @@ export class Session{
     end_date: Date;
     start_time: number;
     fee: number;
-    nStudents: number;
     students: string[];
+    filter_data: string;
 }

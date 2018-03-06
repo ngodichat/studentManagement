@@ -202,7 +202,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\r\n\r\n\r\n/*Created By : Pham Nguyen Binh*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\n\n\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -215,7 +215,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\r\n\r\n<!-- Side Bar -->\r\n<nav class=\"w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2\" style=\"z-index:3;width:250px;\" id=\"mySidebar\">\r\n\t<!-- Logo -->\r\n\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\r\n\t<!-- Sidebar Links -->\r\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/students')}\" routerLink=\"/students\"> <i class=\"w3-medium fa fa-user\"></i>  Danh sách học sinh</a>\r\n\t<!-- <a class=\"w3-bar-item w3-button\" routerLink=\"/addStudent\"  [ngClass]=\"{'w3-teal': (active == '/add')}\"> <i class=\"w3-medium fa fa-plus\"></i>  Thêm học sinh</a> -->\r\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/sessions')}\" routerLink=\"/sessions\"> <i class=\"w3-medium fa fa-university\"></i>  Danh sách lớp học</a>\r\n\t<a class=\"w3-bar-item w3-button\" (click)=\"logOut()\"><i class=\"w3-medium fa fa-sign-out\"></i>  Đăng xuất</a>\r\n</nav>\r\n\r\n<!-- Load main contents -->\r\n<div class=\"w3-main\" style=\"margin-left:250px;\">\r\n\t<div class=\"w3-container\">\r\n\t<!-- Initiate Child Routing -->\r\n\t\t<router-outlet></router-outlet>\r\n\t</div>\r\n</div>\r\n\r\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<!-- Side Bar -->\n<nav class=\"w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2\" style=\"z-index:3;width:250px;\" id=\"mySidebar\">\n\t<!-- Logo -->\n\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\n\t<!-- Sidebar Links -->\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/students')}\" routerLink=\"/students\"> <i class=\"w3-medium fa fa-user\"></i>  Danh sách học sinh</a>\n\t<!-- <a class=\"w3-bar-item w3-button\" routerLink=\"/addStudent\"  [ngClass]=\"{'w3-teal': (active == '/add')}\"> <i class=\"w3-medium fa fa-plus\"></i>  Thêm học sinh</a> -->\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/sessions')}\" routerLink=\"/sessions\"> <i class=\"w3-medium fa fa-university\"></i>  Danh sách lớp học</a>\n\t<a class=\"w3-bar-item w3-button\" (click)=\"logOut()\"><i class=\"w3-medium fa fa-sign-out\"></i>  Đăng xuất</a>\n</nav>\n\n<!-- Load main contents -->\n<div class=\"w3-main\" style=\"margin-left:250px;\">\n\t<div class=\"w3-container\">\n\t<!-- Initiate Child Routing -->\n\t\t<router-outlet></router-outlet>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -337,7 +337,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\r\n/*Created By : Pham Nguyen Binh*/\r\n\r\n\r\n/*Created By : Pham Nguyen Binh*/", ""]);
+exports.push([module.i, "\n/*Created By : Pham Nguyen Binh*/\n\n\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -350,7 +350,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/index/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\r\n<!-- App component - Load Parent routes defined in app.module.ts -->\r\n<router-outlet></router-outlet>\r\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<!-- App component - Load Parent routes defined in app.module.ts -->\n<router-outlet></router-outlet>\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -431,7 +431,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\r\n\r\n.align-center{\r\n\twidth: 40%;\r\n\tmargin: auto;\r\n}\r\n\r\n.login-card{\r\n\tmargin-top: 5%;\r\n\tborder-radius: 15px;\r\n}\r\n\r\n/*Created By : Pham Nguyen Binh*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\n\n.align-center{\n\twidth: 40%;\n\tmargin: auto;\n}\n\n.login-card{\n\tmargin-top: 5%;\n\tborder-radius: 15px;\n}\n\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -444,7 +444,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\r\n\r\n<div class=\"w3-container align-center w3-card login-card\">\r\n\t<form [formGroup]=\"loginForm\" (ngSubmit)=\"doLogin()\">\r\n\t\t<div class=\"text-center\">\r\n\t\t\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\r\n\t\t</div>\r\n\r\n\t\t<label class=\"w3-text-blue\"><b>Email</b></label>\r\n\t\t<input class=\"w3-input w3-border\" type=\"email\" formControlName=\"email\" placeholder=\"Địa chỉ email\">\r\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.email.invalid && (loginForm.controls.email.dirty)\">Địa chỉ email không hợp lệ</div> \r\n\r\n\t\t<label class=\"w3-text-blue\"><b>Mật khẩu</b></label>\r\n\t\t<input class=\"w3-input w3-border\" type=\"password\" formControlName=\"password\" placeholder=\"Mật khẩu\">\r\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.password.invalid && (loginForm.controls.password.dirty)\">Mật khẩu phải dài tối thiểu 6 ký tự và có số</div> \r\n\t\t<br>\r\n\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!loginForm.valid\">Đăng nhập <i class=\"w3-medium fa fa-check\"></i> </button>\r\n\t</form>\r\n\t<div class=\"w3-panel w3-blue-gray\">\r\n\t\t<h4>Ghi chú : </h4>\r\n\t\t<p>Tài khoản : admin@gmail.com &amp; admin123</p>\r\n\t\t<!-- <p>All data will be restored when refreshed</p> -->\r\n\t</div> \r\n</div>\r\n\r\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container align-center w3-card login-card\">\n\t<form [formGroup]=\"loginForm\" (ngSubmit)=\"doLogin()\">\n\t\t<div class=\"text-center\">\n\t\t\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\n\t\t</div>\n\n\t\t<label class=\"w3-text-blue\"><b>Email</b></label>\n\t\t<input class=\"w3-input w3-border\" type=\"email\" formControlName=\"email\" placeholder=\"Địa chỉ email\">\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.email.invalid && (loginForm.controls.email.dirty)\">Địa chỉ email không hợp lệ</div> \n\n\t\t<label class=\"w3-text-blue\"><b>Mật khẩu</b></label>\n\t\t<input class=\"w3-input w3-border\" type=\"password\" formControlName=\"password\" placeholder=\"Mật khẩu\">\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.password.invalid && (loginForm.controls.password.dirty)\">Mật khẩu phải dài tối thiểu 6 ký tự và có số</div> \n\t\t<br>\n\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!loginForm.valid\">Đăng nhập <i class=\"w3-medium fa fa-check\"></i> </button>\n\t</form>\n\t<div class=\"w3-panel w3-blue-gray\">\n\t\t<h4>Ghi chú : </h4>\n\t\t<p>Tài khoản : admin@gmail.com &amp; admin123</p>\n\t\t<!-- <p>All data will be restored when refreshed</p> -->\n\t</div> \n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -555,7 +555,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sessions/add/session-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"sessionAddForm\">\r\n\t<form class=\"w3-container\" [formGroup]=\"sessionAddForm\" (ngSubmit)=\"doSubmit()\">\r\n\t\t<div class=\"w3-panel w3-round-small custom-blue\">\r\n\t\t\t<h3>\r\n\t\t\t\t<span *ngIf=\"id == undefined\">Tạo lớp mới</span>\r\n\t\t\t\t<span *ngIf=\"id != undefined\">Cập nhật thông tin lớp học</span>\r\n\t\t\t\t<a routerLink=\"/sessions\" class=\"w3-button w3-green custom-button\">\r\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\r\n\t\t\t</h3>\r\n\t\t</div>\r\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\r\n\t\t\t<!-- Class name field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"className\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\r\n\t\t\t\t<b>Tên lớp học</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class_name\" id=\"className\">\r\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"className.invalid && (className.dirty || className.touched)\">Tên lớp học không được để trống </div>\r\n\r\n\t\t\t<!-- Start date field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\r\n\t\t\t\t<b>Ngày bắt đầu</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\r\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"startDate.invalid && (startDate.dirty || startDate.touched)\">Ngày bắt đầu không được để trống </div>\r\n\r\n\t\t\t<!-- End date field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"endDate\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\r\n\t\t\t\t<b>Ngày kết thúc</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"end_date\" id=\"endDate\">\r\n\r\n\t\t\t<!-- Start time field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"startTime\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\r\n\t\t\t\t<b>Bắt đầu lúc: </b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"start_time\" id=\"startTime\">\r\n\r\n\t\t\t<!-- Fee field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"fee\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\r\n\t\t\t\t<b>Học phí một buổi: </b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"fee\" id=\"fee\">\r\n\r\n\t\t\t<!-- number of students field -->\r\n\t\t\t<label class=\"w3-text-blue\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-info\"></i>\r\n\t\t\t\t<b>Số lượng học sinh: </b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"number\" formControlName=\"nStudents\" id=\"nStudents\" [value]=\"sessionAddForm.value.nStudents\">\r\n\r\n\t\t\t<!-- Add students field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"fee\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\r\n\t\t\t\t<b>Danh sách học sinh: </b>\r\n\t\t\t\t<a class=\"w3-button w3-green custom-button\" (click)=\"showHideSearchBox();\">\r\n\t\t\t\t\t<i class=\"w3-small  fa fa-plus\"></i> Thêm học sinh</a>\r\n\t\t\t\t<i class=\"w3-medium fa fa-search\"></i>\r\n\t\t\t\t<div *ngIf=\"showSearch\">\r\n\t\t\t\t\t<input *ngIf=\"showSearch\" class=\"w3-input w3-border\" type=\"text\" visible=\"false\" id=\"searchBox\" formControlName=\"filter_data\"\r\n\t\t\t\t\t />\r\n\t\t\t\t\t<select (change)=\"onSelectStudent($event.target.value)\">\r\n\t\t\t\t\t\t<option *ngFor=\"let st of students | filter:sessionAddForm.get('filter_data').value; index as i\" [value]=\"st._id\">{{st.sur_middle_name}} {{st.first_name}}</option>\r\n\t\t\t\t\t</select>\r\n\t\t\t\t</div>\r\n\t\t\t</label>\r\n\t\t\t<table class=\"w3-table w3-striped w3-bordered\">\r\n\t\t\t\t<tr class=\"custom-hover-blue\" *ngFor=\"let student of sessionAddForm.value.students | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\r\n\t\t\t\t\t<td>{{i+1}}</td>\r\n\t\t\t\t\t<td>{{student.first_name}}</td>\r\n\t\t\t\t\t<td>\r\n\t\t\t\t\t\t<button class=\"w3-red fa fa-times\" (click)=\"onRemoveStudent(student);\"></button>\r\n\t\t\t\t\t</td>\r\n\t\t\t\t</tr>\r\n\t\t\t</table>\r\n\t\t\t<br/>\r\n\r\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!sessionAddForm.valid\">\r\n\t\t\t\t<span *ngIf=\"id == undefined\">Tạo mới</span>\r\n\t\t\t\t<span *ngIf=\"id != undefined\">Cập nhật</span>\r\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\r\n\t\t\t</button>\r\n\t\t</div>\r\n\r\n\t</form>\r\n</div>\r\n\r\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessionAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"sessionAddForm\" (ngSubmit)=\"doSubmit()\">\n\t\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"id == undefined\">Tạo lớp mới</span>\n\t\t\t\t<span *ngIf=\"id != undefined\">Cập nhật thông tin lớp học</span>\n\t\t\t\t<a routerLink=\"/sessions\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Class name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"className\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Tên lớp học</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class_name\" id=\"className\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"className.invalid && (className.dirty || className.touched)\">Tên lớp học không được để trống </div>\n\n\t\t\t<!-- Start date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày bắt đầu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"startDate.invalid && (startDate.dirty || startDate.touched)\">Ngày bắt đầu không được để trống </div>\n\n\t\t\t<!-- End date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"endDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày kết thúc</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"end_date\" id=\"endDate\">\n\n\t\t\t<!-- Start time field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startTime\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Bắt đầu lúc: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"start_time\" id=\"startTime\">\n\n\t\t\t<!-- Fee field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"fee\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\n\t\t\t\t<b>Học phí một buổi: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"fee\" id=\"fee\">\n\n\t\t\t<!-- number of students field -->\n\t\t\t<label class=\"w3-text-blue\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-info\"></i>\n\t\t\t\t<b>Số lượng học sinh: {{nStudents}}</b>\n\t\t\t</label>\n\t\t\t<!-- <input class=\"w3-input w3-border\" type=\"number\" formControlName=\"nStudents\" id=\"nStudents\" [value]=\"sessionAddForm.value.nStudents\"> -->\n\t\t\t<br>\n\n\t\t\t<!-- Add students field -->\n\t\t\t<label class=\"w3-text-blue\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Danh sách học sinh: </b>\n\t\t\t\t<!-- <a class=\"w3-button w3-green custom-button\" (click)=\"showHideSearchBox();\">\n\t\t\t\t\t<i class=\"w3-small  fa fa-plus\"></i> Thêm học sinh</a> -->\n\t\t\t\t<i class=\"w3-medium fa fa-search\"></i>\n\t\t\t\t<div *ngIf=\"showSearch\">\n\t\t\t\t\t<input class=\"w3-input w3-border\" type=\"text\" id=\"searchBox\" formControlName=\"filter_data\">\n\t\t\t\t\t<select (change)=\"onSelectStudent($event.target.value)\">\n\t\t\t\t\t\t<option [value]=\"\"></option>\n\t\t\t\t\t\t<option *ngFor=\"let student of students | filter:sessionAddForm.get('filter_data').value; index as i\" [value]=\"student._id\">{{student.sur_middle_name}} {{student.first_name}}</option>\n\t\t\t\t\t</select>\n\t\t\t\t</div>\n\t\t\t</label>\n\t\t\t<br/>\n\t\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t<i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\n\t\t\t\t</tr>\n\t\t\t\t<tr class=\"custom-hover-blue\" *ngFor=\"let student of sessionStudents | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t\t<td>{{i+1}}</td>\n\t\t\t\t\t<td>{{student.sur_middle_name}}</td>\n\t\t\t\t\t<td>{{student.first_name}}</td>\n\t\t\t\t\t<td>\n\t\t\t\t\t\t<button class=\"w3-red fa fa-times\" type=\"button\" (click)=\"onRemoveStudent(student);\"></button>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\n\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!sessionAddForm.valid\">\n\t\t\t\t<span *ngIf=\"id == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"id != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -588,7 +588,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var SessionAddComponent = /** @class */ (function () {
-    function SessionAddComponent(formBuilder, sessionService, toastr, route, datePipe, myNumberPipe, cdRef) {
+    function SessionAddComponent(formBuilder, sessionService, toastr, route, datePipe, myNumberPipe) {
         var _this = this;
         this.formBuilder = formBuilder;
         this.sessionService = sessionService;
@@ -596,8 +596,7 @@ var SessionAddComponent = /** @class */ (function () {
         this.route = route;
         this.datePipe = datePipe;
         this.myNumberPipe = myNumberPipe;
-        this.cdRef = cdRef;
-        this.showSearch = false;
+        this.showSearch = true;
         this.students = JSON.parse(sessionStorage.getItem("students"));
         //check for route Params
         this.route.params.subscribe(function (params) {
@@ -614,35 +613,37 @@ var SessionAddComponent = /** @class */ (function () {
     }
     SessionAddComponent.prototype.showHideSearchBox = function () {
         this.showSearch = !this.showSearch;
-        this.cdRef.detectChanges();
     };
     SessionAddComponent.prototype.onSelectStudent = function (id) {
-        console.log("OLD: ");
-        console.log(this.sessionAddForm.value.students);
+        if (id === "") {
+            return;
+        }
         var student;
         for (var i = 0; i < this.students.length; i++) {
             var s = this.students[i];
             if (s._id === id) {
                 student = s;
                 console.log("FOUND: ");
-                console.log(student);
-                if (this.sessionAddForm.value.students.indexOf(student) === -1) {
-                    this.sessionAddForm.value.students.push(student);
-                    this.cdRef.detectChanges();
-                    console.log(this.sessionAddForm.value.students);
+                console.log(this.sessionStudents.indexOf(student));
+                for (var i_1 = 0; i_1 < this.sessionStudents.length; i_1++) {
+                    var curStudentList = this.sessionStudents[i_1];
+                    if (curStudentList._id === student._id) {
+                        return;
+                    }
                 }
+                this.sessionStudents.push(student);
+                this.nStudents = this.sessionStudents.length;
+                // console.log(`Number of students after adding: ${this.sessionStudents.length} - ${this.nStudents}`);
                 return;
             }
         }
     };
     SessionAddComponent.prototype.getSessionDetail = function (id) {
         var session = this.sessionService.getSessionById(id);
-        // console.log(session._id);
         this.createForm(session);
         this.getStudentsBySession(id);
     };
     SessionAddComponent.prototype.createForm = function (data) {
-        var _this = this;
         this.sessionAddForm = this.formBuilder.group({
             _id: [data === null ? "-1" : data._id],
             class_name: [
@@ -668,33 +669,21 @@ var SessionAddComponent = /** @class */ (function () {
                 data === null ? "100.000" : this.myNumberPipe.transform(data.fee),
                 [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern("[0-9.]+")]
             ],
-            nStudents: [{ value: 0, disabled: true }],
-            students: [[]],
-            filter_data: [""]
-        });
-        this.sessionAddForm.controls["filter_data"].valueChanges.subscribe(function (value) {
-            // console.log("Filter Data: ");
-            // console.log(value);
-        });
-        this.sessionAddForm.controls["students"].valueChanges.subscribe(function (value) {
-            console.log("Students value changed");
-            console.log(value);
-            _this.sessionAddForm.controls["nStudents"] = value.length;
+            filter_data: ""
         });
     };
     SessionAddComponent.prototype.onRemoveStudent = function (student) {
-        var studentList = this.sessionAddForm.value.students;
-        var index = studentList.indexOf(student);
-        studentList.splice(index, 1);
-        this.sessionAddForm.value.students = studentList;
-        this.sessionAddForm.value.nStudents = studentList.length;
+        var index = this.sessionStudents.indexOf(student);
+        this.sessionStudents.splice(index, 1);
+        this.nStudents = this.sessionStudents.length;
+        // this.cdRef.detectChanges();
     };
     SessionAddComponent.prototype.getStudentsBySession = function (sessionId) {
         var _this = this;
         this.sessionService.getStudentsBySession(sessionId).subscribe(function (students) {
             // this.studentList = students;
-            // this.sessionAddForm.value.nStudents = students.length;
-            _this.sessionAddForm.value.students = students;
+            _this.nStudents = students.length;
+            _this.sessionStudents = students;
             // console.log(this.sessionAddForm.value);
         });
         // console.log(studentList);
@@ -735,13 +724,6 @@ var SessionAddComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SessionAddComponent.prototype, "nStudents", {
-        get: function () {
-            return this.sessionAddForm.get("nStudents");
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(SessionAddComponent.prototype, "filterData", {
         get: function () {
             return this.sessionAddForm.get("filter_data");
@@ -759,9 +741,9 @@ var SessionAddComponent = /** @class */ (function () {
             this.sessionAddForm.value.fee = 0;
         }
         var studentIds = [];
-        var students_bk = this.sessionAddForm.value.students;
-        for (var i = 0; i < this.sessionAddForm.value.students.length; i++) {
-            var student = this.sessionAddForm.value.students[i];
+        // let students_bk = this.sessionAddForm.value.students;
+        for (var i = 0; i < this.sessionStudents.length; i++) {
+            var student = this.sessionStudents[i];
             studentIds.push(student._id);
         }
         this.sessionAddForm.value.students = studentIds;
@@ -785,7 +767,7 @@ var SessionAddComponent = /** @class */ (function () {
                 _this.toastr.success("Thành công", "Cập nhật lớp học thành công");
             });
         }
-        this.sessionAddForm.value.students = students_bk;
+        // this.sessionAddForm.value.students = students_bk;
     };
     SessionAddComponent.prototype.formatTime = function (value) {
         if (Number.isInteger(value)) {
@@ -808,8 +790,7 @@ var SessionAddComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3_ngx_toastr__["b" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_5__angular_common__["d" /* DatePipe */],
-            __WEBPACK_IMPORTED_MODULE_6__pipes_my_number_pipe__["a" /* MyNumberPipe */],
-            __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]])
+            __WEBPACK_IMPORTED_MODULE_6__pipes_my_number_pipe__["a" /* MyNumberPipe */]])
     ], SessionAddComponent);
     return SessionAddComponent;
 }());
@@ -839,7 +820,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sessions/list/session-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"sessions\">\r\n\t<div class=\"w3-panel w3-round-small custom-blue\">\r\n\t\t<h3>Danh sách lớp học<button routerLink=\"/addSession\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\r\n\t</div>\r\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\r\n\r\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessions | filter:filterData).length == 0\">\r\n\t\t<!-- <h3>Oh no</h3> -->\r\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\r\n\t</div>\r\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessions | filter:filterData | filter:filterData).length != 0\">\r\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\r\n\t\t\t<tr>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\r\n\t\t\t\t<!-- <th>ID</th> -->\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Bắt đầu</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Kết thúc</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Học phí </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let session of sessions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\r\n\t\t\t\t<td>{{i +1}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.class_name}} </td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_time}}h </td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_date}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.end_date}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.fee | myNumber}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.nStudents}}</td>\r\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\r\n\t\t\t\t<td><button [routerLink]=\"['/updateSession', session._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\r\n\t\t\t\t<td><button (click)=\"deleteSession(session._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\r\n</div>\r\n\r\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessions\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách lớp học<button routerLink=\"/addSession\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessions | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessions | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Bắt đầu</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Kết thúc</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Học phí </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let session of sessions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.class_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_time}}h </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.end_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.fee | myNumber}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.students?.length}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateSession', session._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteSession(session._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -878,8 +859,15 @@ var SessionListComponent = /** @class */ (function () {
         this.sessionService.getAllSessions().subscribe(function (items) {
             // console.log(items);
             _this.sessions = items;
+            _this.success();
             sessionStorage.setItem("sessions", JSON.stringify(_this.sessions));
         });
+    };
+    SessionListComponent.prototype.success = function () {
+        for (var i = 0; i < this.sessions.length; i++) {
+            this.sessions[i].filter_data = this.sessions[i].class_name;
+            // console.log(`Filter session data:`);
+        }
     };
     SessionListComponent.prototype.deleteSession = function (id) {
         var _this = this;
@@ -920,7 +908,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\r\nform{\r\n\tpadding: 0px;\r\n}\r\n/*Created By : Pham Nguyen Binh*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\nform{\n\tpadding: 0px;\n}\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -933,7 +921,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/add/student-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"studentAddForm\">\r\n\t<form class=\"w3-container\" [formGroup]=\"studentAddForm\" (ngSubmit)=\"doRegister()\">\r\n\t\t<div class=\"w3-panel w3-round-small custom-blue\">\r\n\t\t\t<h3>\r\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo học sinh mới</span>\r\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật thông tin học sinh</span>\r\n\t\t\t\t<a routerLink=\"/students\" class=\"w3-button w3-green custom-button\">\r\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\r\n\t\t\t</h3>\r\n\t\t</div>\r\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\r\n\t\t\t<!-- Sur and middle name field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"surMiddleName\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\r\n\t\t\t\t<b>Họ và đệm</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"sur_middle_name\" id=\"surMiddleName\">\r\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)\">Họ và đệm tối thiểu 2 ký tự </div>\r\n\t\t\t\r\n\t\t\t<!-- First name field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"firstName\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\r\n\t\t\t\t<b>Tên</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"first_name\" id=\"firstName\">\r\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"firstName.invalid && (firstName.dirty || firstName.touched)\"> Tên không được để trống</div>\r\n\r\n\t\t\t<!-- Class field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"class\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\r\n\t\t\t\t<b>Lớp</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class\" id=\"class\">\r\n\r\n\t\t\t<!-- School field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"school\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\r\n\t\t\t\t<b>Trường</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"school\" id=\"school\">\r\n\r\n\t\t\t<!-- Referral field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"referral\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\r\n\t\t\t\t<b>Người giới thiệu</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"referral\" id=\"referral\">\r\n\r\n\t\t\t<!-- Parent Name field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"parentName\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\r\n\t\t\t\t<b>Tên bố/ mẹ</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"parent_name\" id=\"parentName\">\r\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"parentName.invalid && (parentName.dirty || parentName.touched)\"> Tên bố/ mẹ không được để trống</div>\r\n\r\n\t\t\t<!-- Phone field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"phone\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-phone\"></i>\r\n\t\t\t\t<b>Điện thoại</b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"phone\" id=\"phone\">\r\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\">Số điện thoại không hợp lệ</div>\r\n\r\n\t\t\t<!-- Start Learning Date field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\r\n\t\t\t\t<b>Ngày nhập học: </b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\r\n\r\n\t\t\t<label class=\"w3-text-blue\" for=\"totalMoney\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\r\n\t\t\t\t<b>Tiền học: </b>\r\n\t\t\t</label>\r\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"total_money\" id=\"totalMoney\">\r\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"totalMoney.invalid && (totalMoney.dirty || totalMoney.touched)\"> Số tiền không hợp lệ</div>\r\n\r\n\t\t\t<!-- Note field -->\r\n\t\t\t<label class=\"w3-text-blue\" for=\"note\">\r\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-book\"></i>\r\n\t\t\t\t<b>Ghi chú</b>\r\n\t\t\t</label>\r\n\t\t\t<textarea id=\"note\" class=\"w3-input w3-border\" style=\"resize: none\" placeholder=\"Ghi chú về học sinh\" [formControl]=\"note\"></textarea>\r\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!studentAddForm.valid\">\r\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo mới</span>\r\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật</span>\r\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\r\n\t\t\t</button>\r\n\t\t</div>\r\n\r\n\t</form>\r\n</div>\r\n\r\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"studentAddForm\" (ngSubmit)=\"doRegister()\">\n\t\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo học sinh mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật thông tin học sinh</span>\n\t\t\t\t<a routerLink=\"/students\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Sur and middle name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"surMiddleName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Họ và đệm</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"sur_middle_name\" id=\"surMiddleName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)\">Họ và đệm tối thiểu 2 ký tự </div>\n\t\t\t\n\t\t\t<!-- First name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"firstName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"first_name\" id=\"firstName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"firstName.invalid && (firstName.dirty || firstName.touched)\"> Tên không được để trống</div>\n\n\t\t\t<!-- Class field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"class\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Lớp</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class\" id=\"class\">\n\n\t\t\t<!-- School field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"school\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Trường</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"school\" id=\"school\">\n\n\t\t\t<!-- Referral field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"referral\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Người giới thiệu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"referral\" id=\"referral\">\n\n\t\t\t<!-- Parent Name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"parentName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên bố/ mẹ</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"parent_name\" id=\"parentName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"parentName.invalid && (parentName.dirty || parentName.touched)\"> Tên bố/ mẹ không được để trống</div>\n\n\t\t\t<!-- Phone field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"phone\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-phone\"></i>\n\t\t\t\t<b>Điện thoại</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"phone\" id=\"phone\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\">Số điện thoại không hợp lệ</div>\n\n\t\t\t<!-- Start Learning Date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày nhập học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\n\t\t\t<label class=\"w3-text-blue\" for=\"totalMoney\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\n\t\t\t\t<b>Tiền học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"total_money\" id=\"totalMoney\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"totalMoney.invalid && (totalMoney.dirty || totalMoney.touched)\"> Số tiền không hợp lệ</div>\n\n\t\t\t<!-- Note field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"note\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-book\"></i>\n\t\t\t\t<b>Ghi chú</b>\n\t\t\t</label>\n\t\t\t<textarea id=\"note\" class=\"w3-input w3-border\" style=\"resize: none\" placeholder=\"Ghi chú về học sinh\" [formControl]=\"note\"></textarea>\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!studentAddForm.valid\">\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1187,7 +1175,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\r\n.margin-right{\r\n\tmargin-right: 10px;\r\n}\r\n.custom-card{\r\n\twidth: 50%;\r\n\tmargin:auto;\r\n}\r\n/*Created By : Pham Nguyen Binh*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\n.margin-right{\n\tmargin-right: 10px;\n}\n.custom-card{\n\twidth: 50%;\n\tmargin:auto;\n}\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -1200,7 +1188,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/details/student-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\r\n\t<div class=\"w3-panel w3-round-small custom-blue\">\r\n\t\t<h3>Thông tin chi tiết \r\n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \r\n\t\t\t<button routerLink=\"/students\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\r\n\t</div>\r\n\t<div class=\" w3-card custom-card\"><br>\r\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\r\n\t\t<hr>\r\n\t\t<table class=\"w3-table w3-bordered\">\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\r\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\r\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\r\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-money\"></i> Tổng tiền </td>\r\n\t\t\t\t<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n</div>\r\n\r\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Thông tin chi tiết \n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \n\t\t\t<button routerLink=\"/students\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\n\t</div>\n\t<div class=\" w3-card custom-card\"><br>\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\n\t\t<hr>\n\t\t<table class=\"w3-table w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-money\"></i> Tổng tiền </td>\n\t\t\t\t<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1294,7 +1282,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\r\ntd{\r\n\t    vertical-align: middle;\r\n}\r\n/*Created By : Pham Nguyen Binh*/", ""]);
+exports.push([module.i, "/*Created By : Pham Nguyen Binh*/\ntd{\n\t    vertical-align: middle;\n}\n/*Created By : Pham Nguyen Binh*/", ""]);
 
 // exports
 
@@ -1307,7 +1295,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/list/student-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\r\n\r\n<div class=\"w3-container\" *ngIf=\"students\">\r\n\t<div class=\"w3-panel w3-round-small custom-blue\">\r\n\t\t<h3>Danh sách học sinh<button routerLink=\"/addStudent\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm học sinh</button></h3>\r\n\t</div>\r\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\r\n\r\n\t<div class=\"w3-panel custom-blue\" *ngIf=\"(students | filter:filterData).length == 0\">\r\n\t\t<!-- <h3>Oh no</h3> -->\r\n\t\t<p>Không có học sinh nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\r\n\t</div>\r\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(students | filter:filterData | filter:filterData).length != 0\">\r\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\r\n\t\t\t<tr>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\r\n\t\t\t\t<!-- <th>ID</th> -->\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Lớp</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Người giới thiệu </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ tên bố/mẹ </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học </th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\r\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\" appHighlightStudent>\r\n\t\t\t\t<td>{{i +1}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.sur_middle_name}} </td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\r\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\r\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\r\n\t\t\t\t<td><button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\r\n\t\t\t\t<td><button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\r\n</div>\r\n\r\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"students\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách học sinh<button routerLink=\"/addStudent\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm học sinh</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel custom-blue\" *ngIf=\"(students | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có học sinh nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(students | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Lớp</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Người giới thiệu </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ tên bố/mẹ </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\" appHighlightStudent>\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.sur_middle_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 

@@ -31,7 +31,7 @@
 				<td class="pointer" [routerLink]="['detail', session._id]">{{session.start_date}}</td>
 				<td class="pointer" [routerLink]="['detail', session._id]">{{session.end_date}}</td>
 				<td class="pointer" [routerLink]="['detail', session._id]">{{session.fee | myNumber}}</td>
-				<td class="pointer" [routerLink]="['detail', session._id]">{{session.nStudents}}</td>
+				<td class="pointer" [routerLink]="['detail', session._id]">{{session.students?.length}}</td>
 				<!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Sửa</button></td> -->
 				<td><button [routerLink]="['/updateSession', session._id]" mat-raised-button color="primary">Sửa</button></td>
 				<td><button (click)="deleteSession(session._id);" mat-raised-button color="warn" >Xóa</button></td>

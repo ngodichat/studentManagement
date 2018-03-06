@@ -31,8 +31,16 @@ export class SessionListComponent implements OnInit {
     this.sessionService.getAllSessions().subscribe(items => {
       // console.log(items);
       this.sessions = items;
+      this.success();
       sessionStorage.setItem("sessions", JSON.stringify(this.sessions));
     });
+  }
+
+  success() {
+    for (let i = 0; i < this.sessions.length; i++) {
+      this.sessions[i].filter_data = this.sessions[i].class_name;
+      // console.log(`Filter session data:`);
+    }
   }
 
   deleteSession(id: string) {

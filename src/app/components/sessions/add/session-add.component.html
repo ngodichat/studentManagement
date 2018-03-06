@@ -51,35 +51,46 @@
 			<!-- number of students field -->
 			<label class="w3-text-blue">
 				<i class="w3-medium custom-icon fa fa-info"></i>
-				<b>Số lượng học sinh: </b>
+				<b>Số lượng học sinh: {{nStudents}}</b>
 			</label>
-			<input class="w3-input w3-border" type="number" formControlName="nStudents" id="nStudents" [value]="sessionAddForm.value.nStudents">
+			<!-- <input class="w3-input w3-border" type="number" formControlName="nStudents" id="nStudents" [value]="sessionAddForm.value.nStudents"> -->
+			<br>
 
 			<!-- Add students field -->
-			<label class="w3-text-blue" for="fee">
+			<label class="w3-text-blue">
 				<i class="w3-medium custom-icon fa fa-calendar"></i>
 				<b>Danh sách học sinh: </b>
-				<a class="w3-button w3-green custom-button" (click)="showHideSearchBox();">
-					<i class="w3-small  fa fa-plus"></i> Thêm học sinh</a>
+				<!-- <a class="w3-button w3-green custom-button" (click)="showHideSearchBox();">
+					<i class="w3-small  fa fa-plus"></i> Thêm học sinh</a> -->
 				<i class="w3-medium fa fa-search"></i>
 				<div *ngIf="showSearch">
-					<input *ngIf="showSearch" class="w3-input w3-border" type="text" visible="false" id="searchBox" formControlName="filter_data"
-					 />
+					<input class="w3-input w3-border" type="text" id="searchBox" formControlName="filter_data">
 					<select (change)="onSelectStudent($event.target.value)">
-						<option *ngFor="let st of students | filter:sessionAddForm.get('filter_data').value; index as i" [value]="st._id">{{st.sur_middle_name}} {{st.first_name}}</option>
+						<option [value]=""></option>
+						<option *ngFor="let student of students | filter:sessionAddForm.get('filter_data').value; index as i" [value]="student._id">{{student.sur_middle_name}} {{student.first_name}}</option>
 					</select>
 				</div>
 			</label>
+			<br/>
 			<table class="w3-table w3-striped w3-bordered">
-				<tr class="custom-hover-blue" *ngFor="let student of sessionAddForm.value.students | paginate: { itemsPerPage: 10, currentPage: p }; index as i;">
+				<tr>
+					<th>
+						<i class="w3-medium custom-icon fa fa-refresh"></i> STT</th>
+					<th>
+						<i class="w3-medium custom-icon fa fa-user"></i> Họ và đệm</th>
+					<th>
+						<i class="w3-medium custom-icon fa fa-user"></i> Tên</th>
+				</tr>
+				<tr class="custom-hover-blue" *ngFor="let student of sessionStudents | paginate: { itemsPerPage: 10, currentPage: p }; index as i;">
 					<td>{{i+1}}</td>
+					<td>{{student.sur_middle_name}}</td>
 					<td>{{student.first_name}}</td>
 					<td>
-						<button class="w3-red fa fa-times" (click)="onRemoveStudent(student);"></button>
+						<button class="w3-red fa fa-times" type="button" (click)="onRemoveStudent(student);"></button>
 					</td>
 				</tr>
 			</table>
-			<br/>
+
 
 			<button class="w3-btn w3-blue" type="submit" [disabled]="!sessionAddForm.valid">
 				<span *ngIf="id == undefined">Tạo mới</span>
