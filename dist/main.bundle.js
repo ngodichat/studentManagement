@@ -1410,12 +1410,26 @@ var StudentDetailsComponent = /** @class */ (function () {
         // Get user detail index number sent in params
         this.route.params.subscribe(function (params) {
             console.log(params);
-            _this.index = params["id"];
-            if (_this.index && _this.index != null && _this.index !== undefined) {
-                _this.getStudentDetails(_this.index);
+            _this._studentId = params["id"];
+            if (_this._studentId && _this._studentId != null && _this._studentId !== undefined) {
+                _this.getStudentDetails(_this._studentId);
             }
         });
     }
+    Object.defineProperty(StudentDetailsComponent.prototype, "studentId", {
+        get: function () {
+            return this._studentId;
+        },
+        set: function (id) {
+            // console.log(id);
+            this._studentId = id;
+            if (this._studentId && this._studentId != null && this._studentId !== undefined) {
+                this.getStudentDetails(this._studentId);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     StudentDetailsComponent.prototype.ngOnInit = function () { };
     // Get student details
     StudentDetailsComponent.prototype.getStudentDetails = function (index) {
@@ -1431,6 +1445,11 @@ var StudentDetailsComponent = /** @class */ (function () {
         // this.toastr.success(getStudentDetail.message, "Success");
         // }
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        __metadata("design:type", Object),
+        __metadata("design:paramtypes", [Object])
+    ], StudentDetailsComponent.prototype, "studentId", null);
     StudentDetailsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: "app-student-details",
@@ -1475,7 +1494,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/list/student-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<div class=\"content-wrapper\">\n\t<section class=\"content\">\n\t\t<div class=\"box\">\n\t\t\t<div class=\"box-header\">\n\t\t\t\t<h3 class=\"box-title\">Danh sách học sinh</h3>\n\t\t\t</div>\n\t\t\t<!-- /.box-header -->\n\t\t\t<div class=\"box-body\">\n\t\t\t\t<table id=\"studentTable\" class=\"table table-bordered table-hover table-striped\">\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<th class=\"text-center\"> STT</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ và đệm</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Tên</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Lớp</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Trường</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Người giới thiệu </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ tên bố/mẹ </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Điện thoại</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Ngày nhập học </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Sửa</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Xóa</th>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr *ngFor=\"let student of students; index as i\">\n\t\t\t\t\t\t\t<td class=\"text-center\">{{i +1}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.sur_middle_name}} </td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\">Xóa</button>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t\t<!-- /.box-body -->\n\t\t</div>\n\t</section>\n</div>\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<div class=\"content-wrapper\">\n\t<section class=\"content\">\n\t\t<div class=\"box\">\n\t\t\t<div class=\"box-header\">\n\t\t\t\t<h3 class=\"box-title\">Danh sách học sinh</h3>\n\t\t\t</div>\n\t\t\t<!-- /.box-header -->\n\t\t\t<div class=\"box-body\">\n\t\t\t\t<table id=\"studentTable\" class=\"table table-bordered table-hover table-striped\">\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<th class=\"text-center\"> STT</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ và đệm</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Tên</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Lớp</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Trường</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Người giới thiệu </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ tên bố/mẹ </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Điện thoại</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Ngày nhập học </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Sửa</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Xóa</th>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr *ngFor=\"let student of students; index as i\">\n\t\t\t\t\t\t\t<td class=\"text-center\">{{i +1}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.sur_middle_name}} </td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t<button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\">Xóa</button>\n\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t\t<!-- /.box-body -->\n\t\t</div>\n\t\t<!-- /.box -->\n\t\t<div class=\"modal fade\" id=\"modal-default\">\n\t\t\t<div class=\"modal-dialog\">\n\t\t\t\t<div class=\"modal-content\">\n\t\t\t\t\t<div class=\"modal-body\">\n\t\t\t\t\t\t<app-student-details [studentId]=\"selectedId\"></app-student-details>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</section>\n</div>\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1594,6 +1613,10 @@ var StudentListComponent = /** @class */ (function () {
             });
             this.getStudentList();
         }
+    };
+    StudentListComponent.prototype.setCurrentId = function (id) {
+        this.selectedId = id;
+        console.log("SELECTED ID: " + this.selectedId);
     };
     StudentListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({

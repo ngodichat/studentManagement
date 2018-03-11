@@ -24,6 +24,7 @@ import "datatables.net-bs";
 export class StudentListComponent implements OnInit {
   studentList: any;
   students: Student[];
+  selectedId: any;
   private tableScript: any;
   tableWidget: any;
   constructor(
@@ -112,6 +113,11 @@ export class StudentListComponent implements OnInit {
       );
       this.getStudentList();
     }
+  }
+
+  setCurrentId(id){
+    this.selectedId = id;
+    console.log(`SELECTED ID: ${this.selectedId}`);
   }
 }
 /**

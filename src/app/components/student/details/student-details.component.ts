@@ -1,7 +1,7 @@
 /**
  * Created By : Pham Nguyen Binh
  */
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
 import { RouterModule, Routes, Router, ActivatedRoute } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
@@ -19,7 +19,7 @@ import { Student } from "../student";
   // host: { "[@routerTransition]": "" }
 })
 export class StudentDetailsComponent implements OnInit {
-  index: any;
+  _studentId: any;
   studentDetail: Student;
   constructor(
     private router: Router,
@@ -30,11 +30,23 @@ export class StudentDetailsComponent implements OnInit {
     // Get user detail index number sent in params
     this.route.params.subscribe(params => {
       console.log(params);
-      this.index = params["id"];
-      if (this.index && this.index != null && this.index !== undefined) {
-        this.getStudentDetails(this.index);
+      this._studentId = params["id"];
+      if (this._studentId && this._studentId != null && this._studentId !== undefined) {
+        this.getStudentDetails(this._studentId);
       }
     });
+  }
+
+  @Input() set studentId(id){
+    // console.log(id);
+    this._studentId = id;
+    if (this._studentId && this._studentId != null && this._studentId !== undefined) {
+      this.getStudentDetails(this._studentId);
+    }
+  }
+
+  get studentId(){
+    return this._studentId;
   }
 
   ngOnInit() {}
