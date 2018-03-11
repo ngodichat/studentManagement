@@ -1,53 +1,99 @@
 <!-- Created By : Pham Nguyen Binh -->
 
-<div class="w3-container" *ngIf="studentDetail">
-	<div class="w3-panel w3-round-small custom-blue">
-		<h3>Thông tin chi tiết 
-			<button [routerLink]="['/updateStudent', studentDetail.id]" class="w3-button w3-blue custom-button"> <i class="w3-medium fa fa-pencil"></i> Sửa</button> 
-			<button routerLink="/students" class="w3-button w3-green custom-button margin-right"> <i class="w3-medium fa fa-chevron-left"></i> Quay lại</button></h3>
+<div class="box-header with-border">
+	<h3 class="box-title">Thông tin học sinh</h3>
+</div>
+
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			Họ và tên:
+		</label>
 	</div>
-	<div class=" w3-card custom-card"><br>
-		<h3 class="text-center">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>
-		<hr>
-		<table class="w3-table w3-bordered">
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-user"></i>Họ và tên</td>
-				<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>
-			</tr>
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-university"></i>Lớp</td>
-				<td>: <b>{{studentDetail.class}}</b></td>
-			</tr>
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-university"></i> Trường</td>
-				<td>: <b>{{studentDetail.school}}</b></td>
-			</tr>
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-user"></i> Người giới thiệu </td>
-				<td>: <b>{{studentDetail.referral}}</b></td>
-			</tr>
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-users"></i> Bố/mẹ </td>
-				<td>: <b>{{studentDetail.parent_name}}</b></td>
-			</tr>
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-phone"></i> Điện thoại</td>
-				<td>: <b>{{studentDetail.phone | phone}}</b></td>
-			</tr>
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-calendar"></i> Ngày nhập học</td>
-				<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>
-			</tr>
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-money"></i> Tổng tiền </td>
-				<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>
-			</tr>
-			<tr>
-				<td><i class="w3-medium custom-icon fa fa-book"></i> Ghi chú </td>
-				<td>: <b>{{studentDetail.note}}</b></td>
-			</tr>
-		</table>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.sur_middle_name}} {{studentDetail?.first_name}}</label>
 	</div>
 </div>
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			<b>Lớp: </b>
+		</label>
+	</div>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.class}}</label>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			<b>Trường: </b>
+		</label>
+	</div>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.school}}</label>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			<b>Người giới thiệu: </b>
+		</label>
+	</div>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.referral}}</label>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			<b>Bố/mẹ: </b>
+		</label>
+	</div>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.parent_name}}</label>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			<b>Điện thoại: </b>
+		</label>
+	</div>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.phone | phone}}</label>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			<b>Ngày nhập học: </b>
+		</label>
+	</div>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.start_date | date:'dd/MM/yyyy'}}</label>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			<b>Tổng tiền: </b>
+		</label>
+	</div>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.total_money | myNumber}} VNĐ</label>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<label>
+			<b>Ghi chú: </b>
+		</label>
+	</div>
+	<div class="col-xs-6">
+		<label>{{studentDetail?.note}}</label>
+	</div>
+</div>
+
 
 <!-- Created By : Pham Nguyen Binh -->

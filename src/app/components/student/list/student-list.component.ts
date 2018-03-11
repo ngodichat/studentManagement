@@ -45,6 +45,7 @@ export class StudentListComponent implements OnInit {
   initDatatable() {
     let studentListId: any = $("#studentTable");
     this.tableWidget = studentListId.DataTable({
+      retrieve: true,
       language: {
         info: "Hiển thị _START_ - _END_ / _TOTAL_ học sinh",
         processing: "Đang xử lý...",

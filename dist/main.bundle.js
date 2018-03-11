@@ -1368,7 +1368,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/details/student-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Thông tin chi tiết \n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \n\t\t\t<button routerLink=\"/students\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\n\t</div>\n\t<div class=\" w3-card custom-card\"><br>\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\n\t\t<hr>\n\t\t<table class=\"w3-table w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-money\"></i> Tổng tiền </td>\n\t\t\t\t<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-book\"></i> Ghi chú </td>\n\t\t\t\t<td>: <b>{{studentDetail.note}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"box-header with-border\">\n\t<h3 class=\"box-title\">Thông tin học sinh</h3>\n</div>\n\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\tHọ và tên:\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.sur_middle_name}} {{studentDetail?.first_name}}</label>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\t<b>Lớp: </b>\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.class}}</label>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\t<b>Trường: </b>\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.school}}</label>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\t<b>Người giới thiệu: </b>\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.referral}}</label>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\t<b>Bố/mẹ: </b>\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.parent_name}}</label>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\t<b>Điện thoại: </b>\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.phone | phone}}</label>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\t<b>Ngày nhập học: </b>\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.start_date | date:'dd/MM/yyyy'}}</label>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\t<b>Tổng tiền: </b>\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.total_money | myNumber}} VNĐ</label>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-xs-6\">\n\t\t<label>\n\t\t\t<b>Ghi chú: </b>\n\t\t</label>\n\t</div>\n\t<div class=\"col-xs-6\">\n\t\t<label>{{studentDetail?.note}}</label>\n\t</div>\n</div>\n\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1552,6 +1552,7 @@ var StudentListComponent = /** @class */ (function () {
     StudentListComponent.prototype.initDatatable = function () {
         var studentListId = __WEBPACK_IMPORTED_MODULE_5_jquery__("#studentTable");
         this.tableWidget = studentListId.DataTable({
+            retrieve: true,
             language: {
                 info: "Hiển thị _START_ - _END_ / _TOTAL_ học sinh",
                 processing: "Đang xử lý...",
@@ -1891,23 +1892,26 @@ var MyNumberPipe = /** @class */ (function () {
     function MyNumberPipe() {
     }
     MyNumberPipe.prototype.transform = function (value, args) {
-        var valueStr = value.toString();
-        if (valueStr.indexOf(".") != -1)
-            return value;
-        var numberGroups = valueStr.startsWith("-")
-            ? (valueStr.length - 1) / 3
-            : valueStr.length / 3;
-        // console.log(numberGroups);
-        for (var i = 1; i < numberGroups; i++) {
-            var pos = 4 * i - 1;
-            valueStr = [
-                valueStr.slice(0, valueStr.length - pos),
-                ".",
-                valueStr.slice(valueStr.length - pos)
-            ].join("");
-            // console.log(valueStr);
+        if (value && value !== undefined) {
+            var valueStr = value.toString();
+            if (valueStr.indexOf(".") != -1)
+                return value;
+            var numberGroups = valueStr.startsWith("-")
+                ? (valueStr.length - 1) / 3
+                : valueStr.length / 3;
+            // console.log(numberGroups);
+            for (var i = 1; i < numberGroups; i++) {
+                var pos = 4 * i - 1;
+                valueStr = [
+                    valueStr.slice(0, valueStr.length - pos),
+                    ".",
+                    valueStr.slice(valueStr.length - pos)
+                ].join("");
+                // console.log(valueStr);
+            }
+            return valueStr;
         }
-        return valueStr;
+        return "0";
     };
     MyNumberPipe = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Pipe */])({
@@ -1941,7 +1945,7 @@ var PhonePipe = /** @class */ (function () {
     function PhonePipe() {
     }
     PhonePipe.prototype.transform = function (value, args) {
-        if (value.startsWith("+84")) {
+        if (value !== undefined && value != null && value.startsWith("+84")) {
             return "0" + value.substr(3);
         }
         return value;

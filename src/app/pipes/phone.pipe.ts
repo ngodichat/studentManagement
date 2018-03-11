@@ -9,7 +9,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class PhonePipe implements PipeTransform {
   transform(value: string, args?: any): any {
-    if (value.startsWith("+84")) {
+    if (value !== undefined && value != null && value.startsWith("+84")) {
       return "0" + value.substr(3);
     }
     return value;
