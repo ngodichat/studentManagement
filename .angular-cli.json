@@ -7,10 +7,7 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "extras", "pages", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -19,11 +16,18 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "extras/css/w3.css",
         "../node_modules/ngx-toastr/toastr.css",
-        "extras/css/styles.css"
+        "../node_modules/datatables.net-bs/css/dataTables.bootstrap.css",
+        "../node_modules/bootstrap3/dist/css/bootstrap.min.css",
+        "../node_modules/bootstrap3/dist/css/bootstrap-theme.min.css",
+        "../node_modules/ionicons/dist/css/ionicons.min.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap3/dist/js/bootstrap.min.js",
+        "../node_modules/fastclick/lib/fastclick.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

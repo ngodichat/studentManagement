@@ -146,7 +146,7 @@ export class StudentAddComponent implements OnInit {
       _id: [data === null ? -1 : data._id],
       sur_middle_name: [
         data === null ? "" : data.sur_middle_name,
-        [Validators.required]
+        [Validators.required, Validators.minLength(2)]
       ],
       first_name: [
         data === null ? "" : data.first_name,
@@ -157,14 +157,14 @@ export class StudentAddComponent implements OnInit {
       referral: [data === null ? "" : data.referral],
       parent_name: [
         data === null ? "" : data.parent_name,
-        [Validators.required]
+        [Validators.required, Validators.minLength(2), Validators.maxLength(50)]
       ],
       phone: [
         data === null ? "" : data.phone,
         [Validators.pattern("(\\+)?[0-9]*"), Validators.maxLength(13)]
       ],
       total_money: [
-        data === null ? 0 : this.myNumberPipe.transform(data.total_money),
+        data === null ? "0" : this.myNumberPipe.transform(data.total_money),
         [Validators.pattern("(-)?[0-9.]+")]
       ],
       start_date: [

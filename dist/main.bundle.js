@@ -53,6 +53,11 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pipes_my_number_pipe__ = __webpack_require__("../../../../../src/app/pipes/my-number.pipe.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_sessions_add_session_add_component__ = __webpack_require__("../../../../../src/app/components/sessions/add/session-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_transaction_history_add_transaction_add_component__ = __webpack_require__("../../../../../src/app/components/transaction-history/add/transaction-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_transaction_history_list_transaction_list_component__ = __webpack_require__("../../../../../src/app/components/transaction-history/list/transaction-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__services_transaction_transaction_service__ = __webpack_require__("../../../../../src/app/services/transaction/transaction.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_sidebar_sidebar_component__ = __webpack_require__("../../../../../src/app/components/sidebar/sidebar.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -112,6 +117,11 @@ var routes = [
 
 
 
+
+
+
+
+
 // import { default as _rollupMoment } from "moment";
 var moment = __WEBPACK_IMPORTED_MODULE_26_moment__;
 var MY_DATE_FORMATS = {
@@ -144,6 +154,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_25__components_sessions_list_session_list_component__["a" /* SessionListComponent */],
                 __WEBPACK_IMPORTED_MODULE_27__pipes_my_number_pipe__["a" /* MyNumberPipe */],
                 __WEBPACK_IMPORTED_MODULE_28__components_sessions_add_session_add_component__["a" /* SessionAddComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__components_transaction_history_add_transaction_add_component__["a" /* TransactionAddComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__components_transaction_history_list_transaction_list_component__["a" /* TransactionListComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__components_header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__components_sidebar_sidebar_component__["a" /* SidebarComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -156,9 +170,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_21__angular_material__["f" /* MatCheckboxModule */],
                 __WEBPACK_IMPORTED_MODULE_21__angular_material__["e" /* MatButtonModule */],
                 __WEBPACK_IMPORTED_MODULE_21__angular_material__["g" /* MatDatepickerModule */],
-                __WEBPACK_IMPORTED_MODULE_21__angular_material__["j" /* MatNativeDateModule */],
+                __WEBPACK_IMPORTED_MODULE_21__angular_material__["k" /* MatNativeDateModule */],
                 __WEBPACK_IMPORTED_MODULE_21__angular_material__["h" /* MatFormFieldModule */],
-                __WEBPACK_IMPORTED_MODULE_21__angular_material__["i" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_21__angular_material__["j" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_21__angular_material__["i" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_21__angular_material__["l" /* MatToolbarModule */],
                 __WEBPACK_IMPORTED_MODULE_24_ngx_pagination__["a" /* NgxPaginationModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_7_ngx_toastr__["a" /* ToastrModule */].forRoot({
@@ -172,6 +188,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__services_user_user_service__["a" /* UserService */],
                 __WEBPACK_IMPORTED_MODULE_10__services_student_student_service__["a" /* StudentService */],
                 __WEBPACK_IMPORTED_MODULE_0__services_sessions_session_service__["a" /* SessionService */],
+                __WEBPACK_IMPORTED_MODULE_31__services_transaction_transaction_service__["a" /* TransactionService */],
                 __WEBPACK_IMPORTED_MODULE_12__pipes_phone_pipe__["a" /* PhonePipe */],
                 __WEBPACK_IMPORTED_MODULE_27__pipes_my_number_pipe__["a" /* MyNumberPipe */],
                 __WEBPACK_IMPORTED_MODULE_13__angular_common__["d" /* DatePipe */],
@@ -188,6 +205,75 @@ var AppModule = /** @class */ (function () {
         // enableProdMode();
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/header/header.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/header/header.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<header class=\"main-header\">\n\n  <!-- Logo -->\n  <a href=\"#\" class=\"logo\">\n    <!-- mini logo for sidebar mini 50x50 pixels -->\n    <span class=\"logo-mini\">\n        <img src=\"assets/favicon.png\"/></span>\n    <!-- logo for regular state and mobile devices -->\n    <span class=\"logo-lg\">\n      <b>SME</b></span>\n  </a>\n\n  <!-- Header Navbar: style can be found in header.less -->\n  <nav class=\"navbar navbar-static-top\">\n    <!-- Sidebar toggle button-->\n    <a href=\"#\" class=\"sidebar-toggle\" data-toggle=\"push-menu\" role=\"button\">\n      <span class=\"sr-only\">Toggle navigation</span>\n    </a>\n    <!-- Navbar Right Menu -->\n    <div class=\"navbar-custom-menu\">\n      <ul class=\"nav navbar-nav\">\n        <!-- Messages: style can be found in dropdown.less-->\n        <li class=\"dropdown messages-menu\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n            <i class=\"fa fa-envelope-o\"></i>\n            <span class=\"label label-success\">4</span>\n          </a>\n          <ul class=\"dropdown-menu\">\n            <li class=\"header\">You have 4 messages</li>\n            <li>\n              <!-- inner menu: contains the actual data -->\n              <ul class=\"menu\">\n                <li>\n                  <!-- start message -->\n                  <a href=\"#\">\n                    <div class=\"pull-left\">\n                      <img src=\"dist/img/user2-160x160.jpg\" class=\"img-circle\" alt=\"User Image\">\n                    </div>\n                    <h4>\n                      Support Team\n                      <small>\n                        <i class=\"fa fa-clock-o\"></i> 5 mins</small>\n                    </h4>\n                    <p>Why not buy a new awesome theme?</p>\n                  </a>\n                </li>\n                <!-- end message -->\n                <li>\n                  <a href=\"#\">\n                    <div class=\"pull-left\">\n                      <img src=\"dist/img/user3-128x128.jpg\" class=\"img-circle\" alt=\"User Image\">\n                    </div>\n                    <h4>\n                      AdminLTE Design Team\n                      <small>\n                        <i class=\"fa fa-clock-o\"></i> 2 hours</small>\n                    </h4>\n                    <p>Why not buy a new awesome theme?</p>\n                  </a>\n                </li>\n                <li>\n                  <a href=\"#\">\n                    <div class=\"pull-left\">\n                      <img src=\"dist/img/user4-128x128.jpg\" class=\"img-circle\" alt=\"User Image\">\n                    </div>\n                    <h4>\n                      Developers\n                      <small>\n                        <i class=\"fa fa-clock-o\"></i> Today</small>\n                    </h4>\n                    <p>Why not buy a new awesome theme?</p>\n                  </a>\n                </li>\n                <li>\n                  <a href=\"#\">\n                    <div class=\"pull-left\">\n                      <img src=\"dist/img/user3-128x128.jpg\" class=\"img-circle\" alt=\"User Image\">\n                    </div>\n                    <h4>\n                      Sales Department\n                      <small>\n                        <i class=\"fa fa-clock-o\"></i> Yesterday</small>\n                    </h4>\n                    <p>Why not buy a new awesome theme?</p>\n                  </a>\n                </li>\n                <li>\n                  <a href=\"#\">\n                    <div class=\"pull-left\">\n                      <img src=\"dist/img/user4-128x128.jpg\" class=\"img-circle\" alt=\"User Image\">\n                    </div>\n                    <h4>\n                      Reviewers\n                      <small>\n                        <i class=\"fa fa-clock-o\"></i> 2 days</small>\n                    </h4>\n                    <p>Why not buy a new awesome theme?</p>\n                  </a>\n                </li>\n              </ul>\n            </li>\n            <li class=\"footer\">\n              <a href=\"#\">See All Messages</a>\n            </li>\n          </ul>\n        </li>\n        <!-- Notifications: style can be found in dropdown.less -->\n        <li class=\"dropdown notifications-menu\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n            <i class=\"fa fa-bell-o\"></i>\n            <span class=\"label label-warning\">10</span>\n          </a>\n          <ul class=\"dropdown-menu\">\n            <li class=\"header\">You have 10 notifications</li>\n            <li>\n              <!-- inner menu: contains the actual data -->\n              <ul class=\"menu\">\n                <li>\n                  <a href=\"#\">\n                    <i class=\"fa fa-users text-aqua\"></i> 5 new members joined today\n                  </a>\n                </li>\n                <li>\n                  <a href=\"#\">\n                    <i class=\"fa fa-warning text-yellow\"></i> Very long description here that may not fit into the page and may cause design problems\n                  </a>\n                </li>\n                <li>\n                  <a href=\"#\">\n                    <i class=\"fa fa-users text-red\"></i> 5 new members joined\n                  </a>\n                </li>\n                <li>\n                  <a href=\"#\">\n                    <i class=\"fa fa-shopping-cart text-green\"></i> 25 sales made\n                  </a>\n                </li>\n                <li>\n                  <a href=\"#\">\n                    <i class=\"fa fa-user text-red\"></i> You changed your username\n                  </a>\n                </li>\n              </ul>\n            </li>\n            <li class=\"footer\">\n              <a href=\"#\">View all</a>\n            </li>\n          </ul>\n        </li>\n        <!-- Tasks: style can be found in dropdown.less -->\n        <li class=\"dropdown tasks-menu\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n            <i class=\"fa fa-flag-o\"></i>\n            <span class=\"label label-danger\">9</span>\n          </a>\n          <ul class=\"dropdown-menu\">\n            <li class=\"header\">You have 9 tasks</li>\n            <li>\n              <!-- inner menu: contains the actual data -->\n              <ul class=\"menu\">\n                <li>\n                  <!-- Task item -->\n                  <a href=\"#\">\n                    <h3>\n                      Design some buttons\n                      <small class=\"pull-right\">20%</small>\n                    </h3>\n                    <div class=\"progress xs\">\n                      <div class=\"progress-bar progress-bar-aqua\" style=\"width: 20%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                        <span class=\"sr-only\">20% Complete</span>\n                      </div>\n                    </div>\n                  </a>\n                </li>\n                <!-- end task item -->\n                <li>\n                  <!-- Task item -->\n                  <a href=\"#\">\n                    <h3>\n                      Create a nice theme\n                      <small class=\"pull-right\">40%</small>\n                    </h3>\n                    <div class=\"progress xs\">\n                      <div class=\"progress-bar progress-bar-green\" style=\"width: 40%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                        <span class=\"sr-only\">40% Complete</span>\n                      </div>\n                    </div>\n                  </a>\n                </li>\n                <!-- end task item -->\n                <li>\n                  <!-- Task item -->\n                  <a href=\"#\">\n                    <h3>\n                      Some task I need to do\n                      <small class=\"pull-right\">60%</small>\n                    </h3>\n                    <div class=\"progress xs\">\n                      <div class=\"progress-bar progress-bar-red\" style=\"width: 60%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n                        <span class=\"sr-only\">60% Complete</span>\n                      </div>\n                    </div>\n                  </a>\n                </li>\n                <!-- end task item -->\n                <li>\n                  <!-- Task item -->\n                  <a href=\"#\">\n                    <h3>\n                      Make beautiful transitions\n                      <small class=\"pull-right\">80%</small>\n                    </h3>\n                    <div class=\"progress xs\">\n                      <div class=\"progress-bar progress-bar-yellow\" style=\"width: 80%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\"\n                        aria-valuemax=\"100\">\n                        <span class=\"sr-only\">80% Complete</span>\n                      </div>\n                    </div>\n                  </a>\n                </li>\n                <!-- end task item -->\n              </ul>\n            </li>\n            <li class=\"footer\">\n              <a href=\"#\">View all tasks</a>\n            </li>\n          </ul>\n        </li>\n        <!-- User Account: style can be found in dropdown.less -->\n        <li class=\"dropdown user user-menu\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n            <img src=\"assets/img/avatar5.png\" class=\"user-image\" alt=\"User Image\">\n            <span class=\"hidden-xs\">Admin</span>\n          </a>\n          <ul class=\"dropdown-menu\">\n            <!-- User image -->\n            <li class=\"user-header\">\n              <img src=\"assets/img/avatar5.png\" class=\"img-circle\" alt=\"User Image\">\n\n              <p>\n                Admin\n                <small>Member since Nov. 2012</small>\n              </p>\n            </li>\n            <!-- Menu Footer-->\n            <li class=\"user-footer\">\n              <div class=\"pull-left\">\n                <a href=\"#\" class=\"btn btn-default btn-flat\">Profile</a>\n              </div>\n              <div class=\"pull-right\">\n                <a (click)=\"logOut()\" class=\"btn btn-default btn-flat\">Đăng xuất</a>\n              </div>\n            </li>\n          </ul>\n        </li>\n        <!-- Control Sidebar Toggle Button -->\n        <li>\n          <a href=\"#\" data-toggle=\"control-sidebar\">\n            <i class=\"fa fa-gears\"></i>\n          </a>\n        </li>\n      </ul>\n    </div>\n\n  </nav>\n</header>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/header/header.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HeaderComponent = /** @class */ (function () {
+    function HeaderComponent(router) {
+        this.router = router;
+    }
+    HeaderComponent.prototype.ngOnInit = function () {
+    };
+    // Logout User
+    HeaderComponent.prototype.logOut = function () {
+        localStorage.removeItem("userData");
+        this.router.navigate(["/login"]);
+    };
+    HeaderComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-header',
+            template: __webpack_require__("../../../../../src/app/components/header/header.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/header/header.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], HeaderComponent);
+    return HeaderComponent;
 }());
 
 
@@ -215,7 +301,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<!-- Side Bar -->\n<nav class=\"w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2\" style=\"z-index:3;width:250px;\" id=\"mySidebar\">\n\t<!-- Logo -->\n\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\n\t<!-- Sidebar Links -->\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/students')}\" routerLink=\"/students\"> <i class=\"w3-medium fa fa-user\"></i>  Danh sách học sinh</a>\n\t<!-- <a class=\"w3-bar-item w3-button\" routerLink=\"/addStudent\"  [ngClass]=\"{'w3-teal': (active == '/add')}\"> <i class=\"w3-medium fa fa-plus\"></i>  Thêm học sinh</a> -->\n\t<a class=\"w3-bar-item w3-button\" [ngClass]=\"{'custom-blue': (active == '/sessions')}\" routerLink=\"/sessions\"> <i class=\"w3-medium fa fa-university\"></i>  Danh sách lớp học</a>\n\t<a class=\"w3-bar-item w3-button\" (click)=\"logOut()\"><i class=\"w3-medium fa fa-sign-out\"></i>  Đăng xuất</a>\n</nav>\n\n<!-- Load main contents -->\n<div class=\"w3-main\" style=\"margin-left:250px;\">\n\t<div class=\"w3-container\">\n\t<!-- Initiate Child Routing -->\n\t\t<router-outlet></router-outlet>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<div class=\"wrapper\">\n\t<app-header></app-header>\n\t<app-sidebar></app-sidebar>\n\t<!-- Initiate Child Routing -->\n\t<router-outlet></router-outlet>\n</div>\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -234,6 +320,8 @@ module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<!-- Side Bar -->\n<
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sessions_add_session_add_component__ = __webpack_require__("../../../../../src/app/components/sessions/add/session-add.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sessions_list_session_list_component__ = __webpack_require__("../../../../../src/app/components/sessions/list/session-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_config_config_service__ = __webpack_require__("../../../../../src/app/services/config/config.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__transaction_history_list_transaction_list_component__ = __webpack_require__("../../../../../src/app/components/transaction-history/list/transaction-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__transaction_history_add_transaction_add_component__ = __webpack_require__("../../../../../src/app/components/transaction-history/add/transaction-add.component.ts");
 /**
  * Created By : Pham Nguyen Binh
  */
@@ -257,6 +345,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 // Services
 
+
+
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(router, toastr) {
         var _this = this;
@@ -271,12 +361,6 @@ var HomeComponent = /** @class */ (function () {
     // Detect route changes for active sidebar menu
     HomeComponent.prototype.routeChanged = function (val) {
         this.active = val.url;
-    };
-    // Logout User
-    HomeComponent.prototype.logOut = function () {
-        this.toastr.success("Success", "Logged Out Successfully");
-        localStorage.removeItem("userData");
-        this.router.navigate(["/login"]);
     };
     HomeComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -294,32 +378,44 @@ var HomeComponent = /** @class */ (function () {
 // Define and export child routes of HomeComponent
 var homeChildRoutes = [
     {
+        path: "",
+        component: __WEBPACK_IMPORTED_MODULE_3__student_list_student_list_component__["a" /* StudentListComponent */]
+    },
+    {
         path: "students",
         component: __WEBPACK_IMPORTED_MODULE_3__student_list_student_list_component__["a" /* StudentListComponent */]
     },
     {
-        path: "sessions",
-        component: __WEBPACK_IMPORTED_MODULE_7__sessions_list_session_list_component__["a" /* SessionListComponent */]
+        path: "detail/:id",
+        component: __WEBPACK_IMPORTED_MODULE_4__student_details_student_details_component__["a" /* StudentDetailsComponent */]
     },
     {
         path: "addStudent",
         component: __WEBPACK_IMPORTED_MODULE_5__student_add_student_add_component__["a" /* StudentAddComponent */]
     },
     {
-        path: "addSession",
-        component: __WEBPACK_IMPORTED_MODULE_6__sessions_add_session_add_component__["a" /* SessionAddComponent */]
-    },
-    {
         path: "updateStudent/:id",
         component: __WEBPACK_IMPORTED_MODULE_5__student_add_student_add_component__["a" /* StudentAddComponent */]
+    },
+    {
+        path: "sessions",
+        component: __WEBPACK_IMPORTED_MODULE_7__sessions_list_session_list_component__["a" /* SessionListComponent */]
+    },
+    {
+        path: "addSession",
+        component: __WEBPACK_IMPORTED_MODULE_6__sessions_add_session_add_component__["a" /* SessionAddComponent */]
     },
     {
         path: "updateSession/:id",
         component: __WEBPACK_IMPORTED_MODULE_6__sessions_add_session_add_component__["a" /* SessionAddComponent */]
     },
     {
-        path: "detail/:id",
-        component: __WEBPACK_IMPORTED_MODULE_4__student_details_student_details_component__["a" /* StudentDetailsComponent */]
+        path: "transactions",
+        component: __WEBPACK_IMPORTED_MODULE_9__transaction_history_list_transaction_list_component__["a" /* TransactionListComponent */]
+    },
+    {
+        path: "addTransactions",
+        component: __WEBPACK_IMPORTED_MODULE_10__transaction_history_add_transaction_add_component__["a" /* TransactionAddComponent */]
     }
 ];
 /**
@@ -444,7 +540,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container align-center w3-card login-card\">\n\t<form [formGroup]=\"loginForm\" (ngSubmit)=\"doLogin()\">\n\t\t<div class=\"text-center\">\n\t\t\t<img src=\"assets/sangwin-logo.png\" class=\"logo\">\n\t\t</div>\n\n\t\t<label class=\"w3-text-blue\"><b>Email</b></label>\n\t\t<input class=\"w3-input w3-border\" type=\"email\" formControlName=\"email\" placeholder=\"Địa chỉ email\">\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.email.invalid && (loginForm.controls.email.dirty)\">Địa chỉ email không hợp lệ</div> \n\n\t\t<label class=\"w3-text-blue\"><b>Mật khẩu</b></label>\n\t\t<input class=\"w3-input w3-border\" type=\"password\" formControlName=\"password\" placeholder=\"Mật khẩu\">\n\t\t<div class=\"w3-panel w3-red\"  *ngIf=\"loginForm.controls.password.invalid && (loginForm.controls.password.dirty)\">Mật khẩu phải dài tối thiểu 6 ký tự và có số</div> \n\t\t<br>\n\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!loginForm.valid\">Đăng nhập <i class=\"w3-medium fa fa-check\"></i> </button>\n\t</form>\n\t<div class=\"w3-panel w3-blue-gray\">\n\t\t<h4>Ghi chú : </h4>\n\t\t<p>Tài khoản : admin@gmail.com &amp; admin123</p>\n\t\t<!-- <p>All data will be restored when refreshed</p> -->\n\t</div> \n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"login-box\">\n\t<div class=\"login-logo\">\n\t\t<a href=\"#\">\n\t\t\t<img src=\"assets/sangwin-logo.png\" />\n\t\t</a>\n\t</div>\n\t<!-- /.login-logo -->\n\t<div class=\"login-box-body\">\n\t\t<p class=\"login-box-msg\">Đăng nhập để sử dụng hệ thống</p>\n\n\t\t<form [formGroup]=\"loginForm\" (ngSubmit)=\"doLogin()\">\n\t\t\t<div class=\"form-group has-feedback\">\n\t\t\t\t<input type=\"email\" class=\"form-control\" placeholder=\"Email\" formControlName=\"email\">\n\t\t\t\t<span class=\"glyphicon glyphicon-envelope form-control-feedback\"></span>\n\t\t\t</div>\n\t\t\t<div class=\"form-group has-feedback\">\n\t\t\t\t<input type=\"password\" class=\"form-control\" placeholder=\"Password\" formControlName=\"password\">\n\t\t\t\t<span class=\"glyphicon glyphicon-lock form-control-feedback\"></span>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-8\">\n\t\t\t\t\t<div class=\"checkbox icheck\">\n\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t<input type=\"checkbox\"> Ghi nhớ\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<!-- /.col -->\n\t\t\t\t<div class=\"col-xs-4\">\n\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary btn-block btn-flat\" [disabled]=\"!loginForm.valid\">Đăng nhập</button>\n\t\t\t\t</div>\n\t\t\t\t<!-- /.col -->\n\t\t\t</div>\n\t\t</form>\n\n\t\t<div class=\"social-auth-links text-center\">\n\t\t\t<p>- OR -</p>\n\t\t\t<a href=\"#\" class=\"btn btn-block btn-social btn-facebook btn-flat\">\n\t\t\t\t<i class=\"fa fa-facebook-f\"></i> Đăng nhập bằng Facebook\n\t\t\t</a>\n\t\t\t<a href=\"#\" class=\"btn btn-block btn-social btn-google btn-flat\">\n\t\t\t\t<i class=\"ion-logo-google\"></i> Đăng nhập bằng Google\n\t\t\t</a>\n\t\t</div>\n\t\t<!-- /.social-auth-links -->\n\n\t\t<!-- <a href=\"#\">I forgot my password</a>\n\t\t<br>\n\t\t<a href=\"register.html\" class=\"text-center\">Register a new membership</a> -->\n\n\t</div>\n\t<!-- /.login-box-body -->\n</div>\n<!-- /.login-box -->\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -479,11 +575,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(formBuilder, router, userService, toastr) {
+    function LoginComponent(formBuilder, router, userService, toastr, renderer) {
         this.formBuilder = formBuilder;
         this.router = router;
         this.userService = userService;
         this.toastr = toastr;
+        this.renderer = renderer;
+        this.renderer.addClass(document.body, "hold-transition");
+        this.renderer.addClass(document.body, "login-page");
+        var s = this.renderer.createElement("script");
+        s.text = "\n      $(function () {\n  \t\t\t$('input').iCheck({\n  \t\t\t\tcheckboxClass: 'icheckbox_square-blue',\n  \t\t\t\tradioClass: 'iradio_square-blue',\n  \t\t\t\tincreaseArea: '20%' /* optional */\n  \t\t\t});\n  \t\t});\n    ";
+        this.renderer.appendChild(document.head, s);
         this.loginForm = this.formBuilder.group({
             email: ["", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__services_config_config_service__["a" /* ValidationService */].emailValidator]],
             password: ["", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__services_config_config_service__["a" /* ValidationService */].passwordValidator]]
@@ -494,6 +596,10 @@ var LoginComponent = /** @class */ (function () {
         if (localStorage.getItem("userData")) {
             this.router.navigate(["/students"]);
         }
+    };
+    LoginComponent.prototype.ngOnDestroy = function () {
+        this.renderer.removeClass(document.body, "hold-transition");
+        this.renderer.removeClass(document.body, "login-page");
     };
     // Initicate login
     LoginComponent.prototype.doLogin = function () {
@@ -522,7 +628,8 @@ var LoginComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__services_user_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_5_ngx_toastr__["b" /* ToastrService */]])
+            __WEBPACK_IMPORTED_MODULE_5_ngx_toastr__["b" /* ToastrService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -900,6 +1007,79 @@ var SessionListComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/sidebar/sidebar.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/sidebar/sidebar.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<aside class=\"main-sidebar\">\n  <!-- sidebar: style can be found in sidebar.less -->\n  <section class=\"sidebar\">\n    <!-- Sidebar user panel -->\n    <div class=\"user-panel\">\n      <div class=\"pull-left image\">\n        <img src=\"assets/img/avatar5.png\" class=\"img-circle\" alt=\"User Image\">\n      </div>\n      <div class=\"pull-left info\">\n        <p>Admin</p>\n        <a href=\"#\">\n          <i class=\"fa fa-circle text-success\"></i> Online</a>\n      </div>\n    </div>\n    <!-- search form -->\n    <form action=\"#\" method=\"get\" class=\"sidebar-form\">\n      <div class=\"input-group\">\n        <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search...\">\n        <span class=\"input-group-btn\">\n          <button type=\"submit\" name=\"search\" id=\"search-btn\" class=\"btn btn-flat\">\n            <i class=\"fa fa-search\"></i>\n          </button>\n        </span>\n      </div>\n    </form>\n    <!-- /.search form -->\n    <!-- sidebar menu: : style can be found in sidebar.less -->\n    <ul class=\"sidebar-menu\" data-widget=\"tree\">\n      <li class=\"header\">MAIN NAVIGATION</li>\n      <li class=\"treeview menu-open\" [ngClass]=\"{'active': (curUrl === '/students' || curUrl === '/addStudent')}\">\n        <a href=\"#\">\n          <i class=\"fa fa-user\"></i>\n          <span>Học sinh</span>\n          <span class=\"pull-right-container\">\n            <i class=\"fa fa-angle-left pull-right\"></i>\n          </span>\n        </a>\n        <ul class=\"treeview-menu\">\n            <li [ngClass]=\"{'active': (curUrl === '/students')}\"><a routerLink=\"/students\" ><i class=\"fa fa-users\"></i> Danh sách học sinh</a></li>\n            <li [ngClass]=\"{'active': (curUrl === '/addStudent')}\"><a routerLink=\"/addStudent\"><i class=\"fa fa-user-plus\"></i> Thêm học sinh</a></li>\n          </ul>\n      </li>\n      <li [ngClass]=\"{'active': (curUrl == '/sessions')}\">\n        <a routerLink=\"/sessions\">\n          <i class=\"fa fa-th\"></i>\n          <span>Lớp học</span>\n        </a>\n      </li>\n    </ul>\n  </section>\n  <!-- /.sidebar -->\n</aside>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/sidebar/sidebar.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SidebarComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SidebarComponent = /** @class */ (function () {
+    function SidebarComponent(router) {
+        var _this = this;
+        this.router = router;
+        // Detect route changes for active sidebar menu
+        this.router.events.subscribe(function (val) {
+            _this.routeChanged(val);
+        });
+    }
+    // Detect route changes for active sidebar menu
+    SidebarComponent.prototype.routeChanged = function (val) {
+        console.log("current URL: " + val.url);
+        this.curUrl = val.url;
+    };
+    SidebarComponent.prototype.ngOnInit = function () { };
+    SidebarComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: "app-sidebar",
+            template: __webpack_require__("../../../../../src/app/components/sidebar/sidebar.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/sidebar/sidebar.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], SidebarComponent);
+    return SidebarComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/student/add/student-add.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -921,7 +1101,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/add/student-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"studentAddForm\" (ngSubmit)=\"doRegister()\">\n\t\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo học sinh mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật thông tin học sinh</span>\n\t\t\t\t<a routerLink=\"/students\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Sur and middle name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"surMiddleName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Họ và đệm</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"sur_middle_name\" id=\"surMiddleName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)\">Họ và đệm tối thiểu 2 ký tự </div>\n\t\t\t\n\t\t\t<!-- First name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"firstName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"first_name\" id=\"firstName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"firstName.invalid && (firstName.dirty || firstName.touched)\"> Tên không được để trống</div>\n\n\t\t\t<!-- Class field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"class\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Lớp</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class\" id=\"class\">\n\n\t\t\t<!-- School field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"school\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Trường</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"school\" id=\"school\">\n\n\t\t\t<!-- Referral field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"referral\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Người giới thiệu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"referral\" id=\"referral\">\n\n\t\t\t<!-- Parent Name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"parentName\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i>\n\t\t\t\t<b>Tên bố/ mẹ</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"parent_name\" id=\"parentName\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"parentName.invalid && (parentName.dirty || parentName.touched)\"> Tên bố/ mẹ không được để trống</div>\n\n\t\t\t<!-- Phone field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"phone\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-phone\"></i>\n\t\t\t\t<b>Điện thoại</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"phone\" id=\"phone\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\">Số điện thoại không hợp lệ</div>\n\n\t\t\t<!-- Start Learning Date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày nhập học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\n\t\t\t<label class=\"w3-text-blue\" for=\"totalMoney\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\n\t\t\t\t<b>Tiền học: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"total_money\" id=\"totalMoney\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"totalMoney.invalid && (totalMoney.dirty || totalMoney.touched)\"> Số tiền không hợp lệ</div>\n\n\t\t\t<!-- Note field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"note\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-book\"></i>\n\t\t\t\t<b>Ghi chú</b>\n\t\t\t</label>\n\t\t\t<textarea id=\"note\" class=\"w3-input w3-border\" style=\"resize: none\" placeholder=\"Ghi chú về học sinh\" [formControl]=\"note\"></textarea>\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!studentAddForm.valid\">\n\t\t\t\t<span *ngIf=\"index == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"index != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<div class=\"content-wrapper\">\n\t<section class=\"content\">\n\t\t<div class=\"row\">\n\t\t\t<!-- left column -->\n\t\t\t<div class=\"col-lg-4 col-md-3 col-ms-1\"></div>\n\t\t\t<div class=\"col-lg-4 col-md-6\">\n\t\t\t\t<!-- general form elements -->\n\t\t\t\t<div class=\"box box-primary\">\n\t\t\t\t\t<div class=\"box-header with-border\">\n\t\t\t\t\t\t<h3 class=\"box-title\" *ngIf=\"index === undefined; else updateStudent\">Thêm học sinh</h3>\n\t\t\t\t\t\t<ng-template #updateStudent><h3 class=\"box-title\" >Cập nhật thông tin học sinh</h3></ng-template>\n\t\t\t\t\t</div>\n\t\t\t\t\t<!-- /.box-header -->\n\t\t\t\t\t<!-- form start -->\n\t\t\t\t\t<form role=\"form\" [formGroup]=\"studentAddForm\" (ngSubmit)=\"doRegister()\">\n\t\t\t\t\t\t<div class=\"box-body\">\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-xs-6 form-group\" [ngClass]=\"{'has-error':(surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched))}\">\n\t\t\t\t\t\t\t\t\t<label for=\"surMiddleName\"> Họ và đệm </label>\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"sur_middle_name\" id=\"surMiddleName\">\n\t\t\t\t\t\t\t\t\t<span class=\"help-block\" *ngIf=\"surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)\">Họ và tên đệm tối thiểu 2 ký tự</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-6 form-group\" [ngClass]=\"{'has-error':(firstName.invalid && (firstName.dirty || firstName.touched))}\">\n\t\t\t\t\t\t\t\t\t<label for=\"firstName\"> Tên </label>\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"first_name\" id=\"firstName\">\n\t\t\t\t\t\t\t\t\t<span class=\"help-block\" *ngIf=\"firstName.invalid && (firstName.dirty || firstName.touched)\">Tên không được để trống. Độ dài 2-50 ký tự</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-xs-6 form-group\" [ngClass]=\"{'has-error':(class.invalid && (class.dirty || class.touched))}\">\n\t\t\t\t\t\t\t\t\t<label for=\"class\"> Lớp </label>\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"class\" id=\"class\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-6 form-group\" [ngClass]=\"{'has-error':(school.invalid && (school.dirty || school.touched))}\">\n\t\t\t\t\t\t\t\t\t<label for=\"school\"> Trường </label>\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"school\" id=\"school\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\" [ngClass]=\"{'has-error':(referral.invalid && (referral.dirty || referral.touched))}\">\n\t\t\t\t\t\t\t\t<label for=\"referral\"> Người giới thiệu </label>\n\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"referral\" id=\"referral\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\" [ngClass]=\"{'has-error':(parentName.invalid && (parentName.dirty || parentName.touched))}\">\n\t\t\t\t\t\t\t\t<label for=\"parentName\"> Tên bố/mẹ</label>\n\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"parent_name\" id=\"parentName\">\n\t\t\t\t\t\t\t\t<span class=\"help-block\" *ngIf=\"parentName.invalid && (parentName.dirty || parentName.touched)\">Tên bố mẹ không được để trống. Độ dài 2-50 ký tự</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\" [ngClass]=\"{'has-error':(phone.invalid && (phone.dirty || phone.touched))}\">\n\t\t\t\t\t\t\t\t<label for=\"phone\">\n\t\t\t\t\t\t\t\t\t<i class=\"ion-ios-call\"></i> Điện thoại </label>\n\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"phone\" id=\"phone\">\n\t\t\t\t\t\t\t\t<span class=\"help-block\" *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\">Số điện thoại không hợp lệ</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\" [ngClass]=\"{'has-error':(startDate.invalid && (startDate.dirty || startDate.touched))}\">\n\t\t\t\t\t\t\t\t<label for=\"startDate\"> Ngày nhập học: </label>\n\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\" [ngClass]=\"{'has-error':(totalMoney.invalid && (totalMoney.dirty || totalMoney.touched))}\">\n\t\t\t\t\t\t\t\t<label for=\"totalMoney\"> Tiền học: </label>\n\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"total_money\" id=\"totalMoney\">\n\t\t\t\t\t\t\t\t<span class=\"help-block\" *ngIf=\"totalMoney.invalid && (totalMoney.dirty || totalMoney.touched)\">Số tiền không hợp lệ</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\" [ngClass]=\"{'has-error':(note.invalid && (note.dirty || note.touched))}\">\n\t\t\t\t\t\t\t\t<label for=\"note\"> Ghi chú: </label>\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" formControlName=\"note\" id=\"note\" style=\"resize: none\" placeholder=\"Ghi chú về học sinh...\"></textarea>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<!-- /.box-body -->\n\n\t\t\t\t\t\t<div class=\"box-footer\">\n\t\t\t\t\t\t\t<button type=\"submit\" [disabled]=\"!studentAddForm.valid\" class=\"btn btn-primary\" *ngIf=\"index === undefined; else updateBtn\">Thêm</button>\n\t\t\t\t\t\t\t<ng-template  #updateBtn> <button type=\"submit\" [disabled]=\"!studentAddForm.valid\" class=\"btn btn-primary\">Cập nhật</button></ng-template>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4 col-md-3 col-ms-1\"></div>\n\t\t</div>\n\t</section>\n</div>\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1113,7 +1293,7 @@ var StudentAddComponent = /** @class */ (function () {
             _id: [data === null ? -1 : data._id],
             sur_middle_name: [
                 data === null ? "" : data.sur_middle_name,
-                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required]
+                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].minLength(2)]
             ],
             first_name: [
                 data === null ? "" : data.first_name,
@@ -1124,14 +1304,14 @@ var StudentAddComponent = /** @class */ (function () {
             referral: [data === null ? "" : data.referral],
             parent_name: [
                 data === null ? "" : data.parent_name,
-                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required]
+                [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].minLength(2), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(50)]
             ],
             phone: [
                 data === null ? "" : data.phone,
                 [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern("(\\+)?[0-9]*"), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].maxLength(13)]
             ],
             total_money: [
-                data === null ? 0 : this.myNumberPipe.transform(data.total_money),
+                data === null ? "0" : this.myNumberPipe.transform(data.total_money),
                 [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern("(-)?[0-9.]+")]
             ],
             start_date: [
@@ -1188,7 +1368,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/details/student-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Thông tin chi tiết \n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \n\t\t\t<button routerLink=\"/students\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\n\t</div>\n\t<div class=\" w3-card custom-card\"><br>\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\n\t\t<hr>\n\t\t<table class=\"w3-table w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-money\"></i> Tổng tiền </td>\n\t\t\t\t<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"studentDetail\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Thông tin chi tiết \n\t\t\t<button [routerLink]=\"['/updateStudent', studentDetail.id]\" class=\"w3-button w3-blue custom-button\"> <i class=\"w3-medium fa fa-pencil\"></i> Sửa</button> \n\t\t\t<button routerLink=\"/students\" class=\"w3-button w3-green custom-button margin-right\"> <i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</button></h3>\n\t</div>\n\t<div class=\" w3-card custom-card\"><br>\n\t\t<h3 class=\"text-center\">{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</h3>\n\t\t<hr>\n\t\t<table class=\"w3-table w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i>Họ và tên</td>\n\t\t\t\t<td>: <b>{{studentDetail.sur_middle_name}} {{studentDetail.first_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i>Lớp</td>\n\t\t\t\t<td>: <b>{{studentDetail.class}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</td>\n\t\t\t\t<td>: <b>{{studentDetail.school}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-user\"></i> Người giới thiệu </td>\n\t\t\t\t<td>: <b>{{studentDetail.referral}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-users\"></i> Bố/mẹ </td>\n\t\t\t\t<td>: <b>{{studentDetail.parent_name}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</td>\n\t\t\t\t<td>: <b>{{studentDetail.phone | phone}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học</td>\n\t\t\t\t<td>: <b>{{studentDetail.start_date | date:'dd/MM/yyyy'}}</b></td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-money\"></i> Tổng tiền </td>\n\t\t\t\t<td>: <b>{{studentDetail.total_money | myNumber}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td><i class=\"w3-medium custom-icon fa fa-book\"></i> Ghi chú </td>\n\t\t\t\t<td>: <b>{{studentDetail.note}}</b> VNĐ</td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1295,7 +1475,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/list/student-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"students\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách học sinh<button routerLink=\"/addStudent\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm học sinh</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel custom-blue\" *ngIf=\"(students | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có học sinh nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(students | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Lớp</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Trường</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-university\"></i> Người giới thiệu </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-user\"></i> Họ tên bố/mẹ </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-phone\"></i> Điện thoại</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-calendar\"></i> Ngày nhập học </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let student of students | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\" appHighlightStudent>\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.sur_middle_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<div class=\"content-wrapper\">\n\t<section class=\"content\">\n\t\t<div class=\"box\">\n\t\t\t<div class=\"box-header\">\n\t\t\t\t<h3 class=\"box-title\">Danh sách học sinh</h3>\n\t\t\t</div>\n\t\t\t<!-- /.box-header -->\n\t\t\t<div class=\"box-body\">\n\t\t\t\t<table id=\"studentTable\" class=\"table table-bordered table-hover table-striped\">\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<th class=\"text-center\"> STT</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ và đệm</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Tên</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Lớp</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Trường</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Người giới thiệu </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ tên bố/mẹ </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Điện thoại</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Ngày nhập học </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Sửa</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Xóa</th>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr *ngFor=\"let student of students; index as i\">\n\t\t\t\t\t\t\t<td class=\"text-center\">{{i +1}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.sur_middle_name}} </td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\">Xóa</button>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t\t<!-- /.box-body -->\n\t\t</div>\n\t</section>\n</div>\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1309,6 +1489,12 @@ module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-cont
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_student_student_service__ = __webpack_require__("../../../../../src/app/services/student/student.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_config_config_service__ = __webpack_require__("../../../../../src/app/services/config/config.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__("../../../../jquery/dist/jquery.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_datatables_net__ = __webpack_require__("../../../../datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_datatables_net___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_datatables_net__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_datatables_net_bs__ = __webpack_require__("../../../../datatables.net-bs/js/dataTables.bootstrap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_datatables_net_bs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_datatables_net_bs__);
 /**
  * Created By : Pham Nguyen Binh
  */
@@ -1327,6 +1513,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var StudentListComponent = /** @class */ (function () {
     function StudentListComponent(studentService, toastr, router) {
         this.studentService = studentService;
@@ -1338,6 +1527,36 @@ var StudentListComponent = /** @class */ (function () {
         this.getStudentList();
         // console.log(this.router.url);
     };
+    StudentListComponent.prototype.ngAfterViewInit = function () {
+        this.initDatatable();
+    };
+    StudentListComponent.prototype.initDatatable = function () {
+        var studentListId = __WEBPACK_IMPORTED_MODULE_5_jquery__("#studentTable");
+        this.tableWidget = studentListId.DataTable({
+            language: {
+                info: "Hiển thị _START_ - _END_ / _TOTAL_ học sinh",
+                processing: "Đang xử lý...",
+                search: "Tìm kiếm:&nbsp;",
+                loadingRecords: "Đang cập nhật dữ liệu...",
+                zeroRecords: "Chưa có học sinh nào",
+                emptyTable: "Chưa có học sinh nào",
+                paginate: {
+                    first: "Trang đầu",
+                    previous: "Trước ",
+                    next: " Tiếp",
+                    last: "Trang cuối"
+                }
+            }
+        });
+    };
+    StudentListComponent.prototype.reInitDatatable = function () {
+        var _this = this;
+        if (this.tableWidget) {
+            this.tableWidget.destroy();
+            this.tableWidget = null;
+        }
+        setTimeout(function () { return _this.initDatatable(); }, 0);
+    };
     // Get student list from services
     StudentListComponent.prototype.getStudentList = function () {
         var _this = this;
@@ -1345,6 +1564,7 @@ var StudentListComponent = /** @class */ (function () {
             // this.toastr.success("Thành công", "Tải danh sách học sinh thành công");
             // console.log(students);
             _this.students = students;
+            _this.reInitDatatable();
             _this.success();
             sessionStorage.setItem("students", JSON.stringify(students));
         }, function (err) {
@@ -1393,6 +1613,144 @@ var StudentListComponent = /** @class */ (function () {
 /**
  * Created By : Pham Nguyen Binh
  */
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction-history/add/transaction-add.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction-history/add/transaction-add.component.html":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction-history/add/transaction-add.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionAddComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TransactionAddComponent = /** @class */ (function () {
+    function TransactionAddComponent() {
+    }
+    TransactionAddComponent.prototype.ngOnInit = function () {
+    };
+    TransactionAddComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-transaction-add',
+            template: __webpack_require__("../../../../../src/app/components/transaction-history/add/transaction-add.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/transaction-history/add/transaction-add.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], TransactionAddComponent);
+    return TransactionAddComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction-history/list/transaction-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction-history/list/transaction-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"transactions\">\n    <div class=\"w3-panel w3-round-small custom-blue\">\n      <h3>Danh sách lớp học<button routerLink=\"/addTransaction\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm giao dịch</button></h3>\n    </div>\n    <span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n  \n    <div class=\"w3-panel w3-green\" *ngIf=\"(transactions | filter:filterData).length == 0\">\n      <!-- <h3>Oh no</h3> -->\n      <p>Không có giao dịch nào <span *ngIf=\"filterData\"> với tiêu chí tìm kiếm\"</span> </p>\n    </div>\n    <div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(transactions | filter:filterData | filter:filterData).length != 0\">\n      <table class=\"w3-table w3-striped w3-bordered\">\n        <tr>\n          <th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n          <!-- <th>ID</th> -->\n          <th><i class=\"w3-medium custom-icon fa \"></i> Tên học sinh</th>\n          <th><i class=\"w3-medium custom-icon fa \"></i> Số tiền </th>\n          <th><i class=\"w3-medium custom-icon fa \"></i> Ngày đóng</th>\n          <th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n          <th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n        </tr>\n        <tr class =\"custom-hover-blue\" *ngFor=\"let session of transactions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n          <td>{{i +1}}</td>\n          <td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.class_name}} </td>\n          <td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_time}}h </td>\n          <td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_date}}</td>\n          <td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.end_date}}</td>\n          <td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.fee | myNumber}}</td>\n          <td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.students?.length}}</td>\n          <!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n          <td><button [routerLink]=\"['/updateSession', session._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n          <td><button (click)=\"deleteSession(session._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n        </tr>\n      </table>\n    </div>\n      <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n  </div>\n  \n  <!-- Created By : Pham Nguyen Binh -->"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction-history/list/transaction-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_transaction_transaction_service__ = __webpack_require__("../../../../../src/app/services/transaction/transaction.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TransactionListComponent = /** @class */ (function () {
+    function TransactionListComponent(transactionService) {
+        this.transactionService = transactionService;
+    }
+    TransactionListComponent.prototype.ngOnInit = function () {
+    };
+    TransactionListComponent.prototype.getAllTransactions = function () {
+        var _this = this;
+        this.transactionService.getAllTransactions().subscribe(function (transactions) {
+            _this.transactions = transactions;
+            _this.success();
+        });
+    };
+    TransactionListComponent.prototype.success = function () {
+        for (var i = 0; i < this.transactions.length; i++) {
+            var transaction = this.transactions[i];
+            transaction.filter_data = transaction.student_name;
+        }
+    };
+    TransactionListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-transaction-list',
+            template: __webpack_require__("../../../../../src/app/components/transaction-history/list/transaction-list.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/transaction-history/list/transaction-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_transaction_transaction_service__["a" /* TransactionService */]])
+    ], TransactionListComponent);
+    return TransactionListComponent;
+}());
+
 
 
 /***/ }),
@@ -1885,6 +2243,42 @@ var StudentService = /** @class */ (function () {
 /**
  * Created By : Pham Nguyen Binh
  */
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/transaction/transaction.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TransactionService = /** @class */ (function () {
+    function TransactionService(http) {
+        this.http = http;
+    }
+    TransactionService.prototype.getAllTransactions = function () {
+        return this.http.get("/api/transactions/");
+    };
+    TransactionService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], TransactionService);
+    return TransactionService;
+}());
+
 
 
 /***/ }),

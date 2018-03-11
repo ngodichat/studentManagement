@@ -1,97 +1,82 @@
 <!-- Created By : Pham Nguyen Binh -->
+<div class="content-wrapper">
+	<section class="content">
+		<div class="row">
+			<!-- left column -->
+			<div class="col-lg-4 col-md-3 col-ms-1"></div>
+			<div class="col-lg-4 col-md-6">
+				<!-- general form elements -->
+				<div class="box box-primary">
+					<div class="box-header with-border">
+						<h3 class="box-title" *ngIf="index === undefined; else updateStudent">Thêm học sinh</h3>
+						<ng-template #updateStudent><h3 class="box-title" >Cập nhật thông tin học sinh</h3></ng-template>
+					</div>
+					<!-- /.box-header -->
+					<!-- form start -->
+					<form role="form" [formGroup]="studentAddForm" (ngSubmit)="doRegister()">
+						<div class="box-body">
+							<div class="row">
+								<div class="col-xs-6 form-group" [ngClass]="{'has-error':(surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched))}">
+									<label for="surMiddleName"> Họ và đệm </label>
+									<input class="form-control" type="text" formControlName="sur_middle_name" id="surMiddleName">
+									<span class="help-block" *ngIf="surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)">Họ và tên đệm tối thiểu 2 ký tự</span>
+								</div>
+								<div class="col-xs-6 form-group" [ngClass]="{'has-error':(firstName.invalid && (firstName.dirty || firstName.touched))}">
+									<label for="firstName"> Tên </label>
+									<input class="form-control" type="text" formControlName="first_name" id="firstName">
+									<span class="help-block" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">Tên không được để trống. Độ dài 2-50 ký tự</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 form-group" [ngClass]="{'has-error':(class.invalid && (class.dirty || class.touched))}">
+									<label for="class"> Lớp </label>
+									<input class="form-control" type="text" formControlName="class" id="class">
+								</div>
+								<div class="col-xs-6 form-group" [ngClass]="{'has-error':(school.invalid && (school.dirty || school.touched))}">
+									<label for="school"> Trường </label>
+									<input class="form-control" type="text" formControlName="school" id="school">
+								</div>
+							</div>
+							<div class="form-group" [ngClass]="{'has-error':(referral.invalid && (referral.dirty || referral.touched))}">
+								<label for="referral"> Người giới thiệu </label>
+								<input class="form-control" type="text" formControlName="referral" id="referral">
+							</div>
+							<div class="form-group" [ngClass]="{'has-error':(parentName.invalid && (parentName.dirty || parentName.touched))}">
+								<label for="parentName"> Tên bố/mẹ</label>
+								<input class="form-control" type="text" formControlName="parent_name" id="parentName">
+								<span class="help-block" *ngIf="parentName.invalid && (parentName.dirty || parentName.touched)">Tên bố mẹ không được để trống. Độ dài 2-50 ký tự</span>
+							</div>
+							<div class="form-group" [ngClass]="{'has-error':(phone.invalid && (phone.dirty || phone.touched))}">
+								<label for="phone">
+									<i class="ion-ios-call"></i> Điện thoại </label>
+								<input class="form-control" type="text" formControlName="phone" id="phone">
+								<span class="help-block" *ngIf="phone.invalid && (phone.dirty || phone.touched)">Số điện thoại không hợp lệ</span>
+							</div>
+							<div class="form-group" [ngClass]="{'has-error':(startDate.invalid && (startDate.dirty || startDate.touched))}">
+								<label for="startDate"> Ngày nhập học: </label>
+								<input class="form-control" type="date" formControlName="start_date" id="startDate">
+							</div>
+							<div class="form-group" [ngClass]="{'has-error':(totalMoney.invalid && (totalMoney.dirty || totalMoney.touched))}">
+								<label for="totalMoney"> Tiền học: </label>
+								<input class="form-control" type="text" formControlName="total_money" id="totalMoney">
+								<span class="help-block" *ngIf="totalMoney.invalid && (totalMoney.dirty || totalMoney.touched)">Số tiền không hợp lệ</span>
+							</div>
+							<div class="form-group" [ngClass]="{'has-error':(note.invalid && (note.dirty || note.touched))}">
+								<label for="note"> Ghi chú: </label>
+								<textarea class="form-control" formControlName="note" id="note" style="resize: none" placeholder="Ghi chú về học sinh..."></textarea>
+							</div>
+						</div>
+						<!-- /.box-body -->
 
-<div class="w3-container" *ngIf="studentAddForm">
-	<form class="w3-container" [formGroup]="studentAddForm" (ngSubmit)="doRegister()">
-		<div class="w3-panel w3-round-small custom-blue">
-			<h3>
-				<span *ngIf="index == undefined">Tạo học sinh mới</span>
-				<span *ngIf="index != undefined">Cập nhật thông tin học sinh</span>
-				<a routerLink="/students" class="w3-button w3-green custom-button">
-					<i class="w3-medium fa fa-chevron-left"></i> Quay lại</a>
-			</h3>
+						<div class="box-footer">
+							<button type="submit" [disabled]="!studentAddForm.valid" class="btn btn-primary" *ngIf="index === undefined; else updateBtn">Thêm</button>
+							<ng-template  #updateBtn> <button type="submit" [disabled]="!studentAddForm.valid" class="btn btn-primary">Cập nhật</button></ng-template>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-3 col-ms-1"></div>
 		</div>
-		<div class="w3-content" style="width: 60%;">
-			<!-- Sur and middle name field -->
-			<label class="w3-text-blue" for="surMiddleName">
-				<i class="w3-medium custom-icon fa fa-user"></i>
-				<b>Họ và đệm</b>
-			</label>
-			<input class="w3-input w3-border" type="text" formControlName="sur_middle_name" id="surMiddleName">
-			<div class="w3-panel w3-red" *ngIf="surMiddleName.invalid && (surMiddleName.dirty || surMiddleName.touched)">Họ và đệm tối thiểu 2 ký tự </div>
-			
-			<!-- First name field -->
-			<label class="w3-text-blue" for="firstName">
-				<i class="w3-medium custom-icon fa fa-user"></i>
-				<b>Tên</b>
-			</label>
-			<input class="w3-input w3-border" type="text" formControlName="first_name" id="firstName">
-			<div class="w3-panel w3-red" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"> Tên không được để trống</div>
-
-			<!-- Class field -->
-			<label class="w3-text-blue" for="class">
-				<i class="w3-medium custom-icon fa fa-university"></i>
-				<b>Lớp</b>
-			</label>
-			<input class="w3-input w3-border" type="text" formControlName="class" id="class">
-
-			<!-- School field -->
-			<label class="w3-text-blue" for="school">
-				<i class="w3-medium custom-icon fa fa-university"></i>
-				<b>Trường</b>
-			</label>
-			<input class="w3-input w3-border" type="text" formControlName="school" id="school">
-
-			<!-- Referral field -->
-			<label class="w3-text-blue" for="referral">
-				<i class="w3-medium custom-icon fa fa-user"></i>
-				<b>Người giới thiệu</b>
-			</label>
-			<input class="w3-input w3-border" type="text" formControlName="referral" id="referral">
-
-			<!-- Parent Name field -->
-			<label class="w3-text-blue" for="parentName">
-				<i class="w3-medium custom-icon fa fa-user"></i>
-				<b>Tên bố/ mẹ</b>
-			</label>
-			<input class="w3-input w3-border" type="text" formControlName="parent_name" id="parentName">
-			<div class="w3-panel w3-red" *ngIf="parentName.invalid && (parentName.dirty || parentName.touched)"> Tên bố/ mẹ không được để trống</div>
-
-			<!-- Phone field -->
-			<label class="w3-text-blue" for="phone">
-				<i class="w3-medium custom-icon fa fa-phone"></i>
-				<b>Điện thoại</b>
-			</label>
-			<input class="w3-input w3-border" type="text" formControlName="phone" id="phone">
-			<div class="w3-panel w3-red" *ngIf="phone.invalid && (phone.dirty || phone.touched)">Số điện thoại không hợp lệ</div>
-
-			<!-- Start Learning Date field -->
-			<label class="w3-text-blue" for="startDate">
-				<i class="w3-medium custom-icon fa fa-calendar"></i>
-				<b>Ngày nhập học: </b>
-			</label>
-			<input class="w3-input w3-border" type="date" formControlName="start_date" id="startDate">
-
-			<label class="w3-text-blue" for="totalMoney">
-				<i class="w3-medium custom-icon fa fa-money"></i>
-				<b>Tiền học: </b>
-			</label>
-			<input class="w3-input w3-border" type="text" formControlName="total_money" id="totalMoney">
-			<div class="w3-panel w3-red" *ngIf="totalMoney.invalid && (totalMoney.dirty || totalMoney.touched)"> Số tiền không hợp lệ</div>
-
-			<!-- Note field -->
-			<label class="w3-text-blue" for="note">
-				<i class="w3-medium custom-icon fa fa-book"></i>
-				<b>Ghi chú</b>
-			</label>
-			<textarea id="note" class="w3-input w3-border" style="resize: none" placeholder="Ghi chú về học sinh" [formControl]="note"></textarea>
-			<button class="w3-btn w3-blue" type="submit" [disabled]="!studentAddForm.valid">
-				<span *ngIf="index == undefined">Tạo mới</span>
-				<span *ngIf="index != undefined">Cập nhật</span>
-				<i class="w3-medium fa fa-check"></i>
-			</button>
-		</div>
-
-	</form>
+	</section>
 </div>
-
 <!-- Created By : Pham Nguyen Binh -->

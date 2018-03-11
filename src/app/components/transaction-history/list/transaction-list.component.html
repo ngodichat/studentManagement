@@ -1,0 +1,41 @@
+<!-- Created By : Pham Nguyen Binh -->
+
+<div class="w3-container" *ngIf="transactions">
+    <div class="w3-panel w3-round-small custom-blue">
+      <h3>Danh sách lớp học<button routerLink="/addTransaction" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Thêm giao dịch</button></h3>
+    </div>
+    <span><i class="w3-medium fa fa-search"></i> Tìm kiếm : <input class="" type="text" [(ngModel)]='filterData'></span>
+  
+    <div class="w3-panel w3-green" *ngIf="(transactions | filter:filterData).length == 0">
+      <!-- <h3>Oh no</h3> -->
+      <p>Không có giao dịch nào <span *ngIf="filterData"> với tiêu chí tìm kiếm"</span> </p>
+    </div>
+    <div class="w3-panel w3-light-grey w3-padding-16 w3-card-2" *ngIf="(transactions | filter:filterData | filter:filterData).length != 0">
+      <table class="w3-table w3-striped w3-bordered">
+        <tr>
+          <th><i class="w3-medium custom-icon fa "></i> STT</th>
+          <!-- <th>ID</th> -->
+          <th><i class="w3-medium custom-icon fa "></i> Tên học sinh</th>
+          <th><i class="w3-medium custom-icon fa "></i> Số tiền </th>
+          <th><i class="w3-medium custom-icon fa "></i> Ngày đóng</th>
+          <th><i class="w3-medium custom-icon fa fa-pencil"></i> Sửa</th>
+          <th><i class="w3-medium custom-icon fa fa-trash"></i> Xóa</th>
+        </tr>
+        <tr class ="custom-hover-blue" *ngFor="let session of transactions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;">
+          <td>{{i +1}}</td>
+          <td class="pointer" [routerLink]="['detail', session._id]">{{session.class_name}} </td>
+          <td class="pointer" [routerLink]="['detail', session._id]">{{session.start_time}}h </td>
+          <td class="pointer" [routerLink]="['detail', session._id]">{{session.start_date}}</td>
+          <td class="pointer" [routerLink]="['detail', session._id]">{{session.end_date}}</td>
+          <td class="pointer" [routerLink]="['detail', session._id]">{{session.fee | myNumber}}</td>
+          <td class="pointer" [routerLink]="['detail', session._id]">{{session.students?.length}}</td>
+          <!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Sửa</button></td> -->
+          <td><button [routerLink]="['/updateSession', session._id]" mat-raised-button color="primary">Sửa</button></td>
+          <td><button (click)="deleteSession(session._id);" mat-raised-button color="warn" >Xóa</button></td>
+        </tr>
+      </table>
+    </div>
+      <pagination-controls (pageChange)="p = $event" nextLabel="Tiếp" previousLabel="Trước"></pagination-controls>
+  </div>
+  
+  <!-- Created By : Pham Nguyen Binh -->

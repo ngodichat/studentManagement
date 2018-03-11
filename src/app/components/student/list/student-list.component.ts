@@ -10,6 +10,9 @@ import { StudentService } from "../../../services/student/student.service";
 import { routerTransition } from "../../../services/config/config.service";
 import { Student } from "../student";
 import { Router } from "@angular/router";
+import * as $ from "jquery";
+import "datatables.net";
+import "datatables.net-bs";
 
 @Component({
   selector: "app-student-list",
@@ -21,6 +24,8 @@ import { Router } from "@angular/router";
 export class StudentListComponent implements OnInit {
   studentList: any;
   students: Student[];
+  private tableScript: any;
+  tableWidget: any;
   constructor(
     private studentService: StudentService,
     private toastr: ToastrService,
@@ -32,6 +37,38 @@ export class StudentListComponent implements OnInit {
     // console.log(this.router.url);
   }
 
+  ngAfterViewInit() {
+    this.initDatatable();
+  }
+
+  initDatatable() {
+    let studentListId: any = $("#studentTable");
+    this.tableWidget = studentListId.DataTable({
+      language: {
+        info: "Hiển thị _START_ - _END_ / _TOTAL_ học sinh",
+        processing: "Đang xử lý...",
+        search: "Tìm kiếm:&nbsp;",
+        loadingRecords: "Đang cập nhật dữ liệu...",
+        zeroRecords: "Chưa có học sinh nào",
+        emptyTable: "Chưa có học sinh nào",
+        paginate: {
+          first: "Trang đầu",
+          previous: "Trước ",
+          next: " Tiếp",
+          last: "Trang cuối"
+        }
+      }
+    });
+  }
+
+  private reInitDatatable(): void {
+    if (this.tableWidget) {
+      this.tableWidget.destroy();
+      this.tableWidget = null;
+    }
+    setTimeout(() => this.initDatatable(), 0);
+  }
+
   // Get student list from services
   getStudentList() {
     this.studentService.getAllStudents().subscribe(
@@ -39,8 +76,9 @@ export class StudentListComponent implements OnInit {
         // this.toastr.success("Thành công", "Tải danh sách học sinh thành công");
         // console.log(students);
         this.students = students;
+        this.reInitDatatable();
         this.success();
-        sessionStorage.setItem("students",JSON.stringify(students));
+        sessionStorage.setItem("students", JSON.stringify(students));
       },
       err => {
         console.log(err);
@@ -64,7 +102,7 @@ export class StudentListComponent implements OnInit {
     const r = confirm("Thầy/cô muốn xóa học sinh này?");
     if (r === true) {
       this.studentService.deleteStudent(index).subscribe(
-        (data) => {
+        data => {
           console.log(data);
           this.toastr.success("Thành công", "Xóa học sinh thành công");
         },

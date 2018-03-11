@@ -2,7 +2,7 @@
  * Created By : Pham Nguyen Binh
  */
 
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Renderer2, OnDestroy } from "@angular/core";
 import { Validators, FormBuilder, FormGroup } from "@angular/forms";
 import { RouterModule, Routes, Router } from "@angular/router";
 import { ValidationService } from "../../services/config/config.service";
@@ -17,14 +17,29 @@ import { routerTransition } from "../../services/config/config.service";
   animations: [routerTransition()],
   host: { "[@routerTransition]": "" }
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private userService: UserService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private renderer: Renderer2
   ) {
+    this.renderer.addClass(document.body, "hold-transition");
+    this.renderer.addClass(document.body, "login-page");
+    let s = this.renderer.createElement("script");
+    s.text = `
+      $(function () {
+  			$('input').iCheck({
+  				checkboxClass: 'icheckbox_square-blue',
+  				radioClass: 'iradio_square-blue',
+  				increaseArea: '20%' /* optional */
+  			});
+  		});
+    `;
+
+    this.renderer.appendChild(document.head, s);
     this.loginForm = this.formBuilder.group({
       email: ["", [Validators.required, ValidationService.emailValidator]],
       password: ["", [Validators.required, ValidationService.passwordValidator]]
@@ -36,6 +51,11 @@ export class LoginComponent implements OnInit {
     if (localStorage.getItem("userData")) {
       this.router.navigate(["/students"]);
     }
+  }
+
+  ngOnDestroy() {
+    this.renderer.removeClass(document.body, "hold-transition");
+    this.renderer.removeClass(document.body, "login-page");
   }
 
   // Initicate login

@@ -15,6 +15,8 @@ import { SessionListComponent } from "../sessions/list/session-list.component";
 
 // Services
 import { routerTransition } from "../../services/config/config.service";
+import { TransactionListComponent } from "../transaction-history/list/transaction-list.component";
+import { TransactionAddComponent } from "../transaction-history/add/transaction-add.component";
 
 @Component({
   selector: "app-home",
@@ -38,44 +40,49 @@ export class HomeComponent implements OnInit {
   routeChanged(val) {
     this.active = val.url;
   }
-
-  // Logout User
-  logOut() {
-    this.toastr.success("Success", "Logged Out Successfully");
-    localStorage.removeItem("userData");
-    this.router.navigate(["/login"]);
-  }
 }
 
 // Define and export child routes of HomeComponent
 export const homeChildRoutes: Routes = [
   {
+    path: "",
+    component: StudentListComponent
+  },
+  {
     path: "students",
     component: StudentListComponent
   },
   {
-    path: "sessions",
-    component: SessionListComponent
+    path: "detail/:id",
+    component: StudentDetailsComponent
   },
   {
     path: "addStudent",
     component: StudentAddComponent
   },
   {
-    path: "addSession",
-    component: SessionAddComponent
-  },
-  {
     path: "updateStudent/:id",
     component: StudentAddComponent
+  },
+  {
+    path: "sessions",
+    component: SessionListComponent
+  },
+  {
+    path: "addSession",
+    component: SessionAddComponent
   },
   {
     path: "updateSession/:id",
     component: SessionAddComponent
   },
   {
-    path: "detail/:id",
-    component: StudentDetailsComponent
+    path: "transactions",
+    component: TransactionListComponent
+  },
+  {
+    path: "addTransactions",
+    component: TransactionAddComponent
   }
 ];
 

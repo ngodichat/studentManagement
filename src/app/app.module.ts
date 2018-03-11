@@ -42,7 +42,9 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatInputModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatIconModule,
+  MatToolbarModule
 } from "@angular/material";
 
 import {
@@ -78,6 +80,11 @@ const routes: Routes = [
 import * as _moment from "moment";
 import { MyNumberPipe } from './pipes/my-number.pipe';
 import { SessionAddComponent } from './components/sessions/add/session-add.component';
+import { TransactionAddComponent } from './components/transaction-history/add/transaction-add.component';
+import { TransactionListComponent } from './components/transaction-history/list/transaction-list.component';
+import { TransactionService } from "./services/transaction/transaction.service";
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 // import { default as _rollupMoment } from "moment";
 const moment = _moment;
 export const MY_DATE_FORMATS = {
@@ -106,6 +113,10 @@ export const MY_DATE_FORMATS = {
     SessionListComponent,
     MyNumberPipe,
     SessionAddComponent,
+    TransactionAddComponent,
+    TransactionListComponent,
+    HeaderComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -121,6 +132,8 @@ export const MY_DATE_FORMATS = {
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
+    MatToolbarModule,
     NgxPaginationModule,
     HttpClientModule,
     ToastrModule.forRoot({
@@ -134,6 +147,7 @@ export const MY_DATE_FORMATS = {
     UserService,
     StudentService,
     SessionService,
+    TransactionService,
     PhonePipe,
     MyNumberPipe,
     DatePipe,
