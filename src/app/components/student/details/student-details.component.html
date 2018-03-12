@@ -1,99 +1,85 @@
 <!-- Created By : Pham Nguyen Binh -->
-
-<div class="box-header with-border">
-	<h3 class="box-title">Thông tin học sinh</h3>
-</div>
-
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			Họ và tên:
-		</label>
+<div class="box">
+	<div class="box-header with-border">
+		<h3 class="box-title"><b>Thông tin học sinh</b></h3>
 	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.sur_middle_name}} {{studentDetail?.first_name}}</label>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			<b>Lớp: </b>
-		</label>
-	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.class}}</label>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			<b>Trường: </b>
-		</label>
-	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.school}}</label>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			<b>Người giới thiệu: </b>
-		</label>
-	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.referral}}</label>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			<b>Bố/mẹ: </b>
-		</label>
-	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.parent_name}}</label>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			<b>Điện thoại: </b>
-		</label>
-	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.phone | phone}}</label>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			<b>Ngày nhập học: </b>
-		</label>
-	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.start_date | date:'dd/MM/yyyy'}}</label>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			<b>Tổng tiền: </b>
-		</label>
-	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.total_money | myNumber}} VNĐ</label>
+	<div class="box-body">
+		<div class="row">
+			<div class="col-xs-6">
+				<label>
+					Họ và tên:
+				</label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.sur_middle_name}} {{studentDetail?.first_name}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label> Lớp: </label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.class}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label> Trường: </label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.school}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label> Người giới thiệu: </label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.referral}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label> Bố/mẹ: </label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.parent_name}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label> Điện thoại: </label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.phone | phone}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label> Ngày nhập học: </label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.start_date | date:'dd/MM/yyyy'}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label> Tổng tiền: </label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.total_money | myNumber}} VNĐ</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label> Ghi chú: </label>
+			</div>
+			<div class="col-xs-6">
+				<label>{{studentDetail?.note}}</label>
+			</div>
+		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-xs-6">
-		<label>
-			<b>Ghi chú: </b>
-		</label>
-	</div>
-	<div class="col-xs-6">
-		<label>{{studentDetail?.note}}</label>
-	</div>
-</div>
-
+<!-- /.box-body -->
 
 <!-- Created By : Pham Nguyen Binh -->
