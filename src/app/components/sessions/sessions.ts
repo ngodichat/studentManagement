@@ -8,5 +8,4 @@ export class Session{
     start_time: number;
     fee: number;
     students: string[];
-    filter_data: string;
 }

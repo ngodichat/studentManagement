@@ -6,6 +6,9 @@ import { SessionService } from "./../../../services/sessions/session.service";
 import { Component, OnInit } from "@angular/core";
 import { ToastrService } from "ngx-toastr";
 import { Session } from "../sessions";
+import * as $ from "jquery";
+import "datatables.net";
+import "datatables.net-bs";
 
 @Component({
   selector: "app-session-list",
@@ -17,7 +20,8 @@ import { Session } from "../sessions";
 export class SessionListComponent implements OnInit {
   sessionList: any;
   sessions: Session[];
-
+  tableWidget: any;
+  selectedId: any;
   constructor(
     private sessionService: SessionService,
     private toastService: ToastrService
@@ -27,20 +31,47 @@ export class SessionListComponent implements OnInit {
     this.getSessionList();
   }
 
-  getSessionList() {
-    this.sessionService.getAllSessions().subscribe(items => {
-      // console.log(items);
-      this.sessions = items;
-      this.success();
-      sessionStorage.setItem("sessions", JSON.stringify(this.sessions));
+  ngAfterViewInit() {
+    this.initDatatable();
+  }
+
+  initDatatable() {
+    let sessionListId: any = $("#sessionTable");
+    this.tableWidget = sessionListId.DataTable({
+      retrieve: true,
+      language: {
+        info: "Hiển thị _START_ - _END_ / _TOTAL_ học sinh",
+        processing: "Đang xử lý...",
+        search: "Tìm kiếm:&nbsp;",
+        loadingRecords: "Đang cập nhật dữ liệu...",
+        zeroRecords: "Chưa có lớp học nào",
+        emptyTable: "Chưa có lớp học nào",
+        infoFiltered: "(lọc trong tổng số _MAX_ lớp học)",
+        lengthMenu: "Hiển thị _MENU_ bản ghi",
+        paginate: {
+          first: "Trang đầu",
+          previous: "Trước ",
+          next: " Tiếp",
+          last: "Trang cuối"
+        }
+      }
     });
   }
 
-  success() {
-    for (let i = 0; i < this.sessions.length; i++) {
-      this.sessions[i].filter_data = this.sessions[i].class_name;
-      // console.log(`Filter session data:`);
+  private reInitDatatable(): void {
+    if (this.tableWidget) {
+      this.tableWidget.destroy();
+      this.tableWidget = null;
     }
+    setTimeout(() => this.initDatatable(), 0);
+  }
+
+  getSessionList() {
+    this.sessionService.getAllSessions().subscribe(items => {
+      this.sessions = items;
+      this.reInitDatatable();
+      sessionStorage.setItem("sessions", JSON.stringify(this.sessions));
+    });
   }
 
   deleteSession(id: string) {
@@ -57,5 +88,10 @@ export class SessionListComponent implements OnInit {
         }
       );
     }
+  }
+
+  setCurrentId(id){
+    this.selectedId = id;
+    console.log(`SELECTED ID: ${this.selectedId}`);
   }
 }

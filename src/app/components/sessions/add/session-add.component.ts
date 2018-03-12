@@ -7,6 +7,9 @@ import { Session } from "../sessions";
 import { Student } from "../../student/student";
 import { DatePipe } from "@angular/common";
 import { MyNumberPipe } from "../../../pipes/my-number.pipe";
+import * as $ from "jquery";
+import "datatables.net";
+import "datatables.net-bs";
 
 @Component({
   selector: "app-session-add",
@@ -15,13 +18,13 @@ import { MyNumberPipe } from "../../../pipes/my-number.pipe";
 })
 export class SessionAddComponent implements OnInit {
   sessionAddForm: FormGroup;
-  id: string;
+  index: string;
   showSearch: boolean;
   // studentList: Student[];
   students: Student[];
   sessionStudents: Student[];
   optionStudentId: string;
-  nStudents: number;
+  tableWidget: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,26 +32,52 @@ export class SessionAddComponent implements OnInit {
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private datePipe: DatePipe,
-    private myNumberPipe: MyNumberPipe
-  ) // private cdRef: ChangeDetectorRef
-  {
+    private myNumberPipe: MyNumberPipe // private cdRef: ChangeDetectorRef
+  ) {
     this.showSearch = true;
     this.students = JSON.parse(sessionStorage.getItem("students"));
     //check for route Params
     this.route.params.subscribe(params => {
-      this.id = params["id"];
-      if (this.id && this.id != undefined) {
-        console.log(`Update session: ${this.id}`);
+      this.index = params["id"];
+      if (this.index && this.index != undefined) {
+        console.log(`Update session: ${this.index}`);
         // this.sessionAddForm.value._id = id;
-        this.getSessionDetail(this.id);
+        this.getSessionDetail(this.index);
       } else {
         this.createForm(null);
       }
     });
   }
 
-  showHideSearchBox() {
-    this.showSearch = !this.showSearch;
+  initDatatable() {
+    let studentListId: any = $("#studentTable");
+    this.tableWidget = studentListId.DataTable({
+      retrieve: true,
+      language: {
+        info: "Hiển thị _START_ - _END_ / _TOTAL_ học sinh",
+        processing: "Đang xử lý...",
+        search: "Tìm kiếm:&nbsp;",
+        loadingRecords: "Đang cập nhật dữ liệu...",
+        zeroRecords: "Chưa có học sinh nào",
+        emptyTable: "Chưa có học sinh nào",
+        infoFiltered: "(lọc trong tổng số _MAX_ học sinh)",
+        lengthMenu: "Hiển thị _MENU_ bản ghi",
+        paginate: {
+          first: "Trang đầu",
+          previous: "Trước ",
+          next: " Tiếp",
+          last: "Trang cuối"
+        }
+      }
+    });
+  }
+
+  private reInitDatatable(): void {
+    if (this.tableWidget) {
+      this.tableWidget.destroy();
+      this.tableWidget = null;
+    }
+    setTimeout(() => this.initDatatable(), 0);
   }
 
   onSelectStudent(id: string) {
@@ -69,9 +98,6 @@ export class SessionAddComponent implements OnInit {
           }
         }
         this.sessionStudents.push(student);
-        this.nStudents = this.sessionStudents.length;
-        // console.log(`Number of students after adding: ${this.sessionStudents.length} - ${this.nStudents}`);
-        
         return;
       }
     }
@@ -107,27 +133,27 @@ export class SessionAddComponent implements OnInit {
       fee: [
         data === null ? "100.000" : this.myNumberPipe.transform(data.fee),
         [Validators.pattern("[0-9.]+")]
-      ],
-      filter_data: ""
+      ]
     });
   }
 
-  onRemoveStudent(student: Student) {
-    const index = this.sessionStudents.indexOf(student);
-    this.sessionStudents.splice(index, 1);
-    this.nStudents = this.sessionStudents.length;
+  removeStudent(student: Student) {
+    let r = confirm(
+      `Thầy/cô chắc chắn muốn xóa học sinh này khỏi lớp học ${this.className}`
+    );
+    if (r) {
+      const index = this.sessionStudents.indexOf(student);
+      this.sessionStudents.splice(index, 1);
+      this.reInitDatatable();
+    }
     // this.cdRef.detectChanges();
   }
 
   getStudentsBySession(sessionId: string) {
     this.sessionService.getStudentsBySession(sessionId).subscribe(students => {
-      // this.studentList = students;
-      this.nStudents = students.length;
       this.sessionStudents = students;
-      // console.log(this.sessionAddForm.value);
+      this.reInitDatatable();
     });
-    // console.log(studentList);
-    // return studentList;
   }
 
   get className() {
@@ -138,7 +164,7 @@ export class SessionAddComponent implements OnInit {
     return this.sessionAddForm.get("start_date");
   }
 
-  get endtDate() {
+  get endDate() {
     return this.sessionAddForm.get("end_date");
   }
 
@@ -148,10 +174,6 @@ export class SessionAddComponent implements OnInit {
 
   get fee() {
     return this.sessionAddForm.get("fee");
-  }
-
-  get filterData() {
-    return this.sessionAddForm.get("filter_data");
   }
 
   doSubmit() {
@@ -169,15 +191,7 @@ export class SessionAddComponent implements OnInit {
       studentIds.push(student._id);
     }
     this.sessionAddForm.value.students = studentIds;
-
-    delete this.sessionAddForm.value.filterData;
-    // let time: string = this.sessionAddForm.value.start_time;
-    // const pos_of_h = time.indexOf("h");
-    // if(pos_of_h !== -1){
-    //   console.log(+time.substr(0,pos_of_h)+(+time.substr(pos_of_h-1)/60));
-    // }
-
-    if (!this.id) {
+    if (!this.index) {
       this.sessionService
         .doAddSession(this.sessionAddForm.value)
         .subscribe(_ => {

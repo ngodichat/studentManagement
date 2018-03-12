@@ -662,7 +662,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sessions/add/session-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessionAddForm\">\n\t<form class=\"w3-container\" [formGroup]=\"sessionAddForm\" (ngSubmit)=\"doSubmit()\">\n\t\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t\t<h3>\n\t\t\t\t<span *ngIf=\"id == undefined\">Tạo lớp mới</span>\n\t\t\t\t<span *ngIf=\"id != undefined\">Cập nhật thông tin lớp học</span>\n\t\t\t\t<a routerLink=\"/sessions\" class=\"w3-button w3-green custom-button\">\n\t\t\t\t\t<i class=\"w3-medium fa fa-chevron-left\"></i> Quay lại</a>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div class=\"w3-content\" style=\"width: 60%;\">\n\t\t\t<!-- Class name field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"className\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-university\"></i>\n\t\t\t\t<b>Tên lớp học</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"class_name\" id=\"className\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"className.invalid && (className.dirty || className.touched)\">Tên lớp học không được để trống </div>\n\n\t\t\t<!-- Start date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày bắt đầu</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\t\t\t<div class=\"w3-panel w3-red\" *ngIf=\"startDate.invalid && (startDate.dirty || startDate.touched)\">Ngày bắt đầu không được để trống </div>\n\n\t\t\t<!-- End date field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"endDate\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Ngày kết thúc</b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"date\" formControlName=\"end_date\" id=\"endDate\">\n\n\t\t\t<!-- Start time field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"startTime\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Bắt đầu lúc: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"start_time\" id=\"startTime\">\n\n\t\t\t<!-- Fee field -->\n\t\t\t<label class=\"w3-text-blue\" for=\"fee\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-money\"></i>\n\t\t\t\t<b>Học phí một buổi: </b>\n\t\t\t</label>\n\t\t\t<input class=\"w3-input w3-border\" type=\"text\" formControlName=\"fee\" id=\"fee\">\n\n\t\t\t<!-- number of students field -->\n\t\t\t<label class=\"w3-text-blue\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-info\"></i>\n\t\t\t\t<b>Số lượng học sinh: {{nStudents}}</b>\n\t\t\t</label>\n\t\t\t<!-- <input class=\"w3-input w3-border\" type=\"number\" formControlName=\"nStudents\" id=\"nStudents\" [value]=\"sessionAddForm.value.nStudents\"> -->\n\t\t\t<br>\n\n\t\t\t<!-- Add students field -->\n\t\t\t<label class=\"w3-text-blue\">\n\t\t\t\t<i class=\"w3-medium custom-icon fa fa-calendar\"></i>\n\t\t\t\t<b>Danh sách học sinh: </b>\n\t\t\t\t<!-- <a class=\"w3-button w3-green custom-button\" (click)=\"showHideSearchBox();\">\n\t\t\t\t\t<i class=\"w3-small  fa fa-plus\"></i> Thêm học sinh</a> -->\n\t\t\t\t<i class=\"w3-medium fa fa-search\"></i>\n\t\t\t\t<div *ngIf=\"showSearch\">\n\t\t\t\t\t<input class=\"w3-input w3-border\" type=\"text\" id=\"searchBox\" formControlName=\"filter_data\">\n\t\t\t\t\t<select (change)=\"onSelectStudent($event.target.value)\">\n\t\t\t\t\t\t<option [value]=\"\"></option>\n\t\t\t\t\t\t<option *ngFor=\"let student of students | filter:sessionAddForm.get('filter_data').value; index as i\" [value]=\"student._id\">{{student.sur_middle_name}} {{student.first_name}}</option>\n\t\t\t\t\t</select>\n\t\t\t\t</div>\n\t\t\t</label>\n\t\t\t<br/>\n\t\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t\t<tr>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t<i class=\"w3-medium custom-icon fa fa-refresh\"></i> STT</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i> Họ và đệm</th>\n\t\t\t\t\t<th>\n\t\t\t\t\t\t<i class=\"w3-medium custom-icon fa fa-user\"></i> Tên</th>\n\t\t\t\t</tr>\n\t\t\t\t<tr class=\"custom-hover-blue\" *ngFor=\"let student of sessionStudents | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t\t<td>{{i+1}}</td>\n\t\t\t\t\t<td>{{student.sur_middle_name}}</td>\n\t\t\t\t\t<td>{{student.first_name}}</td>\n\t\t\t\t\t<td>\n\t\t\t\t\t\t<button class=\"w3-red fa fa-times\" type=\"button\" (click)=\"onRemoveStudent(student);\"></button>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\n\n\t\t\t<button class=\"w3-btn w3-blue\" type=\"submit\" [disabled]=\"!sessionAddForm.valid\">\n\t\t\t\t<span *ngIf=\"id == undefined\">Tạo mới</span>\n\t\t\t\t<span *ngIf=\"id != undefined\">Cập nhật</span>\n\t\t\t\t<i class=\"w3-medium fa fa-check\"></i>\n\t\t\t</button>\n\t\t</div>\n\n\t</form>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<div class=\"content-wrapper\">\n\t<section class=\"content\">\n\t\t<div class=\"row\">\n\t\t\t<!-- left column -->\n\t\t\t<div class=\"col-lg-3 col-md-3 col-ms-1\"></div>\n\t\t\t<div class=\"col-lg-6 col-md-6\">\n\t\t\t\t<!-- general form elements -->\n\t\t\t\t<div class=\"box box-primary\">\n\t\t\t\t\t<div class=\"box-header with-border\">\n\t\t\t\t\t\t<h3 class=\"box-title\" *ngIf=\"index === undefined; else updateSession\">Thêm lớp học</h3>\n\t\t\t\t\t\t<ng-template #updateSession>\n\t\t\t\t\t\t\t<h3 class=\"box-title\">Cập nhật thông tin lớp học</h3>\n\t\t\t\t\t\t</ng-template>\n\t\t\t\t\t</div>\n\t\t\t\t\t<!-- /.box-header -->\n\t\t\t\t\t<!-- form start -->\n\t\t\t\t\t<form role=\"form\" [formGroup]=\"sessionAddForm\" (ngSubmit)=\"doRegister()\">\n\t\t\t\t\t\t<div class=\"box-body\">\n\t\t\t\t\t\t\t<div class=\"form-group\" [ngClass]=\"{'has-error':(className.invalid && (className.dirty || className.touched))}\">\n\t\t\t\t\t\t\t\t<label for=\"className\">Tên lớp học </label>\n\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"class_name\" id=\"className\">\n\t\t\t\t\t\t\t\t<span class=\"help-block\" *ngIf=\"className.invalid && (className.dirty || className.touched)\">Tên lớp học không được để trống</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-xs-6 form-group\" [ngClass]=\"{'has-error':(startDate.invalid && (startDate.dirty || startDate.touched))}\">\n\t\t\t\t\t\t\t\t\t<label for=\"startDate\"> Ngày bắt đầu </label>\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"date\" formControlName=\"start_date\" id=\"startDate\">\n\t\t\t\t\t\t\t\t\t<span class=\"help-block\" *ngIf=\"startDate.invalid && (startDate.dirty || startDate.touched)\">Ngày bắt đầu không được để trống</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-6 form-group\" [ngClass]=\"{'has-error':(endDate.invalid && (endDate.dirty || endDate.touched))}\">\n\t\t\t\t\t\t\t\t\t<label for=\"endDate\"> Ngày kết thúc </label>\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"date\" formControlName=\"end_date\" id=\"endDate\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-xs-6 form-group\" [ngClass]=\"{'has-error':(startTime.invalid && (startTime.dirty || startTime.touched))}\">\n\t\t\t\t\t\t\t\t\t<label for=\"startTime\">Bắt đầu lúc: </label>\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"start_time\" id=\"startTime\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-6 form-group\" [ngClass]=\"{'has-error':(fee.invalid && (fee.dirty || fee.touched))}\">\n\t\t\t\t\t\t\t\t\t<label for=\"fee\">Học phí 1 buổi: </label>\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" formControlName=\"fee\" id=\"fee\">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t<label>Danh sách học sinh</label>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"box\">\n\t\t\t\t\t\t\t\t<!-- /.box-header -->\n\t\t\t\t\t\t\t\t<div class=\"box-body\">\n\t\t\t\t\t\t\t\t\t<table id=\"studentTable\" class=\"table table-bordered table-hover table-striped\">\n\t\t\t\t\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t\t<th class=\"text-center\"> STT</th>\n\t\t\t\t\t\t\t\t\t\t\t\t<th class=\"text-center\"> Họ và đệm</th>\n\t\t\t\t\t\t\t\t\t\t\t\t<th class=\"text-center\"> Tên</th>\n\t\t\t\t\t\t\t\t\t\t\t\t<th class=\"text-center\"> Lớp</th>\n\t\t\t\t\t\t\t\t\t\t\t\t<th class=\"text-center\"> Trường</th>\n\t\t\t\t\t\t\t\t\t\t\t\t<th class=\"text-center\"> Xóa</th>\n\t\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t\t\t\t\t<tr *ngFor=\"let student of sessionStudents; index as i\">\n\t\t\t\t\t\t\t\t\t\t\t\t<td class=\"text-center\">{{i +1}}</td>\n\t\t\t\t\t\t\t\t\t\t\t\t<td class=\"pointer\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.sur_middle_name}} </td>\n\t\t\t\t\t\t\t\t\t\t\t\t<td class=\"pointer\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.first_name}}</td>\n\t\t\t\t\t\t\t\t\t\t\t\t<td class=\"pointer text-center\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.class}}</td>\n\t\t\t\t\t\t\t\t\t\t\t\t<td class=\"pointer text-center\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.school}}</td>\n\t\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<tr class=\"text-center\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-trash\" (click)=\"removeStudent(student);\"></i>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<!-- /.box-body -->\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<!-- /.box-body -->\n\n\t\t\t\t\t\t<div class=\"box-footer\">\n\t\t\t\t\t\t\t<button type=\"submit\" [disabled]=\"!sessionAddForm.valid\" class=\"btn btn-primary\" *ngIf=\"index === undefined; else updateBtn\">Thêm</button>\n\t\t\t\t\t\t\t<ng-template #updateBtn>\n\t\t\t\t\t\t\t\t<button type=\"submit\" [disabled]=\"!sessionAddForm.valid\" class=\"btn btn-primary\">Cập nhật</button>\n\t\t\t\t\t\t\t</ng-template>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-md-3 col-ms-1\"></div>\n\t\t</div>\n\t</section>\n</div>\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -678,6 +678,12 @@ module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-cont
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pipes_my_number_pipe__ = __webpack_require__("../../../../../src/app/pipes/my-number.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery__ = __webpack_require__("../../../../jquery/dist/jquery.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_datatables_net__ = __webpack_require__("../../../../datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_datatables_net___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_datatables_net__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_datatables_net_bs__ = __webpack_require__("../../../../datatables.net-bs/js/dataTables.bootstrap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_datatables_net_bs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_datatables_net_bs__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -694,32 +700,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var SessionAddComponent = /** @class */ (function () {
-    function SessionAddComponent(formBuilder, sessionService, toastr, route, datePipe, myNumberPipe) {
+    function SessionAddComponent(formBuilder, sessionService, toastr, route, datePipe, myNumberPipe // private cdRef: ChangeDetectorRef
+    ) {
         var _this = this;
         this.formBuilder = formBuilder;
         this.sessionService = sessionService;
         this.toastr = toastr;
         this.route = route;
         this.datePipe = datePipe;
-        this.myNumberPipe = myNumberPipe;
+        this.myNumberPipe = myNumberPipe; // private cdRef: ChangeDetectorRef
         this.showSearch = true;
         this.students = JSON.parse(sessionStorage.getItem("students"));
         //check for route Params
         this.route.params.subscribe(function (params) {
-            _this.id = params["id"];
-            if (_this.id && _this.id != undefined) {
-                console.log("Update session: " + _this.id);
+            _this.index = params["id"];
+            if (_this.index && _this.index != undefined) {
+                console.log("Update session: " + _this.index);
                 // this.sessionAddForm.value._id = id;
-                _this.getSessionDetail(_this.id);
+                _this.getSessionDetail(_this.index);
             }
             else {
                 _this.createForm(null);
             }
         });
     }
-    SessionAddComponent.prototype.showHideSearchBox = function () {
-        this.showSearch = !this.showSearch;
+    SessionAddComponent.prototype.initDatatable = function () {
+        var studentListId = __WEBPACK_IMPORTED_MODULE_7_jquery__("#studentTable");
+        this.tableWidget = studentListId.DataTable({
+            retrieve: true,
+            language: {
+                info: "Hiển thị _START_ - _END_ / _TOTAL_ học sinh",
+                processing: "Đang xử lý...",
+                search: "Tìm kiếm:&nbsp;",
+                loadingRecords: "Đang cập nhật dữ liệu...",
+                zeroRecords: "Chưa có học sinh nào",
+                emptyTable: "Chưa có học sinh nào",
+                infoFiltered: "(lọc trong tổng số _MAX_ học sinh)",
+                lengthMenu: "Hiển thị _MENU_ bản ghi",
+                paginate: {
+                    first: "Trang đầu",
+                    previous: "Trước ",
+                    next: " Tiếp",
+                    last: "Trang cuối"
+                }
+            }
+        });
+    };
+    SessionAddComponent.prototype.reInitDatatable = function () {
+        var _this = this;
+        if (this.tableWidget) {
+            this.tableWidget.destroy();
+            this.tableWidget = null;
+        }
+        setTimeout(function () { return _this.initDatatable(); }, 0);
     };
     SessionAddComponent.prototype.onSelectStudent = function (id) {
         if (id === "") {
@@ -739,8 +776,6 @@ var SessionAddComponent = /** @class */ (function () {
                     }
                 }
                 this.sessionStudents.push(student);
-                this.nStudents = this.sessionStudents.length;
-                // console.log(`Number of students after adding: ${this.sessionStudents.length} - ${this.nStudents}`);
                 return;
             }
         }
@@ -775,26 +810,24 @@ var SessionAddComponent = /** @class */ (function () {
             fee: [
                 data === null ? "100.000" : this.myNumberPipe.transform(data.fee),
                 [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].pattern("[0-9.]+")]
-            ],
-            filter_data: ""
+            ]
         });
     };
-    SessionAddComponent.prototype.onRemoveStudent = function (student) {
-        var index = this.sessionStudents.indexOf(student);
-        this.sessionStudents.splice(index, 1);
-        this.nStudents = this.sessionStudents.length;
+    SessionAddComponent.prototype.removeStudent = function (student) {
+        var r = confirm("Th\u1EA7y/c\u00F4 ch\u1EAFc ch\u1EAFn mu\u1ED1n x\u00F3a h\u1ECDc sinh n\u00E0y kh\u1ECFi l\u1EDBp h\u1ECDc " + this.className);
+        if (r) {
+            var index = this.sessionStudents.indexOf(student);
+            this.sessionStudents.splice(index, 1);
+            this.reInitDatatable();
+        }
         // this.cdRef.detectChanges();
     };
     SessionAddComponent.prototype.getStudentsBySession = function (sessionId) {
         var _this = this;
         this.sessionService.getStudentsBySession(sessionId).subscribe(function (students) {
-            // this.studentList = students;
-            _this.nStudents = students.length;
             _this.sessionStudents = students;
-            // console.log(this.sessionAddForm.value);
+            _this.reInitDatatable();
         });
-        // console.log(studentList);
-        // return studentList;
     };
     Object.defineProperty(SessionAddComponent.prototype, "className", {
         get: function () {
@@ -810,7 +843,7 @@ var SessionAddComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SessionAddComponent.prototype, "endtDate", {
+    Object.defineProperty(SessionAddComponent.prototype, "endDate", {
         get: function () {
             return this.sessionAddForm.get("end_date");
         },
@@ -831,13 +864,6 @@ var SessionAddComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SessionAddComponent.prototype, "filterData", {
-        get: function () {
-            return this.sessionAddForm.get("filter_data");
-        },
-        enumerable: true,
-        configurable: true
-    });
     SessionAddComponent.prototype.doSubmit = function () {
         var _this = this;
         var fee = this.sessionAddForm.value.fee.toString();
@@ -854,13 +880,7 @@ var SessionAddComponent = /** @class */ (function () {
             studentIds.push(student._id);
         }
         this.sessionAddForm.value.students = studentIds;
-        delete this.sessionAddForm.value.filterData;
-        // let time: string = this.sessionAddForm.value.start_time;
-        // const pos_of_h = time.indexOf("h");
-        // if(pos_of_h !== -1){
-        //   console.log(+time.substr(0,pos_of_h)+(+time.substr(pos_of_h-1)/60));
-        // }
-        if (!this.id) {
+        if (!this.index) {
             this.sessionService
                 .doAddSession(this.sessionAddForm.value)
                 .subscribe(function (_) {
@@ -897,7 +917,8 @@ var SessionAddComponent = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3_ngx_toastr__["b" /* ToastrService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_5__angular_common__["d" /* DatePipe */],
-            __WEBPACK_IMPORTED_MODULE_6__pipes_my_number_pipe__["a" /* MyNumberPipe */]])
+            __WEBPACK_IMPORTED_MODULE_6__pipes_my_number_pipe__["a" /* MyNumberPipe */] // private cdRef: ChangeDetectorRef
+        ])
     ], SessionAddComponent);
     return SessionAddComponent;
 }());
@@ -914,7 +935,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "i {\r\n    cursor: pointer;\r\n}", ""]);
 
 // exports
 
@@ -927,7 +948,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sessions/list/session-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-container\" *ngIf=\"sessions\">\n\t<div class=\"w3-panel w3-round-small custom-blue\">\n\t\t<h3>Danh sách lớp học<button routerLink=\"/addSession\" class=\"w3-button w3-green custom-button\"><i class=\"w3-medium  fa fa-plus\"></i> Thêm lớp học</button></h3>\n\t</div>\n\t<span><i class=\"w3-medium fa fa-search\"></i> Tìm kiếm : <input class=\"\" type=\"text\" [(ngModel)]='filterData'></span>\n\n\t<div class=\"w3-panel w3-green\" *ngIf=\"(sessions | filter:filterData).length == 0\">\n\t\t<!-- <h3>Oh no</h3> -->\n\t\t<p>Không có lớp nào <span *ngIf=\"filterData\"> có tên là \"{{filterData}}\"</span> </p>\n\t</div>\n\t<div class=\"w3-panel w3-light-grey w3-padding-16 w3-card-2\" *ngIf=\"(sessions | filter:filterData | filter:filterData).length != 0\">\n\t\t<table class=\"w3-table w3-striped w3-bordered\">\n\t\t\t<tr>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> STT</th>\n\t\t\t\t<!-- <th>ID</th> -->\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Tên lớp </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Ca dạy </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Bắt đầu</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Kết thúc</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Học phí </th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa \"></i> Số học viên</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-pencil\"></i> Sửa</th>\n\t\t\t\t<th><i class=\"w3-medium custom-icon fa fa-trash\"></i> Xóa</th>\n\t\t\t</tr>\n\t\t\t<tr class =\"custom-hover-blue\" *ngFor=\"let session of sessions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;\">\n\t\t\t\t<td>{{i +1}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.class_name}} </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_time}}h </td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.start_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.end_date}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.fee | myNumber}}</td>\n\t\t\t\t<td class=\"pointer\" [routerLink]=\"['detail', session._id]\">{{session.students?.length}}</td>\n\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t<td><button [routerLink]=\"['/updateSession', session._id]\" mat-raised-button color=\"primary\">Sửa</button></td>\n\t\t\t\t<td><button (click)=\"deleteSession(session._id);\" mat-raised-button color=\"warn\" >Xóa</button></td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\n\t  <pagination-controls (pageChange)=\"p = $event\" nextLabel=\"Tiếp\" previousLabel=\"Trước\"></pagination-controls>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"content-wrapper\" *ngIf=\"sessions\">\n\t<section class=\"content\">\n\t\t<div class=\"box\">\n\t\t\t<div class=\"box-header\">\n\t\t\t\t<div class=\"box-title\">Danh sách lớp học</div>\n\t\t\t</div>\n\t\t\t<div class=\"box-body\">\n\t\t\t\t<table id=\"sessionTable\" class=\"table table-hover table-striped table-bordered\">\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<th width=\"5%\" class=\"text-center\"> STT</th>\n\t\t\t\t\t\t\t<th width=\"25%\" class=\"text-center\"> Tên lớp </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Ca dạy </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Bắt đầu</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Kết thúc</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Học phí (VNĐ)</th>\n\t\t\t\t\t\t\t<th width=\"20%\" class=\"text-center\"> Số học viên</th>\n\t\t\t\t\t\t\t<th width=\"10%\" class=\"text-center\"> Quản lý </th>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr *ngFor=\"let session of sessions; index as i\">\n\t\t\t\t\t\t\t<td class=\"text-center\">{{i +1}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\">{{session?.class_name}} </td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\">{{session?.start_time}}h </td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\">{{session?.start_date}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\">{{session?.end_date}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-right\">{{session?.fee | myNumber}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\">{{session?.students?.length}}</td>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<i class=\"col-xs-2 fa fa-edit\" [routerLink]=\"['/updateSession', session._id]\"></i> \n\t\t\t\t\t\t\t\t<i class=\"col-xs-2 fa fa-trash\" (click)=\"deleteSession(session._id);\"></i>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t\t<!-- /.box-body -->\n\t\t</div>\n\t\t<!-- ./box -->\n\t</section>\n</div>\n\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -940,6 +961,12 @@ module.exports = "<!-- Created By : Pham Nguyen Binh -->\n\n<div class=\"w3-cont
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_sessions_session_service__ = __webpack_require__("../../../../../src/app/services/sessions/session.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/toastr.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__("../../../../jquery/dist/jquery.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_datatables_net__ = __webpack_require__("../../../../datatables.net/js/jquery.dataTables.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_datatables_net___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_datatables_net__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_datatables_net_bs__ = __webpack_require__("../../../../datatables.net-bs/js/dataTables.bootstrap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_datatables_net_bs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_datatables_net_bs__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -953,6 +980,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var SessionListComponent = /** @class */ (function () {
     function SessionListComponent(sessionService, toastService) {
         this.sessionService = sessionService;
@@ -961,20 +991,46 @@ var SessionListComponent = /** @class */ (function () {
     SessionListComponent.prototype.ngOnInit = function () {
         this.getSessionList();
     };
+    SessionListComponent.prototype.ngAfterViewInit = function () {
+        this.initDatatable();
+    };
+    SessionListComponent.prototype.initDatatable = function () {
+        var sessionListId = __WEBPACK_IMPORTED_MODULE_4_jquery__("#sessionTable");
+        this.tableWidget = sessionListId.DataTable({
+            retrieve: true,
+            language: {
+                info: "Hiển thị _START_ - _END_ / _TOTAL_ học sinh",
+                processing: "Đang xử lý...",
+                search: "Tìm kiếm:&nbsp;",
+                loadingRecords: "Đang cập nhật dữ liệu...",
+                zeroRecords: "Chưa có lớp học nào",
+                emptyTable: "Chưa có lớp học nào",
+                infoFiltered: "(lọc trong tổng số _MAX_ lớp học)",
+                lengthMenu: "Hiển thị _MENU_ bản ghi",
+                paginate: {
+                    first: "Trang đầu",
+                    previous: "Trước ",
+                    next: " Tiếp",
+                    last: "Trang cuối"
+                }
+            }
+        });
+    };
+    SessionListComponent.prototype.reInitDatatable = function () {
+        var _this = this;
+        if (this.tableWidget) {
+            this.tableWidget.destroy();
+            this.tableWidget = null;
+        }
+        setTimeout(function () { return _this.initDatatable(); }, 0);
+    };
     SessionListComponent.prototype.getSessionList = function () {
         var _this = this;
         this.sessionService.getAllSessions().subscribe(function (items) {
-            // console.log(items);
             _this.sessions = items;
-            _this.success();
+            _this.reInitDatatable();
             sessionStorage.setItem("sessions", JSON.stringify(_this.sessions));
         });
-    };
-    SessionListComponent.prototype.success = function () {
-        for (var i = 0; i < this.sessions.length; i++) {
-            this.sessions[i].filter_data = this.sessions[i].class_name;
-            // console.log(`Filter session data:`);
-        }
     };
     SessionListComponent.prototype.deleteSession = function (id) {
         var _this = this;
@@ -988,6 +1044,10 @@ var SessionListComponent = /** @class */ (function () {
                 _this.toastService.error("Thất bại", "Không xóa được lớp học");
             });
         }
+    };
+    SessionListComponent.prototype.setCurrentId = function (id) {
+        this.selectedId = id;
+        console.log("SELECTED ID: " + this.selectedId);
     };
     SessionListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
@@ -1028,7 +1088,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sidebar/sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<aside class=\"main-sidebar\">\n  <!-- sidebar: style can be found in sidebar.less -->\n  <section class=\"sidebar\">\n    <!-- Sidebar user panel -->\n    <div class=\"user-panel\">\n      <div class=\"pull-left image\">\n        <img src=\"assets/img/avatar5.png\" class=\"img-circle\" alt=\"User Image\">\n      </div>\n      <div class=\"pull-left info\">\n        <p>Admin</p>\n        <a href=\"#\">\n          <i class=\"fa fa-circle text-success\"></i> Online</a>\n      </div>\n    </div>\n    <!-- search form -->\n    <form action=\"#\" method=\"get\" class=\"sidebar-form\">\n      <div class=\"input-group\">\n        <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search...\">\n        <span class=\"input-group-btn\">\n          <button type=\"submit\" name=\"search\" id=\"search-btn\" class=\"btn btn-flat\">\n            <i class=\"fa fa-search\"></i>\n          </button>\n        </span>\n      </div>\n    </form>\n    <!-- /.search form -->\n    <!-- sidebar menu: : style can be found in sidebar.less -->\n    <ul class=\"sidebar-menu\" data-widget=\"tree\">\n      <li class=\"header\">MAIN NAVIGATION</li>\n      <li class=\"treeview menu-open\" [ngClass]=\"{'active': (curUrl === '/students' || curUrl === '/addStudent')}\">\n        <a href=\"#\">\n          <i class=\"fa fa-user\"></i>\n          <span>Học sinh</span>\n          <span class=\"pull-right-container\">\n            <i class=\"fa fa-angle-left pull-right\"></i>\n          </span>\n        </a>\n        <ul class=\"treeview-menu\">\n            <li [ngClass]=\"{'active': (curUrl === '/students')}\"><a routerLink=\"/students\" ><i class=\"fa fa-users\"></i> Danh sách học sinh</a></li>\n            <li [ngClass]=\"{'active': (curUrl === '/addStudent')}\"><a routerLink=\"/addStudent\"><i class=\"fa fa-user-plus\"></i> Thêm học sinh</a></li>\n          </ul>\n      </li>\n      <li [ngClass]=\"{'active': (curUrl == '/sessions')}\">\n        <a routerLink=\"/sessions\">\n          <i class=\"fa fa-th\"></i>\n          <span>Lớp học</span>\n        </a>\n      </li>\n    </ul>\n  </section>\n  <!-- /.sidebar -->\n</aside>"
+module.exports = "<aside class=\"main-sidebar\">\n  <!-- sidebar: style can be found in sidebar.less -->\n  <section class=\"sidebar\">\n    <!-- Sidebar user panel -->\n    <div class=\"user-panel\">\n      <div class=\"pull-left image\">\n        <img src=\"assets/img/avatar5.png\" class=\"img-circle\" alt=\"User Image\">\n      </div>\n      <div class=\"pull-left info\">\n        <p>Admin</p>\n        <a href=\"#\">\n          <i class=\"fa fa-circle text-success\"></i> Online</a>\n      </div>\n    </div>\n    <!-- search form -->\n    <form action=\"#\" method=\"get\" class=\"sidebar-form\">\n      <div class=\"input-group\">\n        <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search...\">\n        <span class=\"input-group-btn\">\n          <button type=\"submit\" name=\"search\" id=\"search-btn\" class=\"btn btn-flat\">\n            <i class=\"fa fa-search\"></i>\n          </button>\n        </span>\n      </div>\n    </form>\n    <!-- /.search form -->\n    <!-- sidebar menu: : style can be found in sidebar.less -->\n    <ul class=\"sidebar-menu\" data-widget=\"tree\">\n      <li class=\"header\">MAIN NAVIGATION</li>\n      <li class=\"treeview menu-open\" [ngClass]=\"{'active': (curUrl === '/students' || curUrl === '/addStudent')}\">\n        <a routerLink=\"/students\">\n          <i class=\"fa fa-user\"></i>\n          <span>Học sinh</span>\n          <span class=\"pull-right-container\">\n            <i class=\"fa fa-angle-left pull-right\"></i>\n          </span>\n        </a>\n        <ul class=\"treeview-menu\">\n          <li [ngClass]=\"{'active': (curUrl === '/students')}\">\n            <a routerLink=\"/students\">Danh sách học sinh</a>\n          </li>\n          <li [ngClass]=\"{'active': (curUrl === '/addStudent')}\">\n            <a routerLink=\"/addStudent\"> Thêm học sinh </a>\n          </li>\n        </ul>\n      </li>\n      <li [ngClass]=\"{'active': (curUrl == '/sessions' || curUrl === '/sessions' || curUrl === '/updateSession/:id')}\">\n        <a routerLink=\"/sessions\">\n          <i class=\"fa fa-th\"></i>\n          <span>Lớp học</span>\n          <span class=\"pull-right-container\">\n            <i class=\"fa fa-angle-left pull-right\"></i>\n          </span>\n        </a>\n        <ul class=\"treeview-menu\">\n            <li [ngClass]=\"{'active': (curUrl === '/sessions')}\">\n              <a routerLink=\"/sessions\"> Danh sách lớp học</a>\n            </li>\n            <li [ngClass]=\"{'active': (curUrl === '/addSession')}\">\n              <a routerLink=\"/addSession\"> Thêm lớp học</a>\n            </li>\n          </ul>\n      </li>\n    </ul>\n  </section>\n  <!-- /.sidebar -->\n</aside>"
 
 /***/ }),
 
@@ -1494,7 +1554,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/student/list/student-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<div class=\"content-wrapper\">\n\t<section class=\"content\">\n\t\t<div class=\"box\">\n\t\t\t<div class=\"box-header\">\n\t\t\t\t<h3 class=\"box-title\">Danh sách học sinh</h3>\n\t\t\t</div>\n\t\t\t<!-- /.box-header -->\n\t\t\t<div class=\"box-body\">\n\t\t\t\t<table id=\"studentTable\" class=\"table table-bordered table-hover table-striped\">\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<th class=\"text-center\"> STT</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ và đệm</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Tên</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Lớp</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Trường</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Người giới thiệu </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ tên bố/mẹ </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Điện thoại</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Ngày nhập học </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Sửa</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Xóa</th>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr *ngFor=\"let student of students; index as i\">\n\t\t\t\t\t\t\t<td class=\"text-center\">{{i +1}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.sur_middle_name}} </td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.first_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.class}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.school}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.referral}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" [routerLink]=\"['/detail', student._id]\">{{student.parent_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.phone | phone}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" [routerLink]=\"['/detail', student._id]\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t\t\t\t<!-- <td><button [routerLink]=\"['update', i]\" class=\"w3-button w3-blue\">Sửa</button></td> -->\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t<button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\">Xóa</button>\n\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t\t<!-- /.box-body -->\n\t\t</div>\n\t\t<!-- /.box -->\n\t\t<div class=\"modal fade\" id=\"modal-default\">\n\t\t\t<div class=\"modal-dialog\">\n\t\t\t\t<div class=\"modal-content\">\n\t\t\t\t\t<div class=\"modal-body\">\n\t\t\t\t\t\t<app-student-details [studentId]=\"selectedId\"></app-student-details>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</section>\n</div>\n<!-- Created By : Pham Nguyen Binh -->"
+module.exports = "<!-- Created By : Pham Nguyen Binh -->\n<div class=\"content-wrapper\">\n\t<section class=\"content\">\n\t\t<div class=\"box\">\n\t\t\t<div class=\"box-header\">\n\t\t\t\t<h3 class=\"box-title\">Danh sách học sinh</h3>\n\t\t\t</div>\n\t\t\t<!-- /.box-header -->\n\t\t\t<div class=\"box-body\">\n\t\t\t\t<table id=\"studentTable\" class=\"table table-bordered table-hover table-striped\">\n\t\t\t\t\t<thead>\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<th class=\"text-center\"> STT</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ và đệm</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Tên</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Lớp</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Trường</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Người giới thiệu </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Họ tên bố/mẹ </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Điện thoại</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Ngày nhập học </th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Sửa</th>\n\t\t\t\t\t\t\t<th class=\"text-center\"> Xóa</th>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</thead>\n\t\t\t\t\t<tbody>\n\t\t\t\t\t\t<tr *ngFor=\"let student of students; index as i\">\n\t\t\t\t\t\t\t<td class=\"text-center\">{{i +1}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.sur_middle_name}} </td>\n\t\t\t\t\t\t\t<td class=\"pointer\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.first_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.class}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.school}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.referral}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.parent_name}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.phone | phone}}</td>\n\t\t\t\t\t\t\t<td class=\"pointer text-center\" data-toggle=\"modal\" data-target=\"#modal-default\" (click)=\"setCurrentId(student._id)\">{{student.start_date | date:\"dd/MM/yyyy\"}}</td>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<button [routerLink]=\"['/updateStudent', student._id]\" mat-raised-button color=\"primary\">Sửa</button>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t<button (click)=\"deleteStudent(student._id);\" mat-raised-button color=\"warn\">Xóa</button>\n\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t</tbody>\n\t\t\t\t</table>\n\t\t\t</div>\n\t\t\t<!-- /.box-body -->\n\t\t</div>\n\t\t<!-- /.box -->\n\t\t<div class=\"modal fade\" id=\"modal-default\">\n\t\t\t<div class=\"modal-dialog\">\n\t\t\t\t<div class=\"modal-content\">\n\t\t\t\t\t<div class=\"modal-body\">\n\t\t\t\t\t\t<app-student-details [studentId]=\"selectedId\"></app-student-details>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</section>\n</div>\n<!-- Created By : Pham Nguyen Binh -->"
 
 /***/ }),
 
@@ -1560,6 +1620,8 @@ var StudentListComponent = /** @class */ (function () {
                 loadingRecords: "Đang cập nhật dữ liệu...",
                 zeroRecords: "Chưa có học sinh nào",
                 emptyTable: "Chưa có học sinh nào",
+                infoFiltered: "(lọc trong tổng số _MAX_ học sinh)",
+                lengthMenu: "Hiển thị _MENU_ bản ghi",
                 paginate: {
                     first: "Trang đầu",
                     previous: "Trước ",
@@ -1585,20 +1647,11 @@ var StudentListComponent = /** @class */ (function () {
             // console.log(students);
             _this.students = students;
             _this.reInitDatatable();
-            _this.success();
             sessionStorage.setItem("students", JSON.stringify(students));
         }, function (err) {
             console.log(err);
             _this.toastr.error("Thất bại", "Không tải được danh sách học sinh");
         });
-    };
-    // Get student list success
-    StudentListComponent.prototype.success = function () {
-        // this.students = abc.data;
-        for (var i = 0; i < this.students.length; i++) {
-            this.students[i].filter_data =
-                this.students[i].sur_middle_name + " " + this.students[i].first_name;
-        }
     };
     // Delete a student with its index
     StudentListComponent.prototype.deleteStudent = function (index) {

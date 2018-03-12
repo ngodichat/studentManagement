@@ -1,44 +1,46 @@
 <!-- Created By : Pham Nguyen Binh -->
 
-<div class="w3-container" *ngIf="sessions">
-	<div class="w3-panel w3-round-small custom-blue">
-		<h3>Danh sách lớp học<button routerLink="/addSession" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Thêm lớp học</button></h3>
-	</div>
-	<span><i class="w3-medium fa fa-search"></i> Tìm kiếm : <input class="" type="text" [(ngModel)]='filterData'></span>
-
-	<div class="w3-panel w3-green" *ngIf="(sessions | filter:filterData).length == 0">
-		<!-- <h3>Oh no</h3> -->
-		<p>Không có lớp nào <span *ngIf="filterData"> có tên là "{{filterData}}"</span> </p>
-	</div>
-	<div class="w3-panel w3-light-grey w3-padding-16 w3-card-2" *ngIf="(sessions | filter:filterData | filter:filterData).length != 0">
-		<table class="w3-table w3-striped w3-bordered">
-			<tr>
-				<th><i class="w3-medium custom-icon fa "></i> STT</th>
-				<!-- <th>ID</th> -->
-				<th><i class="w3-medium custom-icon fa "></i> Tên lớp </th>
-				<th><i class="w3-medium custom-icon fa "></i> Ca dạy </th>
-				<th><i class="w3-medium custom-icon fa "></i> Bắt đầu</th>
-				<th><i class="w3-medium custom-icon fa "></i> Kết thúc</th>
-				<th><i class="w3-medium custom-icon fa "></i> Học phí </th>
-				<th><i class="w3-medium custom-icon fa "></i> Số học viên</th>
-				<th><i class="w3-medium custom-icon fa fa-pencil"></i> Sửa</th>
-				<th><i class="w3-medium custom-icon fa fa-trash"></i> Xóa</th>
-			</tr>
-			<tr class ="custom-hover-blue" *ngFor="let session of sessions | filter:filterData | paginate: { itemsPerPage: 10, currentPage: p }; index as i;">
-				<td>{{i +1}}</td>
-				<td class="pointer" [routerLink]="['detail', session._id]">{{session.class_name}} </td>
-				<td class="pointer" [routerLink]="['detail', session._id]">{{session.start_time}}h </td>
-				<td class="pointer" [routerLink]="['detail', session._id]">{{session.start_date}}</td>
-				<td class="pointer" [routerLink]="['detail', session._id]">{{session.end_date}}</td>
-				<td class="pointer" [routerLink]="['detail', session._id]">{{session.fee | myNumber}}</td>
-				<td class="pointer" [routerLink]="['detail', session._id]">{{session.students?.length}}</td>
-				<!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Sửa</button></td> -->
-				<td><button [routerLink]="['/updateSession', session._id]" mat-raised-button color="primary">Sửa</button></td>
-				<td><button (click)="deleteSession(session._id);" mat-raised-button color="warn" >Xóa</button></td>
-			</tr>
-		</table>
-	</div>
-	  <pagination-controls (pageChange)="p = $event" nextLabel="Tiếp" previousLabel="Trước"></pagination-controls>
+<div class="content-wrapper" *ngIf="sessions">
+	<section class="content">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-title">Danh sách lớp học</div>
+			</div>
+			<div class="box-body">
+				<table id="sessionTable" class="table table-hover table-striped table-bordered">
+					<thead>
+						<tr>
+							<th width="5%" class="text-center"> STT</th>
+							<th width="25%" class="text-center"> Tên lớp </th>
+							<th class="text-center"> Ca dạy </th>
+							<th class="text-center"> Bắt đầu</th>
+							<th class="text-center"> Kết thúc</th>
+							<th class="text-center"> Học phí (VNĐ)</th>
+							<th width="20%" class="text-center"> Số học viên</th>
+							<th width="10%" class="text-center"> Quản lý </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let session of sessions; index as i">
+							<td class="text-center">{{i +1}}</td>
+							<td class="pointer">{{session?.class_name}} </td>
+							<td class="pointer text-center">{{session?.start_time}}h </td>
+							<td class="pointer text-center">{{session?.start_date}}</td>
+							<td class="pointer text-center">{{session?.end_date}}</td>
+							<td class="pointer text-right">{{session?.fee | myNumber}}</td>
+							<td class="pointer text-center">{{session?.students?.length}}</td>
+							<td>
+								<i class="col-xs-2 fa fa-edit" [routerLink]="['/updateSession', session._id]"></i> 
+								<i class="col-xs-2 fa fa-trash" (click)="deleteSession(session._id);"></i>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- ./box -->
+	</section>
 </div>
 
 <!-- Created By : Pham Nguyen Binh -->

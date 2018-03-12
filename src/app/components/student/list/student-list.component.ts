@@ -53,6 +53,8 @@ export class StudentListComponent implements OnInit {
         loadingRecords: "Đang cập nhật dữ liệu...",
         zeroRecords: "Chưa có học sinh nào",
         emptyTable: "Chưa có học sinh nào",
+        infoFiltered: "(lọc trong tổng số _MAX_ học sinh)",
+        lengthMenu: "Hiển thị _MENU_ bản ghi",
         paginate: {
           first: "Trang đầu",
           previous: "Trước ",
@@ -79,7 +81,6 @@ export class StudentListComponent implements OnInit {
         // console.log(students);
         this.students = students;
         this.reInitDatatable();
-        this.success();
         sessionStorage.setItem("students", JSON.stringify(students));
       },
       err => {
@@ -87,15 +88,6 @@ export class StudentListComponent implements OnInit {
         this.toastr.error("Thất bại", "Không tải được danh sách học sinh");
       }
     );
-  }
-
-  // Get student list success
-  success() {
-    // this.students = abc.data;
-    for (let i = 0; i < this.students.length; i++) {
-      this.students[i].filter_data =
-        this.students[i].sur_middle_name + " " + this.students[i].first_name;
-    }
   }
 
   // Delete a student with its index
@@ -116,7 +108,7 @@ export class StudentListComponent implements OnInit {
     }
   }
 
-  setCurrentId(id){
+  setCurrentId(id) {
     this.selectedId = id;
     console.log(`SELECTED ID: ${this.selectedId}`);
   }

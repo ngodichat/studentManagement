@@ -28,7 +28,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
       <li class="treeview menu-open" [ngClass]="{'active': (curUrl === '/students' || curUrl === '/addStudent')}">
-        <a href="#">
+        <a routerLink="/students">
           <i class="fa fa-user"></i>
           <span>Học sinh</span>
           <span class="pull-right-container">
@@ -36,15 +36,30 @@
           </span>
         </a>
         <ul class="treeview-menu">
-            <li [ngClass]="{'active': (curUrl === '/students')}"><a routerLink="/students" ><i class="fa fa-users"></i> Danh sách học sinh</a></li>
-            <li [ngClass]="{'active': (curUrl === '/addStudent')}"><a routerLink="/addStudent"><i class="fa fa-user-plus"></i> Thêm học sinh</a></li>
-          </ul>
+          <li [ngClass]="{'active': (curUrl === '/students')}">
+            <a routerLink="/students">Danh sách học sinh</a>
+          </li>
+          <li [ngClass]="{'active': (curUrl === '/addStudent')}">
+            <a routerLink="/addStudent"> Thêm học sinh </a>
+          </li>
+        </ul>
       </li>
-      <li [ngClass]="{'active': (curUrl == '/sessions')}">
+      <li [ngClass]="{'active': (curUrl == '/sessions' || curUrl === '/sessions' || curUrl === '/updateSession/:id')}">
         <a routerLink="/sessions">
           <i class="fa fa-th"></i>
           <span>Lớp học</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
         </a>
+        <ul class="treeview-menu">
+            <li [ngClass]="{'active': (curUrl === '/sessions')}">
+              <a routerLink="/sessions"> Danh sách lớp học</a>
+            </li>
+            <li [ngClass]="{'active': (curUrl === '/addSession')}">
+              <a routerLink="/addSession"> Thêm lớp học</a>
+            </li>
+          </ul>
       </li>
     </ul>
   </section>
