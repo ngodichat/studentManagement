@@ -24,12 +24,12 @@
 						<tr *ngFor="let session of sessions; index as i">
 							<td class="text-center">{{i +1}}</td>
 							<td class="pointer">{{session?.class_name}} </td>
-							<td class="pointer text-center">{{session?.start_time}}h </td>
-							<td class="pointer text-center">{{session?.start_date}}</td>
-							<td class="pointer text-center">{{session?.end_date}}</td>
+							<td class="pointer text-center">{{session?.start_time}} </td>
+							<td class="pointer text-center">{{session?.start_date | date:'dd-MM-yyyy'}}</td>
+							<td class="pointer text-center">{{session?.end_date | date:'dd-MM-yyyy'}}</td>
 							<td class="pointer text-right">{{session?.fee | myNumber}}</td>
 							<td class="pointer text-center">{{session?.students?.length}}</td>
-							<td>
+							<td >
 								<i class="col-xs-2 fa fa-edit" [routerLink]="['/updateSession', session._id]"></i> 
 								<i class="col-xs-2 fa fa-trash" (click)="deleteSession(session._id);"></i>
 							</td>

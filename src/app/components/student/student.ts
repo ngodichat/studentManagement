@@ -12,4 +12,5 @@ export class Student {
     total_money: number;
     note: string;
     sessions: string[];
+    status: boolean;
 }

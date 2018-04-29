@@ -15,7 +15,7 @@
 					</div>
 					<!-- /.box-header -->
 					<!-- form start -->
-					<form role="form" [formGroup]="sessionAddForm" (ngSubmit)="doRegister()">
+					<form role="form" [formGroup]="sessionAddForm" (ngSubmit)="doSubmit()">
 						<div class="box-body">
 							<div class="form-group" [ngClass]="{'has-error':(className.invalid && (className.dirty || className.touched))}">
 								<label for="className">Tên lớp học </label>
@@ -46,6 +46,7 @@
 
 							<div class="form-group">
 								<label>Danh sách học sinh</label>
+								<!-- <button (click)="">Thêm học sinh</button> -->
 							</div>
 							<div class="box">
 								<!-- /.box-header -->
