@@ -11,6 +11,5 @@ export class Student {
     start_date: Date;
     total_money: number;
     note: string;
-    sessions: string[];
     status: boolean;
 }

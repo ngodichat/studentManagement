@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef, ViewChild } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { SessionService } from "../../../services/sessions/session.service";
 import { ToastrService } from "ngx-toastr";
@@ -7,6 +7,8 @@ import { Session } from "../sessions";
 import { Student } from "../../student/student";
 import { DatePipe } from "@angular/common";
 import { MyNumberPipe } from "../../../pipes/my-number.pipe";
+import { AddStudentDialogComponent } from "../../student/add-student-dialog/add-student-dialog.component";
+
 import * as $ from "jquery";
 import "datatables.net";
 import "datatables.net-bs";
@@ -25,6 +27,15 @@ export class SessionAddComponent implements OnInit {
   sessionStudents: Student[];
   optionStudentId: string;
   tableWidget: any;
+
+
+  @ViewChild(AddStudentDialogComponent)
+  private addStudentDialogComponent: AddStudentDialogComponent
+
+  addStudentDialogUpdate(event: Student){
+    this.sessionStudents.push(event);
+    this.reInitDatatable();
+  }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -145,6 +156,7 @@ export class SessionAddComponent implements OnInit {
       const index = this.sessionStudents.indexOf(student);
       this.sessionStudents.splice(index, 1);
       this.reInitDatatable();
+      this.addStudentDialogComponent.onRemoveStudentFromParent(student);
     }
     // this.cdRef.detectChanges();
   }

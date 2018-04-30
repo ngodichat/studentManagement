@@ -61,6 +61,18 @@ export class SessionService {
     );
   }
 
+  doAddStudent(data: any): Observable<any> {
+    console.log("doAddStudent:");
+    console.log(data.sessionId, data.studentId);
+    
+    return this.http.post("/api/sessions/addStudent",data).pipe(
+      tap(_ => {
+        console.log(`Add new student to session${data.sessionId}`);
+      }),
+      catchError(this.handleError("add new student to session"))
+    );
+  }
+
   private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure

@@ -85,6 +85,7 @@ import { TransactionListComponent } from './components/transaction-history/list/
 import { TransactionService } from "./services/transaction/transaction.service";
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AddStudentDialogComponent } from './components/student/add-student-dialog/add-student-dialog.component';
 // import { default as _rollupMoment } from "moment";
 const moment = _moment;
 export const MY_DATE_FORMATS = {
@@ -117,6 +118,7 @@ export const MY_DATE_FORMATS = {
     TransactionListComponent,
     HeaderComponent,
     SidebarComponent,
+    AddStudentDialogComponent,
   ],
   imports: [
     BrowserModule,
