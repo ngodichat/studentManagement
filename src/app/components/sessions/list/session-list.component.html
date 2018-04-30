@@ -16,7 +16,7 @@
 							<th class="text-center"> Bắt đầu</th>
 							<th class="text-center"> Kết thúc</th>
 							<th class="text-center"> Học phí (VNĐ)</th>
-							<th width="20%" class="text-center"> Số học viên</th>
+							<th width="15%" class="text-center"> Số học viên</th>
 							<th width="10%" class="text-center"> Quản lý </th>
 						</tr>
 					</thead>
@@ -29,9 +29,9 @@
 							<td class="pointer text-center">{{session?.end_date | date:'dd-MM-yyyy'}}</td>
 							<td class="pointer text-right">{{session?.fee | myNumber}}</td>
 							<td class="pointer text-center">{{session?.students?.length}}</td>
-							<td >
-								<i class="col-xs-2 fa fa-edit" [routerLink]="['/updateSession', session._id]"></i> 
-								<i class="col-xs-2 fa fa-trash" (click)="deleteSession(session._id);"></i>
+							<td class="row">
+								<button class="col-xs-5 col-md-5 col-md-offset-1 btn btn-primary" type="button" [routerLink]="['/updateSession', session._id]">Sửa</button>
+								<button class="col-xs-5 col-md-5 col-md-offset-1 btn btn-danger" type="button" (click)="deleteSession(session._id);">Xóa</button>
 							</td>
 						</tr>
 					</tbody>

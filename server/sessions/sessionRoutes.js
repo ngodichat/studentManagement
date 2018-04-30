@@ -47,17 +47,16 @@ router.get("/students/:id", (req, res) => {
     if (!err) {
       for (let i = 0; i < items.length; i++) {
         const studentIDs = items[i].students;
-        if(studentIDs){
+        if (studentIDs) {
           var ids = new Array();
           for (let j = 0; j < studentIDs.length; j++) {
             const studentID = new mongo.ObjectId(studentIDs[j]);
             ids.push(studentID);
           }
-          studentCollection.find({ _id: { $in: ids} }).toArray((err, data) => {
+          studentCollection.find({ _id: { $in: ids } }).toArray((err, data) => {
             res.send(data);
           });
-        }
-        else {
+        } else {
           res.send(new Array());
         }
       }
@@ -69,6 +68,25 @@ router.post("/", (req, res) => {
   console.log("Get add new session request");
   // var sessionCollection = db.collection("sessions");
   sessionCollection.save(req.body);
+  res.end();
+});
+
+//add student to session
+router.post("/addStudent", (req, res) => {
+  console.log("Get add new student to session request");
+  data = req.body;
+  var objectID = new mongo.ObjectID(data.sessionId);
+  sessionCollection.update(
+    { _id: objectID },
+    { $push: { students: data.studentId } },
+    function(err, added) {
+      if (err || !added) {
+        console.log("Student not added.");
+      } else {
+        console.log("Student added to session with id: " + data.sessionId);
+      }
+    }
+  );
   res.end();
 });
 
