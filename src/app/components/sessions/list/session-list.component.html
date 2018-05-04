@@ -6,7 +6,7 @@
 			<div class="box-header">
 				<div class="box-title">Danh sách lớp học</div>
 			</div>
-			<div class="box-body">
+			<div class="box-body table-responsive">
 				<table id="sessionTable" class="table table-hover table-striped table-bordered">
 					<thead>
 						<tr>
@@ -30,8 +30,8 @@
 							<td class="pointer text-right">{{session?.fee | myNumber}}</td>
 							<td class="pointer text-center">{{session?.students?.length}}</td>
 							<td class="row">
-								<button class="col-xs-5 col-md-5 col-md-offset-1 btn btn-primary" type="button" [routerLink]="['/updateSession', session._id]">Sửa</button>
-								<button class="col-xs-5 col-md-5 col-md-offset-1 btn btn-danger" type="button" (click)="deleteSession(session._id);">Xóa</button>
+								<button class="col-md-5 col-md-offset-1 btn btn-primary" type="button" [routerLink]="['/updateSession', session._id]">Sửa</button>
+								<button class="col-md-5 col-md-offset-1 btn btn-danger" type="button" (click)="deleteSession(session._id);">Xóa</button>
 							</td>
 						</tr>
 					</tbody>

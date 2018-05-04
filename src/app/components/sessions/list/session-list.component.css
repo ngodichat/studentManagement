@@ -1,3 +1,7 @@
 i {
     cursor: pointer;
 }
+
+.btn {
+	padding: 6px 6px;
+}
